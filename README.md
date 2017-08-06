@@ -1,2 +1,4 @@
-# labs
-Additional reference information for Labs
+# Labs
+
+This repository contains additional reference information for lab work.
+
