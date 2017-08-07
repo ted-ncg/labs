@@ -82,4 +82,12 @@ If **git** can't connect (some error like `unable to access '...'` or `Couldn't 
 git config --global http.proxy http://proxyUsername:proxyPassword@proxy.server.com:port
 ```
 
+```
+export http_proxy=userproxy.visa.com:80
+
+or
+
+set HTTP_PROXY=userproxy.visa.com:80
+```
+
 Where the username, password, server, etc. are however your proxy is set up.
