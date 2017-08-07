@@ -79,7 +79,8 @@ If you find that you need to use a proxy to access the various dependencies, you
 If **git** can't connect (some error like `unable to access '...'` or `Couldn't resolve host '...'`), then you may need to set up a proxy like this:
 
 ```
-git config --global http.proxy http://proxyUsername:proxyPassword@proxy.server.com:port
+git config --global http.proxy http://userproxy.visa.com:80
+git config --global http.sslVerify false
 ```
 
 ```
