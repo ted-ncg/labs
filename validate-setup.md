@@ -84,10 +84,12 @@ git config --global http.proxy http://proxyUsername:proxyPassword@proxy.server.c
 
 ```
 export http_proxy=userproxy.visa.com:80
+export https_proxy=userproxy.visa.com:443 
 
 or
 
 set HTTP_PROXY=userproxy.visa.com:80
+set HTTPS_PROXY=userproxy.visa.com:443
 ```
 
 Where the username, password, server, etc. are however your proxy is set up.
