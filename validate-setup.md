@@ -50,7 +50,7 @@ If you find that you need to use a proxy to access the various dependencies, you
 1. Open or create the settings.xml file found in the .m2 directory located in your home/user directory, e.g., ~/.m2/settings.xml
 2. Add the following, filling in the protocol (http or https to connect to the proxy), host, port, username, and password as appropriate:
 
-
+```
     <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
@@ -70,6 +70,7 @@ If you find that you need to use a proxy to access the various dependencies, you
       </proxies>
 
     </settings>
+```
 
    Note: If you already had a settings.xml file, then just add the <proxies> section to it, leaving the rest of the file as-is.
 
