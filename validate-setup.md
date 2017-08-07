@@ -8,6 +8,12 @@ This lab is to ensure that all of the tools that we'll be using during this week
 
 Go to: https://visawiki.trusted.visa.com/display/VDP/New+Developer+Onboarding+Checklist
 
+#### Sections of Interest:
+
+- Proxy Settings in Terminal
+- Git Config Settings
+- Maven Settings
+
 You should already have the following tools installed on your machine from the "self-paced learning" pre-course work.
 If you don't have them installed, follow the links next to each item:
 
