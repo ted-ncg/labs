@@ -58,13 +58,19 @@ If you find that you need to use a proxy to access the various dependencies, you
 
       <proxies>
         <proxy>
-          <id>VisaProxy</id>
+          <id>VisaHttpProxy</id>
           <active>true</active>
           <protocol>http</protocol>
           <host>proxy.visa.com</host>
-          <port>8080</port>
-          <username>proxyusername</username>
-          <password>proxypassword</password>
+          <port>80</port>
+          <nonProxyHosts>localhost|127.0.0.1|*.visa.com</nonProxyHosts>
+        </proxy>
+        <proxy>
+          <id>VisaHttpsProxy</id>
+          <active>true</active>
+          <protocol>https</protocol>
+          <host>proxy.visa.com</host>
+          <port>443</port>
           <nonProxyHosts>localhost|127.0.0.1|*.visa.com</nonProxyHosts>
         </proxy>
       </proxies>
