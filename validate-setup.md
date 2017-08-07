@@ -65,7 +65,7 @@ If you find that you need to use a proxy to access the various dependencies, you
           <port>8080</port>
           <username>proxyusername</username>
           <password>proxypassword</password>
-          <nonProxyHosts>localhost</nonProxyHosts>
+          <nonProxyHosts>localhost|127.0.0.1|*.visa.com</nonProxyHosts>
         </proxy>
       </proxies>
 
