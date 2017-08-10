@@ -25,8 +25,12 @@
 2. Modify your controller method to add the account into the model:
 
 ```
-    model.addAttribute("account", account);
-    return "account-view";
+    @GetMapping(...)
+    public String accountView(Model model) {
+      ...
+      model.addAttribute("account", account);
+      return "account-view";
+    }
 ```
 
 3. Map a controller method to localhost:8080/account
