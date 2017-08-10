@@ -1,7 +1,5 @@
 ## All Accounts Navigation
 
-Find this at: https://github.com/ted-ncg/labs/blob/master/all-accounts.md
-
 ### Parameterize Account View Page
 
 1. Update the Account View method to take the account ID on the path. For example
@@ -83,4 +81,30 @@ Find this at: https://github.com/ted-ncg/labs/blob/master/all-accounts.md
    </tr>
    ```
 
+   * In the above example, Thymeleaf will iterate over the "products" collection that it got from Spring's Model, and for each element, will assign it to the `product` variable.
+   * You will need to do something similar, replacing *account* for *product*.
+
 1. Verify that going to `http://localhost:8080/` and clicking on the **View all accounts** takes you to the page and shows the actual accounts in your AccountRepository.
+
+### Linking to Specific Account Pages
+
+**Goal:**
+Use the `th:href` tag to create links to view a specific account page.
+
+1. Update the account-view.html template to add an "href" link for the account name that will link to the details page for that account.
+
+   * With HTML, a link looks like this: `<a href="/account">Bank</a>`. We want it to point to `/account/3` for the account with an ID of 3, but point to `/account/5` for an account with an ID of 5.
+   * We'll need to make the "href" dynamic, which Thymeleaf does through its `th:href` tag.
+     Documentation for that tag can be found here: http://www.thymeleaf.org/doc/articles/standardurlsyntax.html
+
+2. Add a parameterized link, which will look like our templated path in our GetMapping.
+   For example, to produce a link to a product page using its product ID, we would use the `@{}` expression, with an embedded `${}` variable expression like this:
+   
+   ```
+   <a th:href="@{/product/{id}(id=${product.id})}>Product</a>
+   ```
+   
+   This can look complicated, so let's look at the pieces, the `${product.id}` is the dynamic ID from the product and `(id=${...})` means assign it to `id`.
+   The `/product/{id}` then gets the `{id}` replaced at runtime with the `id` variable.   
+   
+3. Verify that clicking on a link from the "all accounts" page takes you to the specific page for that account.
