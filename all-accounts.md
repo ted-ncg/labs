@@ -1,5 +1,7 @@
 ## All Accounts Navigation
 
+Find this at: https://github.com/ted-ncg/labs/blob/master/all-accounts.md
+
 ### Parameterize Account View Page
 
 1. Update the Account View method to take the account ID on the path. For example
