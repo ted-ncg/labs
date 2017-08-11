@@ -10,13 +10,13 @@
     int convertToGbp(int amount)
     ```
 
-   * This method will use the `RestTemplate` Spring class to call out to the currency converter at `trampoline.io/convert`.
+   * This method will use the `RestTemplate` Spring class to call out to the currency converter at `http://jitterted-currency-conversion.herokuapp.com/convert`.
      It will send three *query* parameters:
        * `from` - the source currency, e.g., `USD`
        * `to` - the converted currency, e.g., `GBP`
        * `amount` - the amount to convert
    * **Example:**
-       * To convert $100 to GBP, the URL is `http://trampoline.io/convert?from=USD&to=GBP&amount=100`
+       * To convert $100 to GBP, the URL is `http://jitterted-currency-conversion.herokuapp.com/convert?from=USD&to=GBP&amount=100`
        * The JSON returned from this API would look like this:
           ```json
           {
