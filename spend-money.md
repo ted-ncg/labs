@@ -1,5 +1,7 @@
 ## Spend Some Money
 
+### This page is at: `https://github.com/ted-ncg/labs/blob/master/spend-money.md`
+
 ### Link to the Spend Money Page
 1. Add a link to `/withdraw/{id}` from the Account view page.
    The raw HTML would be:
