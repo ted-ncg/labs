@@ -2,17 +2,17 @@
 
 ### Link to the Spend Money Page
 1. Add a link to `/withdraw/{id}` from the Account view page.
-   The raw HTML is:
+   The raw HTML would be:
    
    ```html
    <br/>
    Want to: <a href="#">Spend Money?</a>
    ```
-   You will need to add the appropriate `th` tag.
+   So you will need to add the appropriate `th` tag using what you've learned previously about `href`s.
 
 ### Create the Spend Money Page
 
-1. Add a new HTML page, named `withdraw.html` with a form that let's us spend (withdraw) money.
+1. Add a new HTML page, named `withdraw.html` with a form that let's us spend (withdraw) money from an account.
 
   ```html
   <!DOCTYPE html>
@@ -47,11 +47,11 @@
   </body>
   </html>
   ```
-1. Create a WithdrawForm "POJO" (Plain Old Java Object) that has two properties, with getters and setters:
+1. Create a `WithdrawForm` *POJO* (Plain Old Java Object) that has two properties, with getters and setters:
    * `accountId` (`long`) - ID of the account to withdraw from
    * `amount` (`int`) - how much to spend
 
-1. Create a `@GetMapping` method that will serve up the form.
+1. Create a `@GetMapping` method in your web controller that will serve up the form:
 
    ```java
      @GetMapping("/withdraw/{id}")
@@ -63,7 +63,7 @@
      }
    ```
 
-1. Create a `@PostMapping` method for the `/withdraw/{id}` path that will take the amount and withdraw it from the current account and **redirect** back to the account view page using `"redirect:/account/{id}"`.
+1. Create a `@PostMapping` method for the `/withdraw` path that will take the amount *from* the form and withdraw it from the account using the `AccountService` and use the `redirect` to take the user back to the account view page using `"redirect:/account/{id}"`.
 
    ```java
      @PostMapping("/withdraw")
@@ -73,3 +73,6 @@
        return "redirect:/account/" + form.getAccountId();
      }
    ```
+
+1. You should now be able to go to the home page, select an account, click on the "spend money" link, enter an amount, and see that the balance for that account has been reduced.
+
