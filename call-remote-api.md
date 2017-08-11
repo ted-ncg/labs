@@ -50,5 +50,5 @@
 
 You may need to add the following proxy information to your Run Configurations as **VM** Arguments:
 
-    -Dhttp.proxyHost=userproxy.visa.com –Dhttp.proxyPort=80
+    -Dhttp.proxyHost=userproxy.visa.com -Dhttp.proxyPort=80
 
