@@ -40,7 +40,7 @@
     ```
 
 1. Inject the CurrencyService into your web `@Controller` and use this service in the `@GetMapping` for the account view page.
-   Display both USD and GBP on the page, like this:
+   Update the HTML view page to display both USD and GBP on the page, like this:
    ```
    USD Balance: $10
    GBP Balance: £8
@@ -48,7 +48,7 @@
 
 ### Proxying
 
-You may need to add the following proxy information to your Run Configurations as Program Arguments:
+You may need to add the following proxy information to your Run Configurations as **VM** Arguments:
 
     -Dhttp.proxyHost=userproxy.visa.com –Dhttp.proxyPort=80
 
