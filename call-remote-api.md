@@ -1,6 +1,6 @@
 ## Calling Remote *Restful* APIs
 
-### This page is at: https://github.com/ted-ncg/labs/
+### This page is at: `https://github.com/ted-ncg/labs/blob/master/call-remote-api.md`
 
 **Goal:** Convert the account balance from USD ($) to GBP (£)
 
@@ -15,14 +15,15 @@
        * `from` - the source currency, e.g., `USD`
        * `to` - the converted currency, e.g., `GBP`
        * `amount` - the amount to convert
-   * To convert $100 to GBP, the URL is `http://trampoline.io/convert?from=USD&to=GBP&amount=100`
-   * The JSON that gets returned from this API looks like this:
-      ```json
-      {
-        "currency": "GBP",
-        "converted": 76.83
-      }
-      ```
+   * **Example:**
+       * To convert $100 to GBP, the URL is `http://trampoline.io/convert?from=USD&to=GBP&amount=100`
+       * The JSON returned from this API would look like this:
+          ```json
+          {
+            "currency": "GBP",
+            "converted": 76.83
+          }
+          ```
    * Create a POJO that represents the returned JSON.
    * Extract the `converted` value and return it.
 
