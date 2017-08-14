@@ -6,6 +6,8 @@ This lab is to ensure that all of the tools that we'll be using during this week
 
 ### Developer Setup
 
+If you haven't already done this as part of your developer on-boarding, you'll want to look at this page for Maven/Artifactory setup as well as Git and Proxying information.
+
 Go to: https://visawiki.trusted.visa.com/display/VDP/New+Developer+Onboarding+Checklist
 
 #### Sections of Interest:
@@ -14,6 +16,8 @@ Go to: https://visawiki.trusted.visa.com/display/VDP/New+Developer+Onboarding+Ch
 - Git Config Settings
 - Maven Settings
 
+----
+
 You should already have the following tools installed on your machine from the "self-paced learning" pre-course work.
 If you don't have them installed, follow the links next to each item:
 
@@ -21,31 +25,33 @@ If you don't have them installed, follow the links next to each item:
 * curl - [installing curl](https://github.com/ted-ncg/austin-spl-june-26/blob/master/install-curl.md)
 * Java 8 - [installing Java](https://github.com/ted-ncg/austin-spl-june-26/blob/master/install-java8.md)
 * Maven 3 - [installing Maven](https://github.com/ted-ncg/austin-spl-june-26/blob/master/install-maven3.md)
-* IntelliJ IDEA - [installing IDEA](https://github.com/ted-ncg/austin-spl-june-26/blob/master/install-intellij.md)
+* IntelliJ IDEA - [installing IDEA](https://github.com/ted-ncg/austin-spl-june-26/blob/master/install-intellij.md) -- **NOTE** install the *Ultimate* Edition for the 30-day trial as it has Spring-specific tools.
 
-## Lab Instructions
+----
+
+# Lab Instructions
 
 1. Open command prompt/terminal
 
 1. Change to your projects directory
 
-1. Clone the repository by doing:
+1. Clone the project repository to your machine by doing:
 
-   `git clone https://github.com/ted-ncg/canteen`
+   `git clone https://github.com/ted-ncg/colorado-canteen`
 
    * If you run into proxying issues, see [proxying git](#proxying-git) for more info
 
 1. Launch IntelliJ IDEA
 
-1. Open the pom.xml (*not* Import)
+1. Do `File` > `Open...` from the menus to open the pom.xml (*don't* use Import) in the `colorado-canteen` project directory.
 
-1. Find the Test class
+1. Find the `CanteenApplicationTest` class -- this is the *test* class, not the application itself.
 
 1. Click on the green arrow next to the class name
 
 1. The test should pass (be green)
 
-1. Open the Maven Projects tool tab on the right side of the window
+1. Open the `Maven Projects` tool tab on the right side of the window
 
 1. Find and open the `Lifecycle` section
 
@@ -53,7 +59,35 @@ If you don't have them installed, follow the links next to each item:
  
 1. There should be no `Failures`
 
-## Maven Proxying
+## Add Your Name
+
+1. Create a new branch with **your name** and make it the current branch (`checkout`).
+    You can do this from the command-line by typing:
+    
+    `git checkout -b tedyoung`
+
+    You should see:
+     
+    `Switched to a new branch 'tedyoung'`
+    
+1. Open up the `README.md` file inside of IDEA.
+
+1. Underneath where it says `## Participants`, add your name.
+
+1. From with IDEA (or via the command-line):
+
+   * Add the file to Git (`git add README.md`)
+   * Commit the file (`git commit -m 'Added Ted Young to participants.'`)
+   * Push the file up to GitHub (`git push --set-upstream origin <branch name here>`) -- remember to use the branch name that you created in the first step.
+
+**NOTE:** You will likely run into a permissions issue. THAT IS OK! Call the instructor over when you run into it.
+
+
+----
+
+**NOTE:** Only follow these directions if the developer onboarding page didn't work for you.
+
+### Maven Proxying
 
 If you find that you need to use a proxy to access the various dependencies, you'll need to add the following to your settings.xml file:
 
