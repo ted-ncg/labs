@@ -12,7 +12,8 @@
 public class AccountRepository {
 
     public Account findOne(Long id) {
-      // return null if there's no account with the id
+      // returns the Account that has the given id,
+      // if there's no Account with that id, return null
     }
 
     public Account save(Account entity) {
@@ -37,10 +38,12 @@ public class AccountRepository {
   ```java
   @Test
   public void findAllShouldReturn2Accounts() {
-    List<Account> accounts = new ArrayList<Account>();
+    List<Account> accounts = new ArrayList<>();
    
     Account a1 = new Account();
+    a1.setId(1L);
     Account a2 = new Account();
+    a2.setId(2L);
     accounts.add(a1);
     accounts.add(a2);
   
