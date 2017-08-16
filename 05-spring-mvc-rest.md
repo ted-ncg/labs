@@ -33,7 +33,7 @@
     {"balance": 22}
     ```
 
-1. Copy the AccountRestTest.java file into your test/java directory and run the test.
+1. Copy the [AccountRestTest.java](https://github.com/ted-ncg/labs/blob/master/AccountRestTest.java) file into your test/java directory and run the test.
 
 1. Commit your code.
 
