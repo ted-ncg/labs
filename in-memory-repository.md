@@ -11,15 +11,15 @@
 ```java
 public class AccountRepository {
 
-    Account findOne(Long id) {
+    public Account findOne(Long id) {
       
     }
 
-    Account save(Account entity) {
-      
+    public Account save(Account entity) {
+      // if account's id is already set, DON'T replace it
     }
 
-    List<Account> findAll() {
+    public List<Account> findAll() {
       
     }
 
