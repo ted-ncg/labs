@@ -1,6 +1,6 @@
 ## View Account
 
-## https://github.com/ted-ncg/labs/blob/master/accounts-view.md
+## https://github.com/ted-ncg/labs/blob/master/account-view.md
 
 ### References
 
