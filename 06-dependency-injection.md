@@ -33,3 +33,5 @@
             .andExpect(jsonPath("$.balance").value("0"));
       }
     ```
+    
+    * Modify the expected balance to make the test pass.
