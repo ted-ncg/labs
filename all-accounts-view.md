@@ -20,7 +20,14 @@
       </html>
     ```
 
-1. Add in the th:text and th:each attributes in the span as needed.
+1. Add in the th:text and th:each attributes in the span as needed. For example, if we were working with a collection of `products`:
+
+       ```
+       <tr th:each="product : ${products}">
+         <td th:text="${product.name}">Onions</td>
+         <td th:text="${product.price}">2.41</td>
+       </tr>
+       ```
     
 1. Create a WebController class annotated with `@Controller`
 
