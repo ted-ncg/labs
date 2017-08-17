@@ -2,6 +2,12 @@
 
 ## https://github.com/ted-ncg/labs/blob/master/all-accounts-view.md
 
+### References
+
+* Thymeleaf 3: http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-and-displaying-variables
+
+## Lab Instructions
+
 1. Create an HTML "template" (name it `all-accounts.html) in the `resources/templates` folder underneath the `/src/main` folder:
 
     ```
