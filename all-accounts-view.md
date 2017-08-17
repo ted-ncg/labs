@@ -3,19 +3,19 @@
 1. Create an HTML "template":
 
     ```
-  <!DOCTYPE html>
-  <html lang="en" xmlns:th="http://www.thymeleaf.org" >
-  <head>
-    <meta charset="UTF-8">
-    <title>Accounts</title>
-  </head>
-  <body>
-  <ul>
-    <li>Account ID:<span>10</span></li>
-    <li>Balance: $<span>99</span></li>
-  </ul>
-  </body>
-  </html>
+      <!DOCTYPE html>
+      <html lang="en" xmlns:th="http://www.thymeleaf.org" >
+      <head>
+        <meta charset="UTF-8">
+        <title>Accounts</title>
+      </head>
+      <body>
+      <ul>
+        <li>Account ID:<span>10</span></li>
+        <li>Balance: $<span>99</span></li>
+      </ul>
+      </body>
+      </html>
     ```
     
 1. Create a WebController class annotated with `@Controller`
