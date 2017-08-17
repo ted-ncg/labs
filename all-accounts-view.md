@@ -1,5 +1,7 @@
 # All Accounts View
 
+## https://github.com/ted-ncg/labs/blob/master/all-accounts-view.md
+
 1. Create an HTML "template":
 
     ```
@@ -17,6 +19,8 @@
       </body>
       </html>
     ```
+
+1. Add in the th:text and th:each attributes in the span as needed.
     
 1. Create a WebController class annotated with `@Controller`
 
