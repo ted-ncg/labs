@@ -2,7 +2,7 @@
 
 ## https://github.com/ted-ncg/labs/blob/master/all-accounts-view.md
 
-1. Create an HTML "template" in the `resources/templates` folder underneath the `/src/main` folder:
+1. Create an HTML "template" (name it `all-accounts.html) in the `resources/templates` folder underneath the `/src/main` folder:
 
     ```
       <!DOCTYPE html>
@@ -33,11 +33,14 @@
          <td th:text="${product.price}">2.41</td>
        </tr>
     
-1. Create a WebController class annotated with `@Controller`
+1. Create a `WebController` class annotated with `@Controller`
+
+1. Inject the `AccountRepository` into your `WebController` class.
 
 1. Create a `@GetMapping()` to `/account/` that displays all accounts.
 
-    * Add a `Model model` as your parameter
-    * Return a `String` with the name of the html template you created in the first step -- **without** the `.html` suffic.
+    * Add a `Model model` as your parameter to the method
+    * use the `model.addAttribute()` method to add the account list to the name `"accounts"`
+    * Return a `String` with the name of the html template you created in the first step -- **without** the `.html` suffix.
 
 1. If you hit `localhost:8080/account/` you should see all of the accounts.
