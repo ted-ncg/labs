@@ -1,6 +1,8 @@
 # Automatic Dependency Injection
 
-Goal: Modify your `AccountsController` so that you can return an `Account` from the `AccountRepository`.
+## https://github.com/ted-ncg/labs/blob/master/06-dependency-injection.md
+
+**Goal**: Modify your `AccountsController` so that you can return an `Account` from the `AccountRepository`.
 
 1. Modify the `AccountsController` constructor to take in a *dependency* on `AccountRepository`
 
