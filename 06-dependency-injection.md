@@ -21,6 +21,10 @@
 1. To ensure that your code works properly, add this test to the `AccountRestTest` class:
 
     ```java
+    // use this import method:   
+    import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+ 
+      // add this test to your test class
       @Test
       public void getWithAccountIdReturnsAccountForThatId() throws Exception {
         mockMvc.perform(get("/api/accounts/1"))
