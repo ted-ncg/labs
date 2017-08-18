@@ -24,8 +24,9 @@
             "converted": 76.83
           }
           ```
-   * Create a POJO that represents the returned JSON called `ConvertedCurrency`.
-   * Extract the `converted` value and return it.
+   * Create a POJO that represents the returned JSON called `ConvertedCurrency`. The *properties* for your POJO must *match* the JSON names.
+   
+   * Extract the `converted` value and return it as an `int` (you can just cast it).
 
    * Here is the Trivia example that we saw:
    
@@ -39,6 +40,8 @@
         .getForObject(numberFactsUrl, Trivia.class, params);
     ```
 
+    And here's the Trivia POJO that's used above: https://github.com/ted-ncg/labs/blob/master/Trivia.java
+    
 1. Inject the CurrencyService into your web (Account) Controller and use this service in the `@GetMapping` for the account view page.
 
    * Update the HTML view page to display both USD and GBP on the page, like this:
