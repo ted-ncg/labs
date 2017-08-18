@@ -9,7 +9,6 @@
 **Goal:** Create a link to a Deposit Money Form to deposit money into an account.
 
 
-
 1. Add a link to `/deposit/{id}` from the Account view page.
 
    * With static HTML, a link looks like this:
