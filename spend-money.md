@@ -12,7 +12,7 @@
    <br/>
    Want to: <a href="#">Spend Money?</a>
    ```
-   So you will need to add the appropriate `th` tag using what you've learned previously about `href`s.
+   You will need to add the appropriate `th` tag using what you've learned previously about `href`s.
 
 ### Create the Spend Money Page
 
