@@ -37,13 +37,13 @@ If you don't have them installed, follow the links next to each item:
 
 1. Clone the project repository to your machine by doing:
 
-   `git clone https://github.com/ted-ncg/colorado-canteen`
+   `git clone https://github.com/ted-ncg/foster-city-canteen`
 
    * If you run into proxying issues, see [proxying git](#proxying-git) for more info
 
 1. Launch IntelliJ IDEA
 
-1. Do `File` > `Open...` from the menus to open the pom.xml (*don't* use Import) in the `colorado-canteen` project directory.
+1. Do `File` > `Open...` from the menus to open the pom.xml (*don't* use Import) in the `foster-city-canteen` project directory.
 
 1. Find the `CanteenApplicationTest` class -- this is the *test* class, not the application itself.
 
@@ -62,13 +62,13 @@ If you don't have them installed, follow the links next to each item:
 ## Add Your Name
 
 1. Create a new branch with **your name** and make it the current branch (`checkout`).
-    You can do this from the command-line by typing:
+    You can do this from the command-line by typing (replace `yourname` with, well, *your* name):
     
-    `git checkout -b tedyoung`
+    `git checkout -b yourname`
 
     You should see:
      
-    `Switched to a new branch 'tedyoung'`
+    `Switched to a new branch 'yourname'`
     
 1. Open up the `README.md` file inside of IDEA.
 
