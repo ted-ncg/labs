@@ -34,6 +34,7 @@ If you don't have them installed, follow the links next to each item:
 # Lab Instructions
 
 ## Clone the Canteen Repository
+
 1. Open command prompt/terminal
 
 1. Change to your projects directory
@@ -44,7 +45,7 @@ If you don't have them installed, follow the links next to each item:
 
    * If you run into proxying issues, see [proxying git](#proxying-git) for more info
 
-## Use Maven to Run the Tests
+## Use Maven to Run the Test
 
 1. Change to the directory holding the project:
 
@@ -83,21 +84,50 @@ If you don't have them installed, follow the links next to each item:
 
 1. Launch IntelliJ IDEA
 
-1. Do `File` > `Open...` from the menus to open the pom.xml (*don't* use Import) in the `foster-city-canteen` project directory.
+1. Open the pom.xml file, either:
 
-1. Find the `CanteenApplicationTest` class -- this is the *test* class, not the application itself.
+   * If you see the Welcome screen, choose `Open`
 
-1. Click on the green arrow next to the class name
+   Otherwise...
+
+   * From the `File` menu, choose the `Open...` item to open the pom.xml (*don't* use Import) in the `foster-city-canteen` project directory.
+
+1. IDEA will then ask you how to open this file. Since we want it to be a new **project**, click `Open as Project`.
+
+    ![](open-as-project.png)
+
+1. The project will load and IDEA will do some indexing, which may take a minute (or more).
+
+### Run the Test in IDEA
+
+1. Once the indexing completes, navigate to the `CanteenApplicationTest` class -- **Note:** this is the *test* class, not the application class.
+
+1. Click on the green arrow next to the left of the class name
 
 1. The test should pass (be green)
 
-1. Open the `Maven Projects` tool tab on the right side of the window
+### Run the Test in IDEA Using Maven
 
-1. Find and open the `Lifecycle` section
+1. Turn on the tool window buttons by clicking on the icon in the lower-left:
 
-1. Run the `test` target task
- 
-1. There should be no `Failures`
+    ![](intellij-tool-windows-button.png)
+
+1. You should now see buttons along the left, bottom, and right edges:
+
+    ![](intellij-tool-windows-visible.png)
+
+1. Find the `Maven Projects` tab, which should be on the right-side edge of the window, 
+   and click on it (1) to open up the tool window.
+
+    ![](intellij-running-maven-task-task.png)
+
+1. Open the `canteen` project tree, then open the `lifecycle` tree (2).
+
+1. Click on the `test` item (3) and then click the green arrow (4) to execute the test task.
+
+1. If all goes well, you'll see the test run and pass in a console as shown below:
+
+    ![](intellij-maven-test-task-run.png)
 
 ----
 

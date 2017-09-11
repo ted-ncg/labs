@@ -26,7 +26,7 @@
           ```
    * Create a POJO that represents the returned JSON called `ConvertedCurrency`. The *properties* for your POJO must *match* the JSON names.
    
-   * Extract the `converted` value and return it as an `int` (you can just cast it).
+   * Extract the `converted` value and return it as an `int` (you can just cast it or use the `intValue()`).
 
    * Here is the Trivia example that we saw:
    
