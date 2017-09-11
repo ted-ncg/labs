@@ -10,6 +10,8 @@ If you haven't already done this as part of your developer on-boarding, you'll w
 
 Go to: https://visawiki.trusted.visa.com/display/VDP/New+Developer+Onboarding+Checklist
 
+Search the page for the sections of interest (below) and follow those instructions:
+
 #### Sections of Interest:
 
 - Proxy Settings in Terminal
@@ -31,15 +33,53 @@ If you don't have them installed, follow the links next to each item:
 
 # Lab Instructions
 
+## Clone the Canteen Repository
 1. Open command prompt/terminal
 
 1. Change to your projects directory
 
-1. Clone the project repository to your machine by doing:
+1. Clone the project repository from GitHub to your machine by doing:
 
    `git clone https://github.com/ted-ncg/foster-city-canteen`
 
    * If you run into proxying issues, see [proxying git](#proxying-git) for more info
+
+## Use Maven to Run the Tests
+
+1. Change to the directory holding the project:
+
+   ```
+   $ cd foster-city-canteen
+   ```
+    
+1. Run the `test` task in Maven:
+
+   ```
+   $ mvn test
+   ```
+
+1. Maven will download a lot of files, so this make take a little while.
+   Once it's finished downloading the files, it will compile the code and run the 1 test in the project.
+   If all goes well, you should see something like:
+   
+   ```
+   Results :
+
+   Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+   [INFO] ------------------------------------------------------------------------
+   [INFO] BUILD SUCCESS
+   [INFO] ------------------------------------------------------------------------
+   [INFO] Total time: 4.706 s
+   [INFO] Finished at: 2017-09-11T10:39:51-07:00
+   [INFO] Final Memory: 20M/437M
+   [INFO] ------------------------------------------------------------------------
+   ```
+
+   If you see the above, continue to the next section.
+   If not, please ask the instructor for help!
+
+## Open the Project in IntelliJ IDEA
 
 1. Launch IntelliJ IDEA
 
@@ -59,7 +99,9 @@ If you don't have them installed, follow the links next to each item:
  
 1. There should be no `Failures`
 
-## Add Your Name
+----
+
+## Add Your Name [OPTIONAL!]
 
 1. Create a new branch with **your name** and make it the current branch (`checkout`).
     You can do this from the command-line by typing (replace `yourname` with, well, *your* name):
@@ -85,9 +127,9 @@ If you don't have them installed, follow the links next to each item:
 
 ----
 
-**NOTE:** Only follow these directions if the developer onboarding page didn't work for you.
-
 ### Maven Proxying
+
+**NOTE:** Only follow these directions if the developer onboarding page didn't work for you.
 
 If you find that you need to use a proxy to access the various dependencies, you'll need to add the following to your settings.xml file:
 
@@ -125,6 +167,8 @@ If you find that you need to use a proxy to access the various dependencies, you
    Note: If you already had a settings.xml file, then just add the <proxies> section to it, leaving the rest of the file as-is.
 
 ## Proxying Git
+
+**NOTE:** Only follow these directions if the developer onboarding page didn't work for you.
 
 If **git** can't connect (some error like `unable to access '...'` or `Couldn't resolve host '...'`), then you may need to set up a proxy like this:
 
