@@ -59,9 +59,9 @@ If you don't have them installed, follow the links next to each item:
    $ mvn test
    ```
 
-1. Maven will download a lot of files, so this make take a little while.
+1. Maven will download a **lot** of files, so this **may take a little while (10-20 minutes)**!
    Once it's finished downloading the files, it will compile the code and run the 1 test in the project.
-   If all goes well, you should see something like:
+   If all goes well, you should eventually see something like:
    
    ```
    Results :
