@@ -18,18 +18,20 @@ Have a way of storing and finding accounts in a central location.
   public class AccountRepository {
   
       public Account findOne(Long id) {
-        // returns the Account that has the given id,
-        // if there's no Account with that id, return null
+        // Returns the Account that is identified by the given id.
+        // If there's no Account with that id, return null.
       }
   
       public Account save(Account entity) {
-        // if account's id is already set, DON'T replace it
-        // if the account came in with NO id, replace it with one generated from AtomicLong.
+        // Stores the given account in the repository so it can be found later.
+        // If the incoming account object's id is already set, DON'T modify it
+        // If the account came in with NO id, replace it with one generated from AtomicLong.
         // return the Account object that must now have its id set
       }
   
       public List<Account> findAll() {
-        // return all accounts as a List, or an empty List if there are no accounts 
+        // Return all accounts as a List
+        // If there are no accounts, return empty List 
       }
   
   }
@@ -58,3 +60,19 @@ Have a way of storing and finding accounts in a central location.
       .hasSize(2);
   }
   ```
+
+* You'll want to also check that each newly saved Account is given an ID that's different from other newly saved Accounts.
+
+  ```java
+  @Test
+  public void newlySavedAccountsHaveUniqueIds() {
+    AccountRepository accountRepository = new AccountRepository();
+    Account account1 = new Account();
+    accountRepository.save(account1);
+    Account account2 = new Account();
+    accountRepository.save(account2);
+  
+    assertThat(account1.getId())
+        .isNotEqualTo(account2.getId());
+  }
+  ```  
