@@ -45,9 +45,9 @@ Make the `/api/accounts/{id}` endpoint return JSON that contains the ID and Bala
 
 1. Returning a "plain old" Java object (POJO, also called a JavaBean or just Bean) that has *properties* for ID and for Balance:
 
-   * Create a *new* class, e.g., `AccountResponse`, that has two *JavaBean* properties: Id, and Balance.
-     * You'll need a getter and setter, named properly, for each property
-   * Change the `accountInfo()` method (in your controller class) to return the `AccountResponse` instance, with the proper  instead of returning an `Account` object.
+   * Create a *new* class, e.g., `AccountResponse`, that has two *JavaBean* properties: `Id`, and `Balance`.
+     * Remember, you'll need a getter and setter, named properly, for each property
+   * Change the `accountInfo()` method (in your controller class) to return the `AccountResponse` instance, instead of returning an `Account` object.
      * e.g.: `public AccountResponse accountInfo(...`
 
 1. Make the AccountRestTest test pass.
