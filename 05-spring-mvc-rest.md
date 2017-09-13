@@ -43,7 +43,14 @@ Make the `/api/accounts/{id}` endpoint return JSON that contains the ID and Bala
 
 1. Copy the [AccountRestTest.java](https://github.com/ted-ncg/labs/blob/master/AccountRestTest.java) file into your test/java directory and run the test.
 
-1. Make the test pass by returning an object (POJO) that has *properties* for ID and for Balance (use $10 for the test).
+1. Returning a "plain old" Java object (POJO, also called a JavaBean or just Bean) that has *properties* for ID and for Balance:
+
+   * Create a *new* class, e.g., `AccountResponse`, that has two *JavaBean* properties: Id, and Balance.
+     * You'll need a getter and setter, named properly, for each property
+   * Change the `accountInfo()` method (in your controller class) to return the `AccountResponse` instance, with the proper  instead of returning an `Account` object.
+     * e.g.: `public AccountResponse accountInfo(...`
+
+1. Make the AccountRestTest test pass.
 
 ## Documentation
 
