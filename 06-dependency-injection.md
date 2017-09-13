@@ -2,9 +2,9 @@
 
 ## https://github.com/ted-ncg/labs/blob/master/06-dependency-injection.md
 
-**Goal**: Modify your `AccountsController` so that you can return an `Account` from the `AccountRepository`.
+**Goal**: Modify your `AccountController` so that you can return an `Account` from the `AccountRepository`.
 
-1. Modify the `AccountsController` constructor to take in a *dependency* on `AccountRepository`
+1. Modify the `AccountController` constructor to take in a *dependency* on `AccountRepository`
 
 1. Ensure that `AccountRepository` is annotated properly so that Spring can create it during the automatic dependency injection process.
 
@@ -18,20 +18,6 @@
 
 1. To "pre-load" data into the `AccountRepository`, you can use the code in the [AccountDataLoader.java](https://github.com/ted-ncg/labs/blob/master/AccountDataLoader.java) file.
 
-1. To ensure that your code works properly, add this test to the `AccountRestTest` class:
+1. To ensure that your code works properly, re-run the `AccountRestTest` and it should still pass.
 
-    ```java
-    // use this import method:   
-    import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
- 
-      // add this test to your test class
-      @Test
-      public void getWithAccountIdReturnsAccountForThatId() throws Exception {
-        mockMvc.perform(get("/api/accounts/1"))
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$.id").value(1))
-            .andExpect(jsonPath("$.balance").value("0"));
-      }
-    ```
-    
-    * Modify the expected balance to make the test pass.
+1. Also try adding more "sample" data to the `AccountDataLoader` and using your browser, or *curl* to hit the endpoint.

@@ -2,7 +2,7 @@
 
 ## Your Task
 
-1. Implement a class named `AccountController`, annotated with `@RestController`.
+1. Implement a class named `AccountApiController`, annotated with `@RestController`.
  
 2. Implement a method `public Account accountInfo(String accountId)` that is mapped so that it will respond (be routed) to
 
