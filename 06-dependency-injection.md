@@ -16,6 +16,25 @@
     
       would return the `Account` with ID of 1.
 
+  ```java
+    @TestConfiguration
+    static class Config {
+      @Bean
+      public AccountRepository createTestAccountRepository() {
+        AccountRepository accountRepository = new AccountRepository();
+        Account account = new Account();
+        account.setId(1L);
+        account.deposit(10);
+        accountRepository.save(account);
+        return accountRepository;
+      }
+    }
+  ```
+
+----
+
+(Using the @SpringBootTest...)
+
 1. To "pre-load" data into the `AccountRepository`, you can use the code in the [AccountDataLoader.java](https://github.com/ted-ncg/labs/blob/master/AccountDataLoader.java) file.
 
 1. To ensure that your code works properly, change the annotations on the `AccountRestTest` by replacing the `@WebMvcTest` with these two annotations:

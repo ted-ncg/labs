@@ -23,3 +23,5 @@
    1. Attempting to transfer an amount <= 0 fails (throws an `InvalidAmountException`)
    
    1. Attempting to transfer more money than the *source* account has throws an `InsufficientFundsException`
+   
+   1. If either account is `null`, it should throw an `IllegalArgumentException`.
