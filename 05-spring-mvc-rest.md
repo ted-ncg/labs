@@ -14,9 +14,9 @@
     
     * Use the `@PathVariable` annotation for the `accountId` variable
     
-    * Note: `localhost:8080` is the default name/port for running the server
+    * Note: `8080` will be the default port when running the application
 
-1. Inside the `accountInfo` method, instantiate a new `Account` object, set its ID to the incoming accountId from the path, set the balance to some amount, and then return the object.
+1. Inside the `accountInfo` method, instantiate a new `Account` object, set its ID to the incoming `accountId` from the path, set the `balance` to some amount, and then return the object.
 
 1. Run the `CanteenApplication` from within IntelliJ IDEA
 
