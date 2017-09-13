@@ -18,6 +18,13 @@
 
 1. To "pre-load" data into the `AccountRepository`, you can use the code in the [AccountDataLoader.java](https://github.com/ted-ncg/labs/blob/master/AccountDataLoader.java) file.
 
-1. To ensure that your code works properly, re-run the `AccountRestTest` and it should still pass.
+1. To ensure that your code works properly, change the annotations on the `AccountRestTest` by replacing the `@WebMvcTest` with these two annotations:
+
+  ```java
+  @SpringBootTest
+  @AutoConfigureMockMvc
+  ```
+  
+  Then you can run the test.
 
 1. Also try adding more "sample" data to the `AccountDataLoader` and using your browser, or *curl* to hit the endpoint.
