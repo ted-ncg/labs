@@ -32,8 +32,10 @@
 1. You should see something like
 
     ```json
-    {"balance": 22}
+    {"id": 123}
     ```
+
+----
 
 1. Copy the [AccountRestTest.java](https://github.com/ted-ncg/labs/blob/master/AccountRestTest.java) file into your test/java directory and run the test.
 
