@@ -37,13 +37,34 @@
 
 ----
 
+## Part II
+
+Make the `/api/accounts/{id}` endpoint return JSON that contains the ID and Balance for the account having the given ID.
+
 1. Copy the [AccountRestTest.java](https://github.com/ted-ncg/labs/blob/master/AccountRestTest.java) file into your test/java directory and run the test.
 
-1. Commit your code.
+1. Make the test pass by returning an object (POJO) that has *properties* for ID and for Balance (use $10 for the test).
 
 ## Documentation
 
 * Spring `@RestController`: http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-restcontroller
+
+  * An example of a *Controller* "endpoint":
+  
+  ```java
+  package com.visa.ncg.canteen;
+  
+  import org.springframework.web.bind.annotation.*;
+  
+  @RestController
+  public class HelloController {
+  
+    @GetMapping("/api/hello/{text}")
+    public String sayHelloTo(@PathVariable("text") String name) {
+      return "Hello " + name;
+    }
+  }  
+  ```
 
 * Returning status codes via `ResponseEntity` (JavaDoc): https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/http/ResponseEntity.html
 

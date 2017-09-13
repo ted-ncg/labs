@@ -21,7 +21,7 @@ public class AccountsRestTest {
   private MockMvc mockMvc;
 
   @Test
-  public void getReturnsAccountWithBalance() throws Exception {
+  public void getReturnsJsonContainingBalance() throws Exception {
     MvcResult result = mockMvc.perform(get("/api/accounts/123"))
         .andExpect(status().isOk())
         .andReturn();
@@ -29,4 +29,13 @@ public class AccountsRestTest {
     assertThat(body)
         .contains("\"balance\"");
   }
+
+  @Test
+  public void getWithAccountIdReturnsAccountAndBalanceForThatId() throws Exception {
+    mockMvc.perform(get("/api/accounts/1"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.id").value(1))
+        .andExpect(jsonPath("$.balance").value("10"));
+  }
+
 }
