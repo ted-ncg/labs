@@ -1,6 +1,6 @@
 ## View Account
 
-### This page: https://github.com/ted-ncg/labs/blob/master/09-web-mvc-account-view.md
+### This page: https://github.com/ted-ncg/labs/blob/master/08-web-mvc-account-view.md
 
 ### References
 
