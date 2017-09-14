@@ -4,6 +4,8 @@
 
 ### References
 
+* Spring Controllers: https://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-controller
+
 * Thymeleaf 3: http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-and-displaying-variables
 
 ## Goal: Create an "account view" page.
