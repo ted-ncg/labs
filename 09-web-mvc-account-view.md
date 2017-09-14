@@ -8,19 +8,20 @@
 
 ### Goal: Create an "account view" page.
 
-1. Create a new controller method that is mapped to `localhost:8080/account/{id}`:
+1. Create a new controller class for the web pages called `AccountWebController`.
 
-  ```
-      @GetMapping(...) // do the right thing here
-      public String accountView(@PathVariable(...) String id,
-                                Model model) {
-        // lookup the account in the repository
-        model.addAttribute("account", account);
-        return "account-view";
-      }
-  ```
-  
-1. Create an HTML file `account-view.html` in the templates directory
+1. Add a GET method that is mapped to `localhost:8080/account/{id}`:
+
+    ```java
+        @GetMapping(...) // do the right thing here
+        public String accountView(@PathVariable(...) String id,
+                                  Model model) {
+          // lookup the account in the repository
+          return "account-view";
+        }
+    ```
+
+1. Create a `templates` directory underneath the `resources` directory. Then create an HTML file called `account-view.html` in the templates directory:
 
    ```
     <!DOCTYPE html>
@@ -36,5 +37,20 @@
     </html>
    ```
 
+1. Test out the static page above by going to `localhost:8080/account/0` to make sure you see the page.
+
+### Templatize the Page
+
 1. "Templatize" the `<h1>Account</h1>` and the `<p>Balance</p>` so that it displays the information from the account by using the `th:text` attribute.
 
+    * For example, if you wanted to templatize the 99 for the account number and have it be replaced with the actual account ID, you'd do:
+    
+        `<h1>Account: <span th:text="${account.id}">99</span></h1>`
+
+1. Test out the page and see what you find by going to `localhost:8080/account/0`.
+
+1. Add the account response object into the `Model` and then restart and try out the application.
+
+    * That is, add the AccountResponse object to the model via:
+    
+      `model.addAttribute("account", accountResponse);`
