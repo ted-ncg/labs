@@ -49,4 +49,4 @@
     * use the `model.addAttribute()` method to add the account list to the name `"accounts"`
     * Return a `String` with the name of the html template you created in the first step -- **without** the `.html` suffix.
 
-1. If you hit `localhost:8080/account/` you should see all of the accounts.
+1. If you hit `localhost:8080/account/` you should see all of the accounts as a two-column table.
