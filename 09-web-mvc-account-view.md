@@ -6,22 +6,23 @@
 
 * Thymeleaf 3: http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-and-displaying-variables
 
-### Goal: Create an "account view" page.
+## Goal: Create an "account view" page.
+
+### Return a Static Page
 
 1. Create a new controller class for the web pages called `AccountWebController`.
 
-1. Add a GET method that is mapped to `localhost:8080/account/{id}`:
+1. Add a method that is mapped to a `GET` to `localhost:8080/account/{id}`:
 
     ```java
-        @GetMapping(...) // do the right thing here
+        @GetMapping(...)
         public String accountView(@PathVariable(...) String id,
                                   Model model) {
-          // lookup the account in the repository
           return "account-view";
         }
     ```
 
-1. Create a `templates` directory underneath the `resources` directory. Then create an HTML file called `account-view.html` in the templates directory:
+1. Create a `templates` directory underneath the `/src/main/resources` directory. Then create an HTML file called `account-view.html` in the `templates` directory:
 
    ```
     <!DOCTYPE html>
@@ -41,16 +42,22 @@
 
 ### Templatize the Page
 
-1. "Templatize" the `<h1>Account</h1>` and the `<p>Balance</p>` so that it displays the information from the account by using the `th:text` attribute.
+1. "Templatize" the `<h1>Account</h1>` and the `<p>Balance</p>` elements so that it displays the information from the account by using the `th:text` attribute.
 
-    * For example, if you wanted to templatize the 99 for the account number and have it be replaced with the actual account ID, you'd do:
+    * For example, if you wanted to templatize the 99 for the account number and have it be replaced with the actual account ID, you'd surround the 99 with a `span` tag like this:
     
         `<h1>Account: <span th:text="${account.id}">99</span></h1>`
 
-1. Test out the page and see what you find by going to `localhost:8080/account/0`.
+1. Look up the Account in the repo, convert to an accountResponse, and then add it into the `Model`.
 
-1. Add the account response object into the `Model` and then restart and try out the application.
-
-    * That is, add the AccountResponse object to the model via:
-    
-      `model.addAttribute("account", accountResponse);`
+    ```java
+    // lookup the account in the repository by its ID
+    ...
+    // convert to an accountResponse object
+    ...
+    // add the accountResponse to the Model
+    model.addAttribute("account", accountResponse);
+    ```    
+1. Restart and test out the page and see what you find by going to `localhost:8080/account/0`.
+   **Note:** You may want to add some more sample data to your `AccountDataLoader` class.
+                                    
