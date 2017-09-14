@@ -8,7 +8,11 @@
 
 ## Goal: Create an "account view" page.
 
-### Return a Static Page
+### Return a Static Version of the Account View Page
+
+1. Modify your `AccountRepository` so that the ID generator (the `AtomicLong`) has an initial value of 1 (instead of the default of 0), e.g.:
+
+    `private final AtomicLong idGenerator = new AtomicLong(1L);`
 
 1. Create a new controller class for the web pages called `AccountWebController`.
 
@@ -38,7 +42,7 @@
     </html>
    ```
 
-1. Test out the static page above by going to `localhost:8080/account/0` to make sure you see the page.
+1. Test out the static page above by going to `localhost:8080/account/1` to make sure you see the page.
 
 ### Templatize the Page
 
@@ -49,6 +53,7 @@
         `<h1>Account: <span th:text="${account.id}">99</span></h1>`
 
 1. Look up the Account in the repo, convert to an accountResponse, and then add it into the `Model`.
+   Don't forget to inject (*Auto-Wire*) the `AccountRepository`!
 
     ```java
     // lookup the account in the repository by its ID
@@ -58,6 +63,29 @@
     // add the accountResponse to the Model
     model.addAttribute("account", accountResponse);
     ```    
-1. Restart and test out the page and see what you find by going to `localhost:8080/account/0`.
-   **Note:** You may want to add some more sample data to your `AccountDataLoader` class.
+
+1. Restart and test out the page and see what you find by going to `localhost:8080/account/1`.
                                     
+### Accounts Have Names
+
+1. Add a new property to the `Account` called `name` which is a `String` (add setter & getter, too).
+
+1. Modify the `AccountDataLoader` class so that each account has a name, e.g.:
+
+    ```java
+      public void run(ApplicationArguments args) throws Exception {
+        Account account = new Account(10);
+        account.setName("Luxuries");
+        accountRepository.save(account);
+        account = new Account(20);
+        account.setName("Necessities");
+        accountRepository.save(account);
+        ...
+      }
+    ```
+
+1. Modify the `AccountResponse` object to have a property (variable plus getter & setter) for `name`.
+
+1. Update the `account-view.html` template and **replace** showing the account's ID with showing the account's **name** (e.g., `account.name`).
+
+1. Restart and test out the page and see what you find by going to `localhost:8080/account/1` and then `localhost:8080/account/2'.
