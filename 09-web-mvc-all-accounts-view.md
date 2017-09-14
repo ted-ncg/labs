@@ -39,7 +39,7 @@
          <td th:text="${product.price}">2.41</td>
        </tr>
 
-1. Create a `@GetMapping()` to `/account/` that displays all accounts.
+1. Using the same `AccountWebController`, create a `@GetMapping()` method to `/account/` that displays all accounts.
 
     * Add a `Model model` as your parameter to the method
     * use the `model.addAttribute()` method to add the account list to the name `"accounts"`
