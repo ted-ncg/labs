@@ -48,9 +48,12 @@ Use the `th:href` tag to create links to view a specific account page.
    ```
    
    This can look complicated, so let's look at the pieces, the `${product.id}` is the dynamic ID from the product and `(id=${...})` means assign it to `id`.
-   The `/product/{id}` then gets the `{id}` replaced at runtime with the `id` variable.   
+   The `/product/{id}` then gets the `{id}` replaced at runtime with the `id` variable.
+   If `${product.id}` was 2, then the final output from Thymeleaf is `/product/2` and the href would look like this:
    
-1. Since we want each account name cell to have both the name of the account and a link, we'll need to pull the th:text out of the `<td>` tag and into a `<span>`.
+      `<a href="/product/2">Product</a>`
+   
+1. Since we want each account name cell to have both the name of the account and a link, we'll need to pull the `th:text` out of the `<td>` tag and into a `<span>`.
 
    The resulting HTML that we want to be generated is:
 
