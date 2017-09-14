@@ -1,6 +1,6 @@
 # All Accounts View
 
-## https://github.com/ted-ncg/labs/blob/master/all-accounts-view.md
+## https://github.com/ted-ncg/labs/blob/master/09-web-mvc-all-accounts-view.md
 
 ### References
 
@@ -8,7 +8,7 @@
 
 ## Lab Instructions
 
-1. Create an HTML "template" (name it `all-accounts.html) in the `resources/templates` folder underneath the `/src/main` folder:
+1. Create an HTML "template" (name it `all-accounts.html') in the `resources/templates` folder :
 
     ```
       <!DOCTYPE html>
@@ -20,12 +20,12 @@
       <body>
       <table>
         <tr>
-          <th>Account ID</th>
+          <th>Account Name</th>
           <th>Balance</th>
         </tr>
         <tr>
-          <td>Account ID:<span>10</span></td>
-          <td>Balance: $<span>99</span></td>
+          <td>Luxuries</td>
+          <td>99</td>
         </tr>
       </table>
       </body>
@@ -38,10 +38,6 @@
          <td th:text="${product.name}">Onions</td>
          <td th:text="${product.price}">2.41</td>
        </tr>
-    
-1. Create a `WebController` class annotated with `@Controller`
-
-1. Inject the `AccountRepository` into your `WebController` class.
 
 1. Create a `@GetMapping()` to `/account/` that displays all accounts.
 
