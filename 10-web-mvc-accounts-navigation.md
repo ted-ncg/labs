@@ -44,7 +44,7 @@ Use the `th:href` tag to create links to view a specific account page.
    For example, to produce a link to a product page using its product ID, we would use the `@{}` expression, with an embedded `${}` variable expression like this:
    
    ```
-   <a th:href="@{/product/{id}(id=${product.id})}>Product</a>
+   <a th:href="@{/product/{id}(id=${product.id})}">Product</a>
    ```
    
    This can look complicated, so let's look at the pieces, the `${product.id}` is the dynamic ID from the product and `(id=${...})` means assign it to `id`.
