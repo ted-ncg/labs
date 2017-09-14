@@ -28,7 +28,7 @@
         }
     ```
 
-1. Create a `templates` directory underneath the `/src/main/resources` directory. Then create an HTML file called `account-view.html` in the `templates` directory:
+1. Create a `templates` directory underneath the `/src/main/resources` directory. Then create an HTML file called `account-view.html` and put it in the `/src/main/resources/templates` directory:
 
    ```
     <!DOCTYPE html>
