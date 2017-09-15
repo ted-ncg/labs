@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
-import static org.mockito.Matchers.any;
+import static org.hamcrest.Matchers.instanceOf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -28,7 +28,7 @@ public class AccountWebIntegrationTest {
     mockMvc.perform(get("/account/1"))
         .andExpect(status().isOk())
         .andExpect(model().attributeExists("account"))
-        .andExpect(model().attribute("account", any(AccountResponse.class)))
+        .andExpect(model().attribute("account", instanceOf(AccountResponse.class)))
         .andExpect(view().name("account-view"));
   }
 
