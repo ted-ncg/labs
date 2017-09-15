@@ -44,12 +44,3 @@
 
 1. Open your browser and go to `localhost:8080/` and see if it works!
 
-----
-
-## Part II
-
-**Goal:** We'd like to allow the user to specify an initial deposit amount, and send the user to the details page for that account. We'd also like to pre-fill the form with a default deposit amount of $10.
-
-1. Create a `createForm` POJO class that has properties for name and initial deposit
-
-1. 
