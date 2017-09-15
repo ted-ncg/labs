@@ -4,7 +4,7 @@
 
 **Goal:** Convert the account balance from USD ($) to GBP (£)
 
-1. Create a new class: `CurrencyService` (marked with the `@Service` annotation) that has a method:
+1. Create a new class: `CurrencyService` that has a method:
 
     ```java
     int convertToGbp(int amount)
@@ -43,7 +43,9 @@
 
     And here's the Trivia POJO that's used above: https://github.com/ted-ncg/labs/blob/master/Trivia.java
     
-1. Inject the CurrencyService into your web (Account) Controller and use this service in the `@GetMapping` for the account view page.
+1. Inject (autowire) the CurrencyService into your Web (Account) Controller, and use this service in the `@GetMapping` for the account view page.
+
+   > **(??)** What will you need to do to properly autowire the service?
 
    * Update the HTML view page to display both USD and GBP on the page, like this:
      ```
