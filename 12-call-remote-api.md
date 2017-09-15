@@ -2,6 +2,23 @@
 
 ### This page is at: `https://github.com/ted-ncg/labs/blob/master/12-call-remote-api.md`
 
+## Reference Docs
+
+* Spring RestTemplate docs: https://docs.spring.io/spring/docs/current/spring-framework-reference/html/remoting.html#rest-resttemplate
+
+## Preparation
+
+* You will need to add proxy information to your Run Configurations as **VM** Options:
+
+   * Go to the `Run` menu, select `Edit Configurations...`
+   * Look for `CanteenApplication` on the left side, under the `Spring Boot` section
+   * Fill in the following in the `VM Options` field:
+
+     `-Dhttp.proxyHost=userproxy.visa.com -Dhttp.proxyPort=80`
+
+
+## The Lab
+
 **Goal:** Convert the account balance from USD ($) to GBP (£)
 
 1. Create a new class: `CurrencyService` that has a method:
@@ -52,10 +69,3 @@
      USD Balance: $10
      GBP Balance: £8
      ```
-
-### Proxying
-
-You may need to add the following proxy information to your Run Configurations as **VM** Options:
-
-    -Dhttp.proxyHost=userproxy.visa.com -Dhttp.proxyPort=80
-
