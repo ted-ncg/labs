@@ -1,10 +1,10 @@
-## Deposit Money
+## Transfer Money
 
-### This page is at: `https://github.com/ted-ncg/labs/blob/master/11-transfer-money-mvc-form.md`
+### This page is at: `https://github.com/ted-ncg/labs/blob/master/13-transfer-money-mvc-form.md`
 
 ----
 
-### Link to the Deposit Money Page
+### Link to the Transfer Money Page
 
 **Goal:** Create a link to a Deposit Money Form to deposit money into an account.
 

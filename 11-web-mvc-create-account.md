@@ -30,11 +30,12 @@
     </form>
     </body>
    ```
+
 1. Create a method (`createAccountForm()`) `@GetMapping` to `/create-account` that returns the above html as a view.
 
     * **Think!** Since this is returning a "view", what might you need to do to the `model`?
 
-1. Add a createAccount() method to your web controller class that:
+1. Add a `createAccount()` method to your web controller class that:
 
     * Has a `@PostMapping` annotation, mapping to `/create-account`
     * Takes a `@ModelAttribute("accountName") String name` parameter
@@ -42,3 +43,13 @@
     * Redirects to the "all accounts" view
 
 1. Open your browser and go to `localhost:8080/` and see if it works!
+
+----
+
+## Part II
+
+**Goal:** We'd like to allow the user to specify an initial deposit amount, and send the user to the details page for that account. We'd also like to pre-fill the form with a default deposit amount of $10.
+
+1. Create a `createForm` POJO class that has properties for name and initial deposit
+
+1. 

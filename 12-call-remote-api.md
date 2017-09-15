@@ -1,10 +1,10 @@
 ## Calling Remote *Restful* APIs
 
-### This page is at: `https://github.com/ted-ncg/labs/blob/master/call-remote-api.md`
+### This page is at: `https://github.com/ted-ncg/labs/blob/master/12-call-remote-api.md`
 
 **Goal:** Convert the account balance from USD ($) to GBP (£)
 
-1. Create a new class: `CurrencyService` (marked with the `@Component` annotation) that has a method
+1. Create a new class: `CurrencyService` (marked with the `@Service` annotation) that has a method:
 
     ```java
     int convertToGbp(int amount)
@@ -14,7 +14,7 @@
      It will send three *query* parameters:
        * `from` - the source currency, e.g., `USD`
        * `to` - the converted currency, e.g., `GBP`
-       * `amount` - the amount to convert
+       * `amount` - the amount to convert, e.g., 10
    * **Example:**
        * To convert $100 to GBP, the URL is `http://jitterted-currency-conversion.herokuapp.com/convert?from=USD&to=GBP&amount=100`
        * The JSON returned from this API would look like this:
@@ -24,7 +24,8 @@
             "converted": 76.83
           }
           ```
-   * Create a POJO that represents the returned JSON called `ConvertedCurrency`. The *properties* for your POJO must *match* the JSON names.
+   * Create a POJO that represents the returned JSON called `ConvertedCurrency`. 
+     The *properties* for your POJO must *match* the JSON names, i.e., it will have 2 properties for the currency and the converted result.
    
    * Extract the `converted` value and return it as an `int` (you can just cast it or use the `intValue()`).
 
@@ -52,7 +53,7 @@
 
 ### Proxying
 
-You may need to add the following proxy information to your Run Configurations as **VM** Arguments:
+You may need to add the following proxy information to your Run Configurations as **VM** Options:
 
-    -Dhttp.proxyHost=userproxy.visa.com -Dhttp.proxyPort=80
+    `-Dhttp.proxyHost=userproxy.visa.com -Dhttp.proxyPort=80`
 
