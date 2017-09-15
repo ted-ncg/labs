@@ -30,7 +30,10 @@
     </form>
     </body>
    ```
-  
+1. Create a method (`createAccountForm()`) `@GetMapping` to `/create-account` that returns the above html as a view.
+
+    * **Think!** Since this is returning a "view", what might you need to do to the `model`?
+
 1. Add a createAccount() method to your web controller class that:
 
     * Has a `@PostMapping` annotation, mapping to `/create-account`
@@ -38,4 +41,4 @@
     * Creates a new `Account` with the given `name` and does a `save` to the account repository.
     * Redirects to the "all accounts" view
 
-1. Open your browser and go to `localhost:8080/create-account` and see if it works!
+1. Open your browser and go to `localhost:8080/` and see if it works!
