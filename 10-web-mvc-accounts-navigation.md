@@ -57,8 +57,16 @@ Use the `th:href` tag to create links to view a specific account page.
 
    The resulting HTML that we want to be generated is:
 
-    `<td><span><a href="/account/3">Luxuries</a></span></td>`
+    `<td><a href="/account/3"><span>Luxuries</span></a></td>`
    
    Use the concepts you've learned to translate the above into Thymeleaf attributes.
    
 1. Verify that clicking on a link from the "all accounts" page takes you to the specific page for that account.
+
+## Bonus
+
+1. You can use the "pre-processing" syntax to generate the href, which for this particular use case is easier:
+
+    `th:href="@{/account/__${account.id}__}"`
+    
+   In case you're interested, the documentation for the pre-processing syntax is here: http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#preprocessing
