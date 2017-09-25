@@ -16,6 +16,13 @@ Add more "negative" tests to the Account class testing.
 
     * If not valid, throw an appropriate `Exception`
     
+    * Use AssertJ's exception assertion mechanism, e.g.:
+    
+    ```java
+    assertThatThrownBy(() -> { account.withdraw(12); })
+            .isInstanceOf(InsufficientBalanceException.class);
+    ```
+    
     * Remember to follow the *Red-Green-Commit-Refactor-Commit* cycle
 
 1. Do the same thing for `deposit`, ensuring that the amounts are valid.
