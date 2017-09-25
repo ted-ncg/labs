@@ -93,7 +93,7 @@ If you don't have them installed, follow the links next to each item:
 
    Otherwise...
 
-   * From the `File` menu, choose the `Open...` item to open the pom.xml (*don't* use Import) in the `foster-city-canteen` project directory.
+   * From the `File` menu, choose the `Open...` item to open the pom.xml (*don't* use Import) in the `austin-canteen` project directory.
 
 1. IDEA will then ask you how to open this file. Since we want it to be a new **project**, click `Open as Project`.
 
