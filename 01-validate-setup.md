@@ -16,7 +16,9 @@ Search the page for the sections of interest (below) and follow those instructio
 
 - Proxy Settings in Terminal
 - Git Config Settings
-- Maven Settings
+- Maven Settings -- **Note:** The Maven `settings.xml` must go in your user directory
+  * On Windows, this is in the `.m2` directory underneath `C:\Users\YOUR_USER_NAME`, e.g., `C:\Users\tedyoung\.m2\settings.xml`
+  * On Mac/Linux, this is in `~/.m2`
 
 ----
 
@@ -35,22 +37,23 @@ If you don't have them installed, follow the links next to each item:
 
 ## Clone the Canteen Repository
 
-1. Open command prompt/terminal
+1. Open a command prompt or terminal
 
 1. Change to your projects directory
 
 1. Clone the project repository from GitHub to your machine by doing:
 
-   `git clone https://github.com/ted-ncg/foster-city-canteen`
+   `git clone https://github.com/ted-ncg/austin-canteen`
 
    * If you run into proxying issues, see [proxying git](#proxying-git) for more info
+   * If you are still having trouble, download and unzip the project instead of using Git to pull it.
 
 ## Use Maven to Run the Test
 
 1. Change to the directory holding the project:
 
    ```
-   $ cd foster-city-canteen
+   $ cd austin-canteen
    ```
     
 1. Run the `test` task in Maven:
@@ -59,7 +62,7 @@ If you don't have them installed, follow the links next to each item:
    $ mvn test
    ```
 
-1. Maven will download a **lot** of files, so this **may take a little while (10-20 minutes)**!
+1. Maven will download a **lot** of files, so this **will take a little while (10-20 minutes)**!
    Once it's finished downloading the files, it will compile the code and run the 1 test in the project.
    If all goes well, you should eventually see something like:
    
@@ -152,14 +155,16 @@ If you don't have them installed, follow the links next to each item:
    * Commit the file (`git commit -m 'Added Ted Young to participants.'`)
    * Push the file up to GitHub (`git push --set-upstream origin <branch name here>`) -- remember to use the branch name that you created in the first step.
 
-**NOTE:** You will likely run into a permissions issue. THAT IS OK! Call the instructor over when you run into it.
+**NOTE:** You *will* run into a permissions issue. THAT IS OK! Call the instructor over when you run into it.
 
+
+----
 
 ----
 
 ### Maven Proxying
 
-**NOTE:** Only follow these directions if the developer onboarding page didn't work for you.
+**NOTE:** Only follow these directions if the developer onboarding page *didn't* work for you.
 
 If you find that you need to use a proxy to access the various dependencies, you'll need to add the following to your settings.xml file:
 
@@ -195,6 +200,8 @@ If you find that you need to use a proxy to access the various dependencies, you
 ```
 
    Note: If you already had a settings.xml file, then just add the <proxies> section to it, leaving the rest of the file as-is.
+
+----
 
 ## Proxying Git
 

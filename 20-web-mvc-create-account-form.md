@@ -33,3 +33,17 @@
    * Redirect the user to the account view page for the newly created account
 
 1. Copy the [AccountWebIntegrationTest.java](https://github.com/ted-ncg/labs/blob/master/AccountWebIntegrationTest.java) into your project and run it -- it should pass.
+
+----
+
+
+
+Find by name: List<Account> findByName(String name)
+
+* https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.query-creation
+
+
+
+Custom query
+
+* https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.custom-implementations
