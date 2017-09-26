@@ -23,6 +23,6 @@ Writing tests *first*, add **withdraw** functionality to the `Account` class.
     public void withdraw3DollarsFromAccountHaving7DollarsResultsIn4DollarBalance() throws Exception
     ```
 
-   Make sure to properly import AssertJ's `assertThat` method: `import static org.assertj.core.api.Assertions.assertThat;'
+   Make sure to properly import AssertJ's `assertThat` method: `import static org.assertj.core.api.Assertions.assertThat;`
 
 1. Follow the Red-Green-Refactor-Commit cycle to add functionality
