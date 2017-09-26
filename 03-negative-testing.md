@@ -14,15 +14,17 @@ Add more "negative" tests to the Account class testing.
 
 1. Add new code (test first!) that ensures amounts for withdraw are positive, i.e., don't allow withdrawing negative amounts.
 
-    * If not valid, throw an appropriate `Exception`
+    * If not valid, throw an appropriate `RuntimeException`
     
     * Use AssertJ's exception assertion mechanism, e.g.:
     
     ```java
-    assertThatThrownBy(() -> { account.withdraw(12); })
-            .isInstanceOf(InsufficientBalanceException.class);
+    assertThatThrownBy(() -> { account.withdraw(-1); })
+            .isInstanceOf(InvalidAmountException.class);
     ```
     
     * Remember to follow the *Red-Green-Commit-Refactor-Commit* cycle
 
-1. Do the same thing for `deposit`, ensuring that the amounts are valid.
+1. Do the same thing for `deposit`, ensuring that the amount being deposited is valid.
+
+1. Now add tests and code to ensure that the Account's balance can not go negative, and throws an appropriate exception if you try to overdraw the account.

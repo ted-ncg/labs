@@ -8,11 +8,11 @@ Have a way of storing and finding accounts in a central location.
 
 ## Steps
 
-* Add a `Long id` to the `Account` class.
+* Add a `Long id` member variable to the `Account` class.
 
 * Create a new class `AccountRepository` that implements the methods below.
 
-  * Write the code **Test First**, writing a failing test, and then just enough code to make the test pass. 
+  * Write the code **Test First** to implement each piece of functionality, writing a failing test, and then just enough code to make the test pass. 
 
   ```java
   public class AccountRepository {
@@ -23,7 +23,7 @@ Have a way of storing and finding accounts in a central location.
       }
   
       public Account save(Account entity) {
-        // Stores the given account in the repository so it can be found later.
+        // Stores the given account in the repository so it can be found later.      
         // If the incoming account object's id is already set, DON'T modify it
         // If the account came in with NO id, replace it with one generated from AtomicLong.
         // return the Account object that must now have its id set
@@ -75,4 +75,6 @@ Have a way of storing and finding accounts in a central location.
     assertThat(account1.getId())
         .isNotEqualTo(account2.getId());
   }
-  ```  
+  ```
+
+* Be sure and think about other *negative* tests that you can add and write them!
