@@ -18,7 +18,10 @@
 
 1. Inside the `accountInfo` method, instantiate a new `Account` object, set its ID to the incoming `accountId` from the path, set the `balance` to some amount, and then return the object.
 
-1. Run the `CanteenApplication` from within IntelliJ IDEA -- once you see something like the following, you can go to the next step:
+1. Run the `CanteenApplication` from within IntelliJ IDEA
+   * Right click on the `CanteenApplication` file and then select "Run..."
+ 
+   * Once you see something like the following, you can go to the next step:
 
    ```
    2017-08-27 09:37:21.351  INFO 11472 --- [  Main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
@@ -31,8 +34,10 @@
 
     * **`curl`**: use `curl` to make the request, e.g.:
       ```
-      curl -v localhost:8080/api/accounts/123
+      curl --noproxy localhost -v localhost:8080/api/accounts/123
       ```
+
+      * **Note:** the `--noproxy localhost` tells `curl` to bypass the proxy for `localhost`
 
 1. You should see something like
 
@@ -44,18 +49,24 @@
 
 ## Part II
 
-Make the `/api/accounts/{id}` endpoint return JSON that contains the ID and Balance for the account having the given ID.
+### Goal
 
-1. Copy the [AccountRestTest.java](https://github.com/ted-ncg/labs/blob/master/AccountRestTest.java) file into your test/java directory and run the test.
+Make the `/api/accounts/{id}` endpoint return JSON that contains both the ID and the Balance for an account having the given ID.
 
-1. Returning a "plain old" Java object (POJO, also called a JavaBean or just Bean) that has *properties* for ID and for Balance:
+### Steps
+
+1. Copy the [AccountRestTest.java](https://github.com/ted-ncg/labs/blob/master/AccountRestTest.java) file into your test/java directory and run the tests. *(It will fail!)*  
+
+1. Instead of returning the "domain" `Account` instance, you will return a "plain old" Java object (POJO, also called a JavaBean or just Bean) that has *properties* for ID and for Balance:
 
    * Create a *new* class, e.g., `AccountResponse`, that has two *JavaBean* properties: `Id`, and `Balance`.
      * Remember, you'll need a getter and setter, named properly, for each property
    * Change the `accountInfo()` method (in your controller class) to return the `AccountResponse` instance, instead of returning an `Account` object.
      * e.g.: `public AccountResponse accountInfo(...`
 
-1. Make the AccountRestTest test pass.
+1. Try out the new code from the browser via `http://localhost:8080/api/accounts/456`
+
+1. Now make the AccountRestTest tests pass.
 
 ## Documentation/Reference
 
