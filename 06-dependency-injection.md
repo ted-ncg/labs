@@ -2,7 +2,7 @@
 
 ## https://github.com/ted-ncg/labs/blob/master/06-dependency-injection.md
 
-**Goal**: Modify your `AccountController` so that you can return an `Account` from the `AccountRepository`.
+**Goal**: Modify your `AccountApiController` so that you can return an `Account` from the `AccountRepository`.
 
 1. Modify the `AccountController` constructor to take in a *dependency* on `AccountRepository`
 
@@ -16,24 +16,6 @@
     
       would return the `Account` with ID of 1.
 
-  ```java
-    @TestConfiguration
-    static class Config {
-      @Bean
-      public AccountRepository createTestAccountRepository() {
-        AccountRepository accountRepository = new AccountRepository();
-        Account account = new Account();
-        account.setId(1L);
-        account.deposit(10);
-        accountRepository.save(account);
-        return accountRepository;
-      }
-    }
-  ```
-
-----
-
-(Using the @SpringBootTest...)
 
 1. To "pre-load" data into the `AccountRepository`, you can use the code in the [AccountDataLoader.java](https://github.com/ted-ncg/labs/blob/master/AccountDataLoader.java) file.
 
