@@ -4,7 +4,7 @@
 
 1. Implement a class named `AccountApiController`, annotated with `@RestController`.
  
-2. Implement a method `public Account accountInfo(String accountId)` that is mapped so that it will respond (be routed) to
+2. Implement a method `public Account accountInfo(String accountId)` that is mapped so that it will respond (be "routed" or "mapped") to
 
     ```
     http://localhost:8080/api/accounts/123
@@ -14,11 +14,16 @@
     
     * Use the `@PathVariable` annotation for the `accountId` variable
     
-    * Note: `8080` will be the default port when running the application
+    * Note: `8080` is the default port when running the application on your machine
 
 1. Inside the `accountInfo` method, instantiate a new `Account` object, set its ID to the incoming `accountId` from the path, set the `balance` to some amount, and then return the object.
 
-1. Run the `CanteenApplication` from within IntelliJ IDEA
+1. Run the `CanteenApplication` from within IntelliJ IDEA -- once you see something like the following, you can go to the next step:
+
+   ```
+   2017-08-27 09:37:21.351  INFO 11472 --- [  Main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+   2017-08-27 09:37:21.355  INFO 11472 --- [  Main] com.visa.ncg.canteen.CanteenApplication  : Started CanteenApplication in 3.433 seconds (JVM running for 4.064)
+   ```
 
 1. Make a request against the endpoint by either:
  
@@ -52,7 +57,7 @@ Make the `/api/accounts/{id}` endpoint return JSON that contains the ID and Bala
 
 1. Make the AccountRestTest test pass.
 
-## Documentation
+## Documentation/Reference
 
 * Spring `@RestController`: http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-ann-restcontroller
 
