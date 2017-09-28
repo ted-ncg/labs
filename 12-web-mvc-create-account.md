@@ -63,3 +63,19 @@
 
 1. Open your browser and go to `localhost:8080/` and see if it works from the browser.
 
+## Bonus
+
+1. Have the form submission redirect to the account view page for the new account.
+
+1. Update the 2nd part of the Web integration test to be:
+
+   ```java
+    mockMvc.perform(get(mvcResult.getResponse().getRedirectedUrl()))
+        .andExpect(status().isOk())
+        .andExpect(view().name("account-view"));
+        .andExpect(model().attributeExists("account"))
+        .andExpect(model().attribute("account", instanceOf(AccountResponse.class)))
+        .andExpect(model().attribute("account", hasProperty("name", is("Video Games"))));
+   ```
+
+1. And it should now pass.
