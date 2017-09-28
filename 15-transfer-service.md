@@ -1,6 +1,6 @@
 # Transfer Service
 
-## https://github.com/ted-ncg/labs/blob/master/14-transfer-service.md
+## https://github.com/ted-ncg/labs/blob/master/15-transfer-service.md
 
 **Goal**: Implement (test-first!) a service that will transfer money from one account to another.
 
