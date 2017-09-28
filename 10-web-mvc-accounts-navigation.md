@@ -36,7 +36,7 @@ Use the `th:href` tag to create links to view a specific account page.
 
 1. Update the all-accounts.html template to add a link (an "anchor" or "href") around the account **name** that will link to the details (account-view) page for that account.
 
-   * With normal static HTML, a link looks like this: `<a href="/account">Bank</a>`. We want to create a link that points to `/account/3` for the account with an ID of 3, but point to `/account/5` for an account with an ID of 5.
+   * With normal static HTML, a link looks like this: `<a href="/account">Bank</a>`. We want to create a link that will point to `/account/3` for an account with an ID of 3, and point to `/account/5` for an account with an ID of 5.
    * We'll need to make the "href" dynamic, which Thymeleaf does through its `th:href` tag.
      Documentation for that tag can be found here: http://www.thymeleaf.org/doc/articles/standardurlsyntax.html
 
