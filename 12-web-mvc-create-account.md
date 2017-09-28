@@ -72,10 +72,12 @@
    ```java
     mockMvc.perform(get(mvcResult.getResponse().getRedirectedUrl()))
         .andExpect(status().isOk())
-        .andExpect(view().name("account-view"));
+        .andExpect(view().name("account-view"))
         .andExpect(model().attributeExists("account"))
         .andExpect(model().attribute("account", instanceOf(AccountResponse.class)))
         .andExpect(model().attribute("account", hasProperty("name", is("Video Games"))));
    ```
+
+   **Note:** You'll need to import the `org.hamcrest` matchers for the new methods above.
 
 1. And it should now pass.
