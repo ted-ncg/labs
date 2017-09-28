@@ -18,19 +18,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class AccountWebIntegrationTest {
+public class AccountViewWebIntegrationTest {
 
   @Autowired
   private MockMvc mockMvc;
-
-  @Test
-  public void getReturnsViewWithAccountResponseInModel() throws Exception {
-    mockMvc.perform(get("/account/1"))
-        .andExpect(status().isOk())
-        .andExpect(model().attributeExists("account"))
-        .andExpect(model().attribute("account", instanceOf(AccountResponse.class)))
-        .andExpect(view().name("account-view"));
-  }
 
   @Test
   public void getWithAccountIdReturnsAccountForThatId() throws Exception {
@@ -43,4 +34,5 @@ public class AccountWebIntegrationTest {
     mockMvc.perform(get(mvcResult.getResponse().getRedirectedUrl()))
         .andExpect(status().isOk());
   }
+
 }

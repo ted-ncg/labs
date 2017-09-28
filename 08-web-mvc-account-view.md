@@ -67,7 +67,7 @@
     ```    
 
 1. Restart and test out the page and see what you find by going to `localhost:8080/account/1`.
-                                    
+
 ### Accounts Have Names
 
 1. Add a new property to the `Account` called `name` which is a `String` (add setter & getter, too).

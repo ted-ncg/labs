@@ -6,9 +6,17 @@
 
 * Thymeleaf 3: http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-and-displaying-variables
 
-## Lab Instructions
+## Goal
 
-1. Create an HTML "template" (name it `all-accounts.html') in the `resources/templates` folder :
+View a summary of all accounts.
+
+## Integration Test
+
+1. Add the [AccountViewWebIntegrationTest](https://github.com/ted-ncg/labs/blob/master/AccountViewWebIntegrationTest.java) and run it and make sure it passes.
+
+## Steps
+
+1. Create an HTML "template" (name it `all-accounts.html') in the `resources/templates` folder:
 
     ```
       <!DOCTYPE html>
