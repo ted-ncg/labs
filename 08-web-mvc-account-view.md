@@ -90,4 +90,4 @@
 
 1. Update the `account-view.html` template and **replace** showing the account's ID with showing the account's **name** (e.g., `account.name`).
 
-1. Restart and test out the page and see what you find by going to `localhost:8080/account/1` and then `localhost:8080/account/2'.
+1. Restart and test out the page and see what you find by going to `localhost:8080/account/1` and then `localhost:8080/account/2`.
