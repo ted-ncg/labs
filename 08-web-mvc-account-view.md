@@ -4,7 +4,7 @@
 
 ### References
 
-* Spring Controllers: https://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-controller
+* Spring Controllers: https://docs.spring.io/spring/docs/4.3.11.RELEASE/spring-framework-reference/htmlsingle/#mvc-controller
 
 * Thymeleaf 3: http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-and-displaying-variables
 
