@@ -57,6 +57,7 @@
     * Takes a parameter `@ModelAttribute("accountName") String name` that will be the account name.
     * Creates a new `Account` with the given `name` and does a `save` to the account repository.
     * Redirects to the "all accounts" view
+    * For documentation on the redirect, see https://docs.spring.io/spring/docs/4.3.11.RELEASE/spring-framework-reference/htmlsingle/#mvc-redirecting-redirect-prefix
 
 1. Run all the tests in `CreateWebApplicationIntegrationTest`, and they should all **pass**.
 
