@@ -1,6 +1,6 @@
 ## Calling Remote *Restful* APIs
 
-### This page is at: `https://github.com/ted-ncg/labs/blob/master/12-call-remote-api.md`
+### This page is at: `https://github.com/ted-ncg/labs/blob/master/17-call-remote-api.md`
 
 ## Reference Docs
 

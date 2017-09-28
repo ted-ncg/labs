@@ -16,3 +16,8 @@
 ----
 
 (Using the @SpringBootTest...)
+
+----
+        .andExpect(model().attributeExists("account"))
+        .andExpect(model().attribute("account", instanceOf(AccountResponse.class)))
+        .andExpect(model().attribute("account", hasProperty("name", is("Video Games"))));
