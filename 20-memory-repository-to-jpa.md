@@ -32,3 +32,15 @@
 1. Clean up code that uses `AccountRepository` so that it's calling the correct methods.
 
 1. Try out the application, everything should continue to work as before!
+
+----
+
+Find by name: List<Account> findByName(String name)
+
+* https://docs.spring.io/spring-data/jpa/docs/4.3.11.RELEASE/reference/html/#repositories.query-methods.query-creation
+
+
+
+Custom query
+
+* https://docs.spring.io/spring-data/jpa/docs/4.3.11.RELEASE/reference/html/#repositories.custom-implementations

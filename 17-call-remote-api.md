@@ -69,3 +69,7 @@
      USD Balance: $10
      GBP Balance: £8
      ```
+
+## Bonus
+
+Goal: Extract the method as an interface
