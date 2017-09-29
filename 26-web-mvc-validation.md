@@ -57,16 +57,16 @@ Validate the incoming form information and tell the user if there are errors.
 
 1. Update the `create-form.html` template to add the display of error messages next to each input field. For example, to display any errors for the input name field, which originally looks like this:
 
-  ```html
-  <p>Name for Account: <input type="text" th:field="*{accountName}"/></p>
-  ```
-  
-  You will add a `<span>` tag with the `th:if` and `th:errors` attributes, like this:
-  
-  ```html
-  <p>Name for Account: <input type="text" th:field="*{accountName}"/>
-    <span th:if="${#fields.hasErrors('accountName')}" th:errors="*{accountName}">Name Error</span>
-  </p>
-  ```
+    ```html
+    <p>Name for Account: <input type="text" th:field="*{accountName}"/></p>
+    ```
+    
+    You will add a `<span>` tag with the `th:if` and `th:errors` attributes, like this:
+    
+    ```html
+    <p>Name for Account: <input type="text" th:field="*{accountName}"/>
+      <span th:if="${#fields.hasErrors('accountName')}" th:errors="*{accountName}">Name Error</span>
+    </p>
+    ```
 
 1. Try it out!
