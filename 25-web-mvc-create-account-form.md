@@ -66,3 +66,11 @@ You can use the `@ModelAttribute` annotation on a "factory" method for instantia
       return createForm;
     }
   ```
+
+You can now remove the initialization that you were doing in the create form `GET` method, and you'll no longer need *any* parameters passed into your `GET`-mapped method, e.g.:
+
+  ```java
+  @GetMapping("create-account")
+  public String createForm()
+  ...etc...
+  ```
