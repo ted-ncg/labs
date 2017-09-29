@@ -46,15 +46,15 @@
    th:style="${condition} ? 'color:black' : 'color:red'"
    ``` 
 
-   Will apply the color style `black` if the condition is true, otherwise will apply the color style of `red`. So your display of the balance will look something like:
+   Will apply the color style `black` if the `condition` is `true`, otherwise will apply the color style of `red`. So your display of the balance will look something like:
 
    ```html
    <span th:text="${account.balance}"
-         th:style="${account.overdrawn} ? 'color:black' : 'color:#FF5733'">99
+         th:style="${account.overdrawn} ? 'color:#FF5733' : 'color:black' ">99
    </span>
-   ``` 
+   ```
 
-   * You'll need to add an appropriate method to the `AccountResponse` object so that `isOverdrawn()` returns `true` if the balance < 0, otherwise returns `false. 
+   * You'll need to add an appropriate method to the `AccountResponse` object so that `isOverdrawn()` returns `true` if the balance < 0, otherwise returns `false`. 
 
 1. Create some sample data in the `AccountDataLoader` that creates some accounts with a negative balance.
 
