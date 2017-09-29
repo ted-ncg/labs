@@ -37,10 +37,10 @@
 
 Find by name: List<Account> findByName(String name)
 
-* https://docs.spring.io/spring-data/jpa/docs/4.3.11.RELEASE/reference/html/#repositories.query-methods.query-creation
+* https://docs.spring.io/spring-data/jpa/docs/1.11.7.RELEASE/reference/html/#repositories.query-methods.query-creation
 
 
 
 Custom query
 
-* https://docs.spring.io/spring-data/jpa/docs/4.3.11.RELEASE/reference/html/#repositories.custom-implementations
+* https://docs.spring.io/spring-data/jpa/docs/1.11.7.RELEASE/reference/html/#repositories.custom-implementations
