@@ -33,6 +33,13 @@
    * Create a new `Account` instance based on the information from the POJO and save it in the repository
    * Redirect the user to the account view page for the newly created account
 
+1. Try it out...
+
+----
+
+## Bonus #1
+
+
 1. Update the account view template to use the `th:style` that will conditionally display the account balance in red if the account is overdrawn, e.g.:
 
    ```html
@@ -53,7 +60,7 @@
 
 ----
 
-## Bonus
+## Bonus #2
 
 You can use the `@ModelAttribute` annotation on a "factory" method for instantiating the `CreateForm` object, like this:
 
