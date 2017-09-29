@@ -50,3 +50,19 @@
    * You'll need to add an appropriate method to the `AccountResponse` object so that `isOverdrawn()` returns `true` if the balance < 0, otherwise returns `false. 
 
 1. Create some sample data in the `AccountDataLoader` that creates some accounts with a negative balance.
+
+----
+
+## Bonus
+
+You can use the `@ModelAttribute` annotation on a "factory" method for instantiating the `CreateForm` object, like this:
+
+  ```java
+    @ModelAttribute("createForm")
+    public CreateForm createForm() {
+      CreateForm createForm = new CreateForm();
+      createForm.setAccountName("");
+      // more initialization here ...
+      return createForm;
+    }
+  ```
