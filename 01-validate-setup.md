@@ -43,7 +43,7 @@ If you don't have them installed, follow the links next to each item:
 
 1. Clone the project repository from GitHub to your machine by doing:
 
-   `git clone https://github.com/ted-ncg/austin-canteen`
+   `git clone https://github.com/ted-ncg/canteen-starter`
 
    * If you run into proxying issues, see [proxying git](#proxying-git) for more info
    * If you are still having trouble, download and unzip the project instead of using Git to pull it.
@@ -53,7 +53,7 @@ If you don't have them installed, follow the links next to each item:
 1. Change to the directory holding the project:
 
    ```
-   $ cd austin-canteen
+   $ cd canteen-starter
    ```
     
 1. Run the `test` task in Maven:
