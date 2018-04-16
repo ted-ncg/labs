@@ -53,6 +53,8 @@ If you don't have them installed, follow the links next to each item:
 
    `git clone https://github.com/tedyoung/austin-canteen-201804.git`
 
+   * **ssh:** If you can use `ssh`, use this link: `git@github.com:ted-ncg/labs.git`
+
    * **NOTE:** If you run into proxying issues, see [proxying git](#proxying-git) for more info
    * If you are still having trouble, download and unzip the project instead of using Git to pull it.
    
