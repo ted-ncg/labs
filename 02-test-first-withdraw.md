@@ -31,6 +31,6 @@ Make sure you have the latest version, where we "mob programmed" the **deposit**
 
 1. Pass the computer to your pair and they should write the code to make the test pass.
 
-1. Write a couple of other tests
+1. Have the person who wrote the code, write another test to further exercise the code.
 
-1. Continue to follow the _Red-Green-Refactor-Commit_ cycle to add functionality.
+1. Now have the other person write any code to make all of the tests pass.
