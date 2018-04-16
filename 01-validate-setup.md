@@ -60,6 +60,8 @@ If you don't have them installed, follow the links next to each item:
    
      * You can do this by opening up a browser, and going to this URL: `https://github.com/tedyoung/austin-canteen-201804`
 
+  * BitBucket: if GitHub doesn't work for you, try this BitBucket link: `https://bitbucket.org/tedmyoung/austin-canteen-201804`
+
 ## Use Maven to Run the Test
 
 1. Change to the directory holding the project:
