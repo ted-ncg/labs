@@ -70,7 +70,7 @@ Make the `/api/accounts/{id}` endpoint return JSON that contains both the ID and
 
 ## Documentation/Reference
 
-* Spring `@RestController`: http://docs.spring.io/spring/docs/4.3.11.RELEASE/spring-framework-reference/htmlsingle/#mvc-ann-restcontroller
+* Spring `@RestController`: http://docs.spring.io/spring/docs/4.3.16.RELEASE/spring-framework-reference/htmlsingle/#mvc-ann-restcontroller
 
   * An example of a *Controller* "endpoint":
   
@@ -89,7 +89,7 @@ Make the `/api/accounts/{id}` endpoint return JSON that contains both the ID and
   }  
   ```
 
-* Returning status codes via `ResponseEntity` (JavaDoc): https://docs.spring.io/spring/docs/4.3.11.RELEASE/javadoc-api/org/springframework/http/ResponseEntity.html
+* Returning status codes via `ResponseEntity` (JavaDoc): https://docs.spring.io/spring/docs/4.3.16.RELEASE/javadoc-api/org/springframework/http/ResponseEntity.html
 
   **Example:**
 
@@ -105,6 +105,6 @@ Make the `/api/accounts/{id}` endpoint return JSON that contains both the ID and
 
   ```
 
-* Extracting information from the URI: http://docs.spring.io/spring/docs/4.3.11.RELEASE/spring-framework-reference/htmlsingle/#mvc-ann-requestmapping-uri-templates
+* Extracting information from the URI: http://docs.spring.io/spring/docs/4.3.16.RELEASE/spring-framework-reference/htmlsingle/#mvc-ann-requestmapping-uri-templates
 
-* Handling exceptions using @ExceptionHandler: https://docs.spring.io/spring/docs/4.3.11.RELEASE/spring-framework-reference/html/mvc.html#mvc-ann-exceptionhandler
+* Handling exceptions using @ExceptionHandler: https://docs.spring.io/spring/docs/4.3.16.RELEASE/spring-framework-reference/html/mvc.html#mvc-ann-exceptionhandler

@@ -4,7 +4,7 @@
 
 ## Reference Docs
 
-* Spring RestTemplate docs: https://docs.spring.io/spring/docs/4.3.11.RELEASE/spring-framework-reference/html/remoting.html#rest-resttemplate
+* Spring RestTemplate docs: https://docs.spring.io/spring/docs/4.3.16.RELEASE/spring-framework-reference/html/remoting.html#rest-resttemplate
 
 ## Preparation
 

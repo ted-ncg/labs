@@ -8,7 +8,7 @@
 
 * Hibernate Validator reference: https://docs.jboss.org/hibernate/validator/5.3/reference/en-US/html/index.html
 
-* Spring validation reference: https://docs.spring.io/spring/docs/4.3.11.RELEASE/spring-framework-reference/htmlsingle/#validation-beanvalidation
+* Spring validation reference: https://docs.spring.io/spring/docs/4.3.16.RELEASE/spring-framework-reference/htmlsingle/#validation-beanvalidation
 
 * Thymeleaf form tutorial: http://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html#creating-a-form
 

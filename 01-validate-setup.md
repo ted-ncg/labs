@@ -1,6 +1,6 @@
 # Validating Your Setup
 
-### `https://github.com/ted-ncg/labs/blob/master/01-validate-setup.md`
+### Short Link: `http://bit.ly/ncg-setup`
 
 In this lab you'll ensure that all of the tools that you'll be using during this week's labs are correctly set up on your machine.
 

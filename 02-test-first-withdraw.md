@@ -1,6 +1,6 @@
 # Test First With Pairing
 
-### https://github.com/ted-ncg/labs/blob/master/02-test-first-withdraw.md
+#### Short Link: `http://bit.ly/ncg-lab2`
 
 ## Goal
 
@@ -12,7 +12,7 @@ Writing tests *first*, add **withdraw** functionality to the `Account` class.
 
 1. Make sure all of the tests currently pass!
 
-### Using ping-pong pairing
+### Using Ping-Pong Pairing
 
 1. Add a new test class `AccountWithdrawTest`
 
