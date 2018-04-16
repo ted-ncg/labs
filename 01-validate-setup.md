@@ -40,9 +40,23 @@ If you don't have them installed, follow the links next to each item:
 
 # Lab Instructions
 
-## Clone the Canteen Repository
+## Validate Java Install
+
+Let's make sure the correct version of Java is installed:
 
 1. Open a command prompt or terminal
+
+1. Type `javac -version`
+
+   You should get something like:
+   
+   ```
+   javac 1.8.0_161
+   ```
+
+   If you don't then double-check your Java installation.
+
+## Clone the Canteen Repository
 
 1. Change to your projects directory, or make one for this training class, e.g.:
 
@@ -63,6 +77,8 @@ If you don't have them installed, follow the links next to each item:
   * BitBucket: if GitHub doesn't work for you, try this BitBucket link: `https://bitbucket.org/tedmyoung/austin-canteen-201804`
 
 ## Use Maven to Run the Test
+
+Let's run the test using Maven from the command line.
 
 1. Change to the directory holding the project:
 
@@ -99,6 +115,8 @@ If you don't have them installed, follow the links next to each item:
 
 ## Open the Project in IntelliJ IDEA
 
+Now that all the dependencies have been downloaded and the project works, let's open it up in IDEA.
+
 1. Launch IntelliJ IDEA
 
 1. Open the pom.xml file, either:
@@ -122,6 +140,9 @@ If you don't have them installed, follow the links next to each item:
 1. Click on the green arrow next to the left of the class name
 
 1. The test results will show up in a bottom window pane and should be green, i.e., they passed.
+   You should see something like this:
+   
+   ![](idea-tests-pass.png)
 
 ### Run the Test in IDEA Using Maven
 
