@@ -8,7 +8,7 @@ Add more "negative" tests to the Account class testing.
 
 ## Steps
 
-1. Download (or `git pull`) the latest code from `https://github.com/ted-ncg/austin-canteen-201804`
+1. Download (or `git pull`) the latest code from `https://github.com/tedyoung/austin-canteen-201804`
 
 1. Make sure all of the tests currently pass!
 

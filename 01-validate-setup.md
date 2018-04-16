@@ -67,7 +67,7 @@ Let's make sure the correct version of Java is installed:
 
    `git clone https://github.com/tedyoung/austin-canteen-201804.git`
 
-   * **ssh:** If you can use `ssh`, use this link: `git@github.com:ted-ncg/labs.git`
+   * **ssh:** If you can use `ssh`, use this link: `git@github.com:tedyoung/austin-canteen-201804.git`
 
    * **NOTE:** If you run into proxying issues, see [proxying git](#proxying-git) for more info
    * If you are still having trouble, download and unzip the project instead of using Git to pull it.
@@ -143,6 +143,8 @@ Now that all the dependencies have been downloaded and the project works, let's 
    You should see something like this:
    
    ![](idea-tests-pass.png)
+
+<br/><br/>
 
 ### Run the Test in IDEA Using Maven
 
