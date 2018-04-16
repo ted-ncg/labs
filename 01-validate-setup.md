@@ -1,12 +1,17 @@
 # Validating Your Setup
 
-This lab is to ensure that all of the tools that we'll be using during this week's labs are correctly set up on your machine.
+### `https://github.com/ted-ncg/labs/blob/master/01-validate-setup.md`
+
+In this lab you'll ensure that all of the tools that you'll be using during this week's labs are correctly set up on your machine.
+
+> Yes, this process can be a bit frustrating, but stick with it and ask your neighbors or the instructor for help!
+
 
 ## Pre-Requisites
 
 ### Developer Setup
 
-If you haven't already done this as part of your developer on-boarding, you'll want to look at this page for Maven/Artifactory setup as well as Git and Proxying information.
+If you haven't already done this as part of your developer on-boarding, you need to look at this page for **Maven-Artifactory** setup as well as **Git** and **Proxying** information.
 
 Go to: https://visawiki.trusted.visa.com/display/VDP/New+Developer+Onboarding+Checklist
 
@@ -22,14 +27,14 @@ Search the page for the sections of interest (below) and follow those instructio
 
 ----
 
-You should already have the following tools installed on your machine from the "self-paced learning" pre-course work.
+You should already have the following tools installed on your machine from the pre-course work.
 If you don't have them installed, follow the links next to each item:
 
 * Git - [installing git](https://github.com/ted-ncg/austin-spl-june-26/blob/master/install-git.md)
-* curl - [installing curl](https://github.com/ted-ncg/austin-spl-june-26/blob/master/install-curl.md)
 * Java 8 - [installing Java](https://github.com/ted-ncg/austin-spl-june-26/blob/master/install-java8.md)
 * Maven 3 - [installing Maven](https://github.com/ted-ncg/austin-spl-june-26/blob/master/install-maven3.md)
 * IntelliJ IDEA - [installing IDEA](https://github.com/ted-ncg/austin-spl-june-26/blob/master/install-intellij.md) -- **NOTE** install the *Ultimate* Edition for the 30-day trial as it has Spring-specific tools.
+* curl (*optional*) - [installing curl](https://github.com/ted-ncg/austin-spl-june-26/blob/master/install-curl.md)
 
 ----
 
@@ -39,21 +44,26 @@ If you don't have them installed, follow the links next to each item:
 
 1. Open a command prompt or terminal
 
-1. Change to your projects directory
+1. Change to your projects directory, or make one for this training class, e.g.:
+
+   * Windows: `mkdir C:\training` and then `cd \training`
+   * macOS: `mkdir ~/training` and then `cd ~/training`
 
 1. Clone the project repository from GitHub to your machine by doing:
 
-   `git clone https://github.com/ted-ncg/canteen-starter`
+   `git clone https://github.com/tedyoung/austin-canteen-201804.git`
 
-   * If you run into proxying issues, see [proxying git](#proxying-git) for more info
+   * **NOTE:** If you run into proxying issues, see [proxying git](#proxying-git) for more info
    * If you are still having trouble, download and unzip the project instead of using Git to pull it.
+   
+     * You can do this by opening up a browser, and going to this URL: `https://github.com/tedyoung/austin-canteen-201804`
 
 ## Use Maven to Run the Test
 
 1. Change to the directory holding the project:
 
    ```
-   $ cd canteen-starter
+   $ cd austin-canteen-201804
    ```
     
 1. Run the `test` task in Maven:
@@ -63,7 +73,7 @@ If you don't have them installed, follow the links next to each item:
    ```
 
 1. Maven will download a **lot** of files, so this **will take a little while (10-20 minutes)**!
-   Once it's finished downloading the files, it will compile the code and run the 1 test in the project.
+   Once it's finished downloading the files, it will compile the code and run the 1 (and only) test in the project.
    If all goes well, you should eventually see something like:
    
    ```
@@ -93,7 +103,7 @@ If you don't have them installed, follow the links next to each item:
 
    Otherwise...
 
-   * From the `File` menu, choose the `Open...` item to open the pom.xml (*don't* use Import) in the `austin-canteen` project directory.
+   * From the `File` menu, choose the `Open...` item to open the pom.xml (*don't* use Import) in the `austin-canteen-201804` project directory.
 
 1. IDEA will then ask you how to open this file. Since we want it to be a new **project**, click `Open as Project`.
 
@@ -107,7 +117,7 @@ If you don't have them installed, follow the links next to each item:
 
 1. Click on the green arrow next to the left of the class name
 
-1. The test should pass (be green)
+1. The test results will show up in a bottom window pane and should be green, i.e., they passed.
 
 ### Run the Test in IDEA Using Maven
 
@@ -136,15 +146,17 @@ If you don't have them installed, follow the links next to each item:
 
 ## Add Your Name [OPTIONAL!]
 
-1. Create a new branch with **your name** and make it the current branch (`checkout`).
-    You can do this from the command-line by typing (replace `yourname` with, well, *your* name):
-    
-    `git checkout -b yourname`
+If you finished the above sections and you have time, you can try to make a new branch using Git and then *push* changes to the GitHub repository.
 
-    You should see:
-     
-    `Switched to a new branch 'yourname'`
+1. Create a new branch with **your last name** and make it the current branch (using `checkout`).
+    You can do this from the command-line by typing the following (be sure replace `*YourLastName*` with, well, *your* last name):
     
+    `git checkout -b *YourLastName*`
+
+    For example, if you did `git checkout -b Young`, you would see:
+
+    `Switched to a new branch 'Young'`
+ 
 1. Open up the `README.md` file inside of IDEA.
 
 1. Underneath where it says `## Participants`, add your name.
