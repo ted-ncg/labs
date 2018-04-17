@@ -84,3 +84,10 @@ This will make an Account be an *Entity*.
   ```
 
 * Be sure and think about other *negative* tests that you can add and write them!
+
+## References
+
+Article: ["Mocks Aren't Stubs"](https://www.martinfowler.com/articles/mocksArentStubs.html) by Martin Fowler
+
+Book: [xUnit Test Patterns](https://martinfowler.com/books/meszaros.html) by Gerard Meszaros
+
