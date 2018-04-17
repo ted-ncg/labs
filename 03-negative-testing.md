@@ -1,10 +1,10 @@
-# More Negative Tests
+# Negative (Exception) Tests
 
 ### https://github.com/ted-ncg/labs/blob/master/03-negative-testing.md
 
 ## Goal
 
-Add more "negative" tests to the Account class testing.
+Add "negative" tests to the Account class testing with exceptions.
 
 ## Steps
 

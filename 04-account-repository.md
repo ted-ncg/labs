@@ -8,11 +8,17 @@ Have a way of storing and finding accounts in a central location.
 
 ## Steps
 
+### Give Account an Identity
+
+This will make an Account be an *Entity*.
+
 * Add a `Long id` member variable to the `Account` class.
+
+### Create a Repository
 
 * Create a new class `AccountRepository` that implements the methods below.
 
-  * Write the code **Test First** to implement each piece of functionality, writing a failing test, and then just enough code to make the test pass. 
+  * Write the code **Test First** to implement each piece of functionality (for **each** method): writing a failing test, and then just enough code to make the test pass. 
 
   ```java
   public class AccountRepository {
@@ -37,11 +43,11 @@ Have a way of storing and finding accounts in a central location.
   }
   ```
 
-### Notes
+### Notes and Questions
 
-* Figure out what appropriate Java Collection class to use to store the accounts so that it's easy to find `Account`'s by their `id`.
+* What is appropriate Java Collection class to use to store the accounts so that it's easy to find `Account`'s by their `id`.
 
-* You will want an AccountRepository constructor that can take a `List<Account>` to "pre-load" the repository with data. For example, you should be able to (in your test) create an AccountRepository like this:
+* You will want an `AccountRepository` constructor that can take a `List<Account>` to "pre-load" the repository with data. For example, you should be able to (in your test) create an AccountRepository like this:
 
   ```java
   @Test
