@@ -18,14 +18,16 @@ Make sure you have the latest version, where we "mob programmed" the **deposit**
 
 1. Add a new test class `AccountWithdrawTest`
 
+   * **Note:** Make sure to properly import AssertJ's `assertThat` method: `import static org.assertj.core.api.Assertions.assertThat;`
+
 1. Add a test method such as
  
     ```java
     @Test
     public void withdraw3DollarsFromAccountHaving7DollarsResultsIn4DollarBalance() throws Exception
     ```
-
-   Make sure to properly import AssertJ's `assertThat` method: `import static org.assertj.core.api.Assertions.assertThat;`
+   
+   * AssertJ JavaDoc can be found here: http://joel-costigliola.github.io/assertj/core/api/index.html
 
 1. Make sure the test **fails** before continuing.
 
