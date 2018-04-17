@@ -28,5 +28,7 @@ Add more "negative" tests to the Account class testing.
     ```
 
     * Remember to follow the *Red-Green-Commit-Refactor-Commit* cycle
-    
-1. Now add tests and code to ensure that the Account's balance can not go negative when you withdraw, and if so, throws an appropriate exception (`InsufficientBalanceException`) if you try to overdraw the account.
+
+### Can't Overdraw Account
+
+1. Add tests and code to ensure that the Account's balance can not go negative when you withdraw, and if so, throws an appropriate exception (`InsufficientBalanceException`) if you try to overdraw the account.
