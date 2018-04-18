@@ -58,3 +58,32 @@ The goal of this lab is for you to implement a "RESTful" API for retrieving info
     ```json
     {"id": 123}
     ```
+
+## Questions
+
+* Why is only `id` in the output and not `balance`?
+
+* What happens if you use letters for the account ID instead of numbers?
+
+## Reference
+
+This is an example of a *Controller* "endpoint":
+  
+```java
+package com.visa.ncg.canteen;
+
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+public class HelloController {
+
+  @GetMapping("/api/hello/{text}")
+  public String sayHelloTo(@PathVariable("text") String name) {
+    return "Hello " + name;
+  }
+}  
+```
+
+### Spring Docs:
+
+* Extracting path and query info from the URI: http://docs.spring.io/spring/docs/4.3.16.RELEASE/spring-framework-reference/htmlsingle/#mvc-ann-requestmapping-uri-templates
