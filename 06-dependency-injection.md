@@ -4,7 +4,7 @@
 
 **Goal**: Modify your `AccountApiController` so that you can return an `Account` from the `AccountRepository`.
 
-1. Modify the `AccountController` constructor to take in a *dependency* on `AccountRepository`
+1. Modify the `AccountApiController` constructor to take in a *dependency* on `AccountRepository`
 
 1. Ensure that `AccountRepository` is annotated properly so that Spring can find and create it during the automatic dependency injection process.
 
