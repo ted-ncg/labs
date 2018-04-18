@@ -6,6 +6,8 @@ The goal of this lab is for you to implement a "RESTful" API for retrieving info
 
 ## Your Task
 
+**Note:** Keep this reference handy: http://engineering.pivotal.io/post/must-know-spring-boot-annotations-controllers/
+
 1. Implement a class named `AccountApiController`, annotated with `@RestController`.
  
 2. Implement a method `public Account accountInfo(String accountId)` that is mapped so that it will respond (be "routed" or "mapped") to
@@ -20,7 +22,15 @@ The goal of this lab is for you to implement a "RESTful" API for retrieving info
     
     * Note: `8080` is the default port when running the application on your machine
 
-1. Inside the `accountInfo` method, instantiate a new `Account` object, set its ID to the incoming `accountId` from the path, set the `balance` to some amount, and then return the object.
+1. Inside the `accountInfo` method:
+ 
+   * Instantiate a new `Account` object
+   
+   * Set its ID to the incoming `accountId` from the path
+   
+   * Set the `balance` to some amount
+   
+   * Return the account object
 
 1. Run the `CanteenApplication` from within IntelliJ IDEA
    * Right click on the `CanteenApplication` file and then select "Run..."
