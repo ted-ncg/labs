@@ -10,6 +10,21 @@
 
 * Tests for Thymeleaf (esp. the URL interpolation)?
 
+Implementing equals, hashCode, and toString()
+
+esp. for failing tests like:
+
+```
+java.lang.AssertionError: 
+Expecting:
+ <[]>
+to contain:
+ <[com.visa.ncg.canteen.Account@215be6bb, com.visa.ncg.canteen.Account@4439f31e]>
+but could not find:
+ <[com.visa.ncg.canteen.Account@215be6bb, com.visa.ncg.canteen.Account@4439f31e]>
+```
+
+
 ## Slides
 
 * JavaBean (differentiate from POJO?)
@@ -26,19 +41,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-Note
-
-Apparently the first-class flight attendant's bags don't have a special place, so they take away space from paying passengers instead of using space that's available in -- first class.
-So, instead of me being able to put my bag above my seat (for which I paid extra), I had to put it 4 rows back, fighting the crowd upstream.
-And he was a bit rude, as well.
-Thanks Virgin/Alaska.
