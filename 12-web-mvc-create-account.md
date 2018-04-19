@@ -28,12 +28,12 @@
 
 1. Create a method (`createAccountForm()`) that maps to `/create-account` and returns the above html as a view.
 
-1. Re-run the `CreateWebApplicationIntegrationTest`, it should now **pass**.
+1. Re-run the `CreateAccountWebIntegrationTest`, it should now **pass**.
    If it doesn't don't move on until it's fixed!
 
 ----
 
-1. Add the following test case to the `CreateWebApplicationIntegrationTest` class:
+1. Add the following test case to the `CreateAccountWebIntegrationTest` class:
 
     ```java
       @Test
@@ -62,7 +62,7 @@
 
         * For documentation on the redirect, see https://docs.spring.io/spring/docs/4.3.16.RELEASE/spring-framework-reference/htmlsingle/#mvc-redirecting-redirect-prefix
 
-1. Run all the tests in `CreateWebApplicationIntegrationTest`, and they should all **pass**.
+1. Run all the tests in `CreateAccountWebIntegrationTest`, and they should all **pass**.
 
 1. Open your browser and go to `localhost:8080/` and see if it works from the browser.
 
