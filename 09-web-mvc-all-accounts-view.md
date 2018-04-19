@@ -2,17 +2,66 @@
 
 ## https://github.com/ted-ncg/labs/blob/master/09-web-mvc-all-accounts-view.md
 
+In this lab you'll add some error handling to the previous lab so no more `NullPointerException`s.
+You'll then provide a "home" page for accounts that displays all the accounts in the system.
+
 ### References
 
 * Thymeleaf 3: http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-and-displaying-variables
 
-## Goal
+## First, Some Tests
+
+Add the [AccountViewWebIntegrationTest](https://github.com/ted-ncg/labs/blob/master/AccountViewWebIntegrationTest.java) and run it and make sure it passes.
+
+  * If it doesn't, ensure that you're putting an `AccountResponse` object into the model and not an `Account`.
+
+**Don't move on until this test passes**
+
+----
+
+## Handle Not Found
+
+Add error handling when an account isn't found.
+
+There are a number of ways to handle problems, we're going to use the ResponseStatus annotation on a custom Exception to indicate that there's a problem.
+
+### Steps
+
+  * Let's add a test that will fail, and then we'll make it pass.
+    Add this test to the `AccountViewWebIntegrationTest` class, run it and it should fail.
+  
+    ```java
+      @Test
+      public void getOfNonExistentAccountReturns404() throws Exception {
+        mockMvc.perform(get("/account/9999"))
+               .andExpect(status().isNotFound());
+      }
+    ```
+
+  * Inside of your `AccountWebController`, add code to the `accountView` method so that if the `findOne` method from the repository returns `null`, you will throw a special exception class that you'll create.
+    Create an exception like this:
+  
+    ```java
+    import org.springframework.http.HttpStatus;
+    import org.springframework.web.bind.annotation.ResponseStatus;
+    
+    @ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "No account with that ID was found.")
+    public class NoSuchAccountException extends RuntimeException {
+      
+    }
+    ```
+
+  * When you get null from the repository, throw an instance of the above exception.
+  
+  * Try running the `AccountViewWebIntegrationTest` tests now.
+  
+  * Try it out from the browser.
+
+----
+
+## Account Summary
 
 View a summary of all accounts.
-
-## Integration Test
-
-1. Add the [AccountViewWebIntegrationTest](https://github.com/ted-ncg/labs/blob/master/AccountViewWebIntegrationTest.java) and run it and make sure it passes.
 
 ## Steps
 
