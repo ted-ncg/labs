@@ -10,6 +10,9 @@
 
 ### Create a Root (Home) Page
 
+1. Copy the [WebIntegrationTest](WebIntegrationTest.java) class to your test path and run it.
+   It should fail.
+
 1. Create an HTML page named `index.html` and place it in the `/src/main/resources/static` directory:
 
     ```html
@@ -27,7 +30,9 @@
     </html>
     ```
 
-1. Verify that going to `http://localhost:8080/` returns the above page.
+1. Run the test from above and it should **pass**.
+
+1. Also verify it by going to `http://localhost:8080/`.
 
 ### Linking to Specific Account Pages
 
