@@ -70,23 +70,28 @@
 
 ### Accounts Have Names
 
-1. Add a new property to the `Account` called `name` which is a `String` (add setter & getter, too).
+1. Add a new member variable to the `Account` called `name` which is a `String`
+
+   * Instead of adding a setter/getter, add methods:
+   
+     * `name()` that returns its name
+     * `changeNameTo(String newName)` that update the name to the new value
 
 1. Modify the `AccountDataLoader` class so that each account has a name, e.g.:
 
     ```java
       public void run(ApplicationArguments args) throws Exception {
         Account account = new Account(10);
-        account.setName("Luxuries");
+        account.changeNameTo("Luxuries");
         accountRepository.save(account);
         account = new Account(20);
-        account.setName("Necessities");
+        account.changeNameTo("Necessities");
         accountRepository.save(account);
         ...
       }
     ```
 
-1. Modify the `AccountResponse` object to have a property (variable plus getter & setter) for `name`.
+1. Modify the `AccountResponse` object to have a property (the variable and its getter & setter) for `name`.
 
 1. Update the `account-view.html` template and **replace** showing the account's ID with showing the account's **name** (e.g., `account.name`).
 
