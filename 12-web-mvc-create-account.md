@@ -8,7 +8,7 @@
 
 1. Add the [CreateAccountWebIntegrationTest](https://github.com/ted-ncg/labs/blob/master/CreateAccountWebIntegrationTest.java) to your project and run the test. **It should fail.**
 
-1. Add a link to the index.html page (that you created in `/src/main/resources/static`, from the previous lab) to link to `/create-account`.
+1. Modify the index.html page (that you created in `/src/main/resources/static`, from the previous lab) to provide a link to a new endpoint: `/create-account`.
 
 1. Create an HTML template called `create-account.html` and put it in the `templates` directory.
    The body of the HTML file is as follows:
@@ -30,6 +30,8 @@
 
 1. Re-run the `CreateWebApplicationIntegrationTest`, it should now **pass**.
    If it doesn't don't move on until it's fixed!
+
+----
 
 1. Add the following test case to the `CreateWebApplicationIntegrationTest` class:
 
@@ -55,9 +57,10 @@
 
     * Has a `@PostMapping` annotation, mapping to `/create-account`
     * Takes a parameter `@ModelAttribute("accountName") String name` that will be the account name.
-    * Creates a new `Account` with the given `name` and does a `save` to the account repository.
-    * Redirects to the "all accounts" view
-    * For documentation on the redirect, see https://docs.spring.io/spring/docs/4.3.16.RELEASE/spring-framework-reference/htmlsingle/#mvc-redirecting-redirect-prefix
+    * Creates a new `Account` instance with the incoming `name` and does a `save` to the account repository.
+    * Redirects back to the "all accounts" view
+
+        * For documentation on the redirect, see https://docs.spring.io/spring/docs/4.3.16.RELEASE/spring-framework-reference/htmlsingle/#mvc-redirecting-redirect-prefix
 
 1. Run all the tests in `CreateWebApplicationIntegrationTest`, and they should all **pass**.
 
