@@ -24,6 +24,12 @@ but could not find:
  <[com.visa.ncg.canteen.Account@215be6bb, com.visa.ncg.canteen.Account@4439f31e]>
 ```
 
+## Labs
+
+* Remote API: use https://jsonplaceholder.typicode.com/ as another example
+
+* Transfer Service: Add bonus to extract class to an interface and use Spring's config annotations to select implementation
+
 
 ## Slides
 

@@ -6,9 +6,9 @@
 
 ### Steps
 
-1. Create a test class AccountTransferServiceTest
+1. Create a test class `AccountTransferServiceTest`
 
-1. Write tests against the AccountTransferService, where the transfer method signature is:
+1. Write tests against a new class, `AccountTransferService`, where the transfer method signature is:
 
     ```java
     public void transfer(Account source,
@@ -16,12 +16,12 @@
                          int amount)    
     ```
 
-1. Write tests to ensure the following:
+1. Write tests (and then the code to make it pass) for the following:
 
    1. Transferring money from one account (the *source*) to another (the *destination*) works
    
-   1. Attempting to transfer an amount <= 0 fails (throws an `InvalidAmountException`)
+   1. Attempting to transfer an amount <= 0, throws an `InvalidAmountException`
    
-   1. Attempting to transfer more money than the *source* account has throws an `InsufficientFundsException`
+   1. Attempting to transfer more money than the *source* account has, throws an `InsufficientBalanceException`
    
    1. If either account is `null`, it should throw an `IllegalArgumentException`.

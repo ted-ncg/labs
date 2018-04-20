@@ -10,7 +10,7 @@
 
 **Goal:** We'd like to allow the user to specify an initial deposit amount and an overdraft limit in addition to the name. Then we want to send the user to the details page for the new account. We'd also like to pre-fill the form with a default deposit amount of $10 and overdraft limit of $0.
 
-1. Create a new `CreateForm` POJO class that has properties for `accountName`, `initialDeposit`, and `overdraftLimit`
+1. Create a new `CreateForm` JavaBean class that has properties for `accountName`, `initialDeposit`, and `overdraftLimit`
 
 1. Update the `create-account.html` to be a template, by replacing the `form` section as follows:
 
@@ -24,7 +24,7 @@
    ```
 
 1. Modify the GET method in your web controller that is mapped to `/create-account` to:
-   * Instantiate a `CreateForm` POJO instance
+   * Instantiate a `CreateForm` instance
    * Set the values for the instance to default to $10 for the initial deposit, empty for the account name, and 0 for the overdraft limit.
    * Put the instance into the Spring `Model`, with the correct attribute name to match what's in the form.
    

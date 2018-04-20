@@ -1,6 +1,6 @@
 ## Calling Remote *Restful* APIs
 
-### This page is at: `https://github.com/ted-ncg/labs/blob/master/17-call-remote-api.md`
+**This page is at:** `https://github.com/ted-ncg/labs/blob/master/14-call-remote-api.md`
 
 ## Reference Docs
 
@@ -8,7 +8,9 @@
 
 ## Preparation
 
-* You will need to add proxy information to your Run Configurations as **VM** Options:
+From within IDEA, you'll need to set up the proxy information so you can reach out to APIs on the internet.
+
+* Add proxy information to your Run Configurations as **VM** Options:
 
    * Go to the `Run` menu, select `Edit Configurations...`
    * Look for `CanteenApplication` on the left side, under the `Spring Boot` section
@@ -27,7 +29,7 @@
     int convertToGbp(int amount)
     ```
 
-   * This method will use the `RestTemplate` Spring class and a POJO (described below) to call out to the currency converter at `http://jitterted-currency-conversion.herokuapp.com/convert`.
+   * This method will use the `RestTemplate` Spring class and a JavaBean (described below) to call out to the currency converter at `http://jitterted-currency-conversion.herokuapp.com/convert`.
      It will send three *query* parameters:
        * `from` - the source currency, e.g., `USD`
        * `to` - the converted currency, e.g., `GBP`
@@ -38,13 +40,13 @@
           ```json
           {
             "currency": "GBP",
-            "converted": 76.83
+            "converted": 71.00
           }
           ```
-   * Create a POJO that represents the returned JSON called `ConvertedCurrency`. 
-     The *properties* for your POJO must *match* the JSON names, i.e., it will have 2 properties for the currency and the converted result.
+   * Create an object that represents the returned JSON called `ConvertedCurrency`. 
+     The *properties* for your JavaBean must *match* the JSON names, i.e., it will have 2 properties for the currency and the converted result.
    
-   * Extract the `converted` value and return it as an `int` (you can just cast it or use the `intValue()`).
+   * Take the `converted` value (which is a `double`) and return it as an `int` (you can just cast it or use the `intValue()`).
 
    * Here is the Trivia example that we saw:
    
@@ -58,18 +60,14 @@
         .getForObject(numberFactsUrl, Trivia.class, params);
     ```
 
-    And here's the Trivia POJO that's used above: https://github.com/ted-ncg/labs/blob/master/Trivia.java
+    And here's the Trivia JavaBean that's used above: https://github.com/ted-ncg/labs/blob/master/Trivia.java
     
 1. Inject (autowire) the CurrencyService into your Web (Account) Controller, and use this service in the `@GetMapping` for the account view page.
 
    > **(??)** What will you need to do to properly autowire the service?
 
-   * Update the HTML view page to display both USD and GBP on the page, like this:
+   * Update the HTML Account view page to display both USD and GBP on the page, like this:
      ```
      USD Balance: $10
      GBP Balance: £8
      ```
-
-## Bonus
-
-Goal: Extract the method as an interface

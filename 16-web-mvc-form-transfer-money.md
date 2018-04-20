@@ -1,6 +1,6 @@
 ## Transfer Money
 
-### This page is at: `https://github.com/ted-ncg/labs/blob/master/16-transfer-money-mvc-form.md`
+**This page is at:** `https://github.com/ted-ncg/labs/blob/master/16-transfer-money-mvc-form.md`
 
 ----
 
@@ -8,17 +8,18 @@
 
 **Goal:** Create a link to a Deposit Money Form to deposit money into an account.
 
-
-1. Add a link to `/deposit/{id}` from the Account view page.
+1. Add a link to `/deposit/{id}` from the Account **view** page.
 
    * With static HTML, a link looks like this:
    
      `<a href="/deposit">Deposit</a>`
     
-     We want the link to point to `/deposit/3` to take us to the Deposit page for the account with an ID of 3, and point to `/deposit/5` for an account with an ID of 5.
+     For example, you want the link to point to `/deposit/3` to take you to the Deposit page for the account with an ID of 3, and point to `/deposit/5` for an account with an ID of 5.
      
-   * We need to make the "href" dynamic, which Thymeleaf does through its `th:href` tag.
-     Documentation for that tag can be found here: http://www.thymeleaf.org/doc/articles/standardurlsyntax.html
+   * You need to make the "href" dynamic, similar to what you did in the "All Accounts" page.
+   
+      * Remember, Thymeleaf does this through the `th:href` tag.
+        Documentation for that tag can be found here: http://www.thymeleaf.org/doc/articles/standardurlsyntax.html
 
    * To do this, we need to create a *parameterized* link, which will look similar to the templated path we used in our `GetMapping`.
    
@@ -28,9 +29,9 @@
      <a th:href="@{/product/{prodId}(prodId=${product.id})}>Product</a>
      ```
    
-   This looks complicated, so let's break it down:
+   As you saw previously, this breaks down to:
    
-      1. The `${product.id}` is the dynamic ID from a product object
+      1. The `${product.id}` is the dynamic ID from a `product` object
       
       1. The `(prodId=${product.id})` means assign the value of the product's ID to `prodId`.
       
@@ -77,7 +78,7 @@
   </body>
   </html>
   ```
-1. Create a `DepositForm` *POJO* (Plain Old Java Object) that has two properties, with getters and setters:
+1. Create a `DepositForm` *JavaBean* that has two properties, with getters and setters:
    * `accountId` (`long`) - ID of the account to deposit to
    * `amount` (`int`) - how much to deposit
 
