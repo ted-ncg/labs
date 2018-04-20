@@ -64,7 +64,11 @@ Allow the user to specify an initial deposit amount, and an overdraft limit, in 
    </span>
    ```
 
-   * You'll need to add an appropriate method to the `AccountResponse` object so that `isOverdrawn()` returns `true` if the balance < 0, otherwise returns `false`. 
+   * You'll need to add an appropriate method to the `AccountResponse` (or `AccountView` if you switched to that) object so that `isOverdrawn()` returns `true` if the balance < 0, otherwise returns `false`. 
+   
+     > Where should "overdrawn" be calculated?
+     
+     > How about if "overdrawn" means that the balance is more negative than the overdraft limit?
 
 1. Create some sample data in the `AccountDataLoader` that creates some accounts with a negative balance.
 
