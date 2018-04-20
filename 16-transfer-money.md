@@ -1,12 +1,58 @@
-## Transfer Money
+# Transfer Service API and Web Form
 
-**This page is at:** `https://github.com/ted-ncg/labs/blob/master/16-transfer-money-mvc-form.md`
+**This page:** `https://github.com/ted-ncg/labs/blob/master/16-transfer-money.md`
+
+## Part 1: Transfer Service
+
+**Goal**: Implement (test-first!) a service that will transfer money from one account to another.
+
+1. Create a JUnit (non-Spring) test class `AccountTransferServiceTest`
+
+1. Write tests against a new class, `AccountTransferService`, where the transfer method signature is:
+
+    ```java
+    public void transfer(Account source,
+                         Account destination,
+                         int amount)    
+    ```
+
+1. Write tests (and then the code to make it pass) for the following:
+
+   1. Transferring money from one account (the *source*) to another (the *destination*) works
+   
+   1. Attempting to transfer an amount <= 0, throws an `InvalidAmountException`
+   
+   1. Attempting to transfer more money than the *source* account has, throws an `InsufficientBalanceException`
+   
+   1. If either account is `null`, it should throw an `IllegalArgumentException`.
 
 ----
 
-### Link to the Transfer Money Page
+## Part 2: REST API for Transferring Money
 
-**Goal:** Create a link to a Deposit Money Form to deposit money into an account.
+Create a new endpoint for transferring money between accounts.
+
+1. Create a new `RestController` class (e.g., `TransferMoneyApiController`) that has a method that is:
+ 
+    * POST mapped to: `/api/transfers`
+    * Takes a parameter: `TransferRequest`, which is a JavaBean that has these three properties
+       * `source`, the ID for the source account
+       * `destination`, the ID for the destination account
+       * `amount`, an `int` for the amount to transfer
+    * Inside the method, use the `TransferService` that you created above (by injecting it into your controller) to transfer the money.
+    * Return `200` if everything works, otherwise a `400` if any exceptions are thrown by the service.
+    
+2. Try it out using Postman, or from the command-line using `curl`, with the following JSON:
+
+```json
+{"source": 1, "destination": 2, "amount": 5}
+```
+
+----
+
+## Part 3: UI For Transferring Money
+
+Create a web form so users can transfer money between accounts.
 
 1. Add a link to `/deposit/{id}` from the Account **view** page.
 
