@@ -1,12 +1,12 @@
-# Transfer Service
+# Transfer Service Form
 
-## https://github.com/ted-ncg/labs/blob/master/15-transfer-service.md
+**Link:** `https://github.com/ted-ncg/labs/blob/master/15-transfer-service.md`
 
 **Goal**: Implement (test-first!) a service that will transfer money from one account to another.
 
-### Steps
+## Part 1: Transfer Service
 
-1. Create a test class `AccountTransferServiceTest`
+1. Create a JUnit (non-Spring) test class `AccountTransferServiceTest`
 
 1. Write tests against a new class, `AccountTransferService`, where the transfer method signature is:
 
@@ -25,3 +25,4 @@
    1. Attempting to transfer more money than the *source* account has, throws an `InsufficientBalanceException`
    
    1. If either account is `null`, it should throw an `IllegalArgumentException`.
+

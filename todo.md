@@ -28,7 +28,9 @@ but could not find:
 
 * Remote API: use https://jsonplaceholder.typicode.com/ as another example
 
-* Transfer Service: Add bonus to extract class to an interface and use Spring's config annotations to select implementation
+* Currency Service: Add bonus to extract class to an interface and use Spring's config annotations to select implementation: either the real one that goes over the internet, or a fake one that provides a fake value
+
+  * This will need Spring configuration information to select the correct one
 
 
 ## Slides
