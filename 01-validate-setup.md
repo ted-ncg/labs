@@ -65,16 +65,16 @@ Let's make sure the correct version of Java is installed:
 
 1. Clone the project repository from GitHub to your machine by doing:
 
-   `git clone https://github.com/tedyoung/austin-canteen-201804.git`
+   `git clone https://github.com/ted-ncg/denver-201807-canteen.git`
 
-   * **ssh:** If you can use `ssh`, use this link: `git@github.com:tedyoung/austin-canteen-201804.git`
+   * **ssh:** If you can use `ssh`, use this link: `git@github.com:ted-ncg/denver-201807-canteen.git`
 
    * **NOTE:** If you run into proxying issues, see [proxying git](#proxying-git) for more info
    * If you are still having trouble, download and unzip the project instead of using Git to pull it.
    
-     * You can do this by opening up a browser, and going to this URL: `https://github.com/tedyoung/austin-canteen-201804`
+     * You can do this by opening up a browser, and going to this URL: `https://github.com/ted-ncg/denver-201807-canteen.git`
 
-  * BitBucket: if GitHub doesn't work for you, try this BitBucket link: `https://bitbucket.org/tedmyoung/austin-canteen-201804`
+  * BitBucket: if GitHub doesn't work for you, try this BitBucket link: `https://bitbucket.org/tedmyoung/denver-201807-canteen.git`
 
 ## Use Maven to Run the Test
 
@@ -83,7 +83,7 @@ Let's run the test using Maven from the command line.
 1. Change to the directory holding the project:
 
    ```
-   $ cd austin-canteen-201804
+   $ cd denver-201807-canteen.git
    ```
     
 1. Run the `test` task in Maven:
@@ -125,7 +125,7 @@ Now that all the dependencies have been downloaded and the project works, let's 
 
    Otherwise...
 
-   * From the `File` menu, choose the `Open...` item to open the pom.xml (*don't* use Import) in the `austin-canteen-201804` project directory.
+   * From the `File` menu, choose the `Open...` item to open the pom.xml (*don't* use Import) in the `denver-201807-canteen.git` project directory.
 
 1. IDEA will then ask you how to open this file. Since we want it to be a new **project**, click `Open as Project`.
 
