@@ -264,3 +264,15 @@ set HTTPS_PROXY=userproxy.visa.com:443
 ```
 
 Where the username, password, server, etc. are however your proxy is set up.
+
+## Working around Secure Certificate Problem
+
+When running Maven on the command line, add
+
+    -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true
+    
+For example:
+
+    mvn test -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true
+
+You can add these parameters to IntelliJ by looking at this post: https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000759324-Maven-SSL-switch-off?page=1#community_comment_115000635924
