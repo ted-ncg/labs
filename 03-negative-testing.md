@@ -1,6 +1,6 @@
 # Negative (Exception) Tests
 
-### https://github.com/ted-ncg/labs/blob/master/03-negative-testing.md
+### Link to this page: https://github.com/ted-ncg/labs/blob/master/03-negative-testing.md
 
 ## Goal
 
