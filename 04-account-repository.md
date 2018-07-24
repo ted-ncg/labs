@@ -20,7 +20,7 @@ This will make an Account be an *Entity*.
 
 * Create a new class `AccountRepository` that implements the methods below.
 
-  * Write the code **Test First** to implement each piece of functionality (for **each** method): writing a failing test, and then just enough code to make the test pass. 
+  * Write the code **Test First** to implement each piece of functionality (for **each** method): writing a failing test, and then just enough code to make the test pass.
 
   ```java
   public class AccountRepository {
@@ -31,10 +31,14 @@ This will make an Account be an *Entity*.
       }
   
       public Account save(Account entity) {
-        // Stores the given account in the repository so it can be found later.      
-        // If the incoming account object's id is already set, DON'T modify it
-        // If the account came in with NO id, replace it with one generated from AtomicLong.
-        // return the Account object that must now have its id set
+        // Stores the given account in the repository so it can be found later.
+        //      
+        // If the account came in with NO id, SET it with a UNIQUE one that
+        // you (that is, the repository) generates
+        //
+        // If the incoming account object's id is ALREADY set, DON'T modify it
+        //
+        // return the Account object that must now have its id set (i.e., is NOT null)
       }
   
       public List<Account> findAll() {

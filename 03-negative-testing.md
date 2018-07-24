@@ -12,7 +12,7 @@ Add "negative" tests to the Account class testing with exceptions.
 
 ### Invalid Withdrawal Amount
 
-1. Write a test and then make it pass for **each** scenario (REMEMBER: ping-pong pair!): 
+1. Write a test and then make it pass for **each** scenario (**REMEMBER**: ping-pong pair!): 
 
     1. Withdrawing a negative or zero amount must `throw` an `InvalidAmountException` (which you need to create as a *subclass* of `RuntimeException`)
    
@@ -26,6 +26,10 @@ Add "negative" tests to the Account class testing with exceptions.
        ```
 
 **Remember:** Follow the *Red-Green-Commit-Refactor-Commit* cycle
+
+**Example:**
+
+Start with the test: make the test fail, fix the exception being thrown in code, test should pass 
 
 ### Can't Overdraw Account
 
