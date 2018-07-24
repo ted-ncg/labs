@@ -103,7 +103,13 @@ Implement the "delete" functionality by implementing this method:
   
   * Deleting an account means that trying to find it by its `id` will return `null` -- as if the account was never saved.
   
-  * If `null` is passed in, throw an `IllegalArgumentException`
+    * Note: don't modify the account object that's being deleted -- it will continue to have the id that was assigned upon `save`
+  
+  * If `null` Account is passed in, throw an `IllegalArgumentException`
+  
+  * If an Account with an `id` that's not found is passed in, throw an `IllegalArgumentException` 
+  
+  
   
 
 ## References
