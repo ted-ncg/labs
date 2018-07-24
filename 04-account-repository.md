@@ -14,6 +14,8 @@ This will make an Account be an *Entity*.
 
 * Add a `Long id` member variable to the `Account` class.
 
+  * **IMPORTANT:** Make sure you name the member variable exactly this way, as a `Long` with the name `id`.
+
 ### Create a Repository
 
 * Create a new class `AccountRepository` that implements the methods below.
