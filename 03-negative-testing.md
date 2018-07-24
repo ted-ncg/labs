@@ -6,11 +6,9 @@
 
 Add "negative" tests to the Account class testing with exceptions.
 
-## Steps
+## Prepare
 
-1. Download (or `git pull`) the latest code from `https://bitbucket.org/tedmyoung/denver-201807-canteen`
-
-1. Make sure all of the tests currently pass!
+1. Make sure **all** of the tests currently pass!
 
 ### Invalid Withdrawal Amount
 
