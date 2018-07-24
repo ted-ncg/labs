@@ -2,6 +2,9 @@
 
 ### This page is: https://github.com/ted-ncg/labs/blob/master/05-spring-mvc-rest.md
 
+
+## Goal
+
 The goal of this lab is for you to implement a "RESTful" API for retrieving information about a specific account, using Spring's MVC framework.
 
 ## Your Task
