@@ -45,6 +45,8 @@ This will make an Account be an *Entity*.
   }
   ```
 
+----
+
 ### Notes and Questions
 
 * What is appropriate Java Collection class to use to store the accounts so that it's easy to find `Account`'s by their `id`.
