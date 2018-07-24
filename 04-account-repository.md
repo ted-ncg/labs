@@ -53,7 +53,7 @@ This will make an Account be an *Entity*.
 
 ### Notes and Questions
 
-* What is appropriate Java Collection class to use to store the accounts so that it's easy to find `Account`'s by their `id`.
+* What is appropriate Java Collection class to use to store the accounts so that it's easy to find `Account`'s by their `id`?
 
 * You will want an `AccountRepository` constructor that can take a `List<Account>` to "pre-load" the repository with data. For example, you should be able to (in your test) create an AccountRepository like this:
 
@@ -92,6 +92,19 @@ This will make an Account be an *Entity*.
   ```
 
 * Be sure and think about other *negative* tests that you can add and write them!
+
+## Optional
+
+Implement the "delete" functionality by implementing this method:
+
+  ```java
+  public void delete(Account account)
+  ```
+  
+  * Deleting an account means that trying to find it by its `id` will return `null` -- as if the account was never saved.
+  
+  * If `null` is passed in, throw an `IllegalArgumentException`
+  
 
 ## References
 
