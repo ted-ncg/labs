@@ -11,29 +11,59 @@ The goal of this lab is for you to implement a "RESTful" API for retrieving info
 
 **Note:** Keep this reference handy: http://engineering.pivotal.io/post/must-know-spring-boot-annotations-controllers/
 
-1. Implement a class named `AccountApiController`, annotated with `@RestController`.
+### Create the REST Controller Class
+
+1. Create a class named `AccountApiController`
+
+1. Add the `@RestController` annotation above the `class` definition:
+
+   ```java
+   @RestController
+   public class AccountApiController {
+   ```
  
-2. Implement a method `public Account accountInfo(String accountId)` that is mapped so that it will respond (be "routed" or "mapped") to
+1. Implement a method that is mapped so that it will respond (be "routed" or "mapped") to
 
-    ```
-    http://localhost:8080/api/accounts/123
-    ``` 
+   ```
+   http://localhost:8080/api/accounts/123
+   ``` 
 
-    * Use the `@GetMapping` annotation for the method
+   a. Create the method
+   
+      ```java
+      public Account accountInfo(String accountId) { 
+      }
+      ```
+
+    * Add the `@GetMapping` annotation to the method
+    
+      ```java
+      // EXAMPLE:
+      // This method would be invoked if a *GET* came in to the path `/users/999`
+      @GetMapping("/users/{id}")
+      public User showUser(...) {...}
+      ```
     
     * Use the `@PathVariable` annotation for the `accountId` variable
     
-    * Note: `8080` is the default port when running the application on your machine
+      ```java
+      // EXAMPLE:
+      // This extracts the `id` from the path and puts it in the userId variable
+      @GetMapping("/users/{id}")
+      public User showUser(@PathVariable("id") String userId) {...}
+      ```
 
 1. Inside the `accountInfo` method:
  
-   * Instantiate a new `Account` object
+   * Create a **new** `Account` object
    
-   * Set its ID to the incoming `accountId` from the path
+   * Set its ID to the `accountId` (the ID that came in from the path)
    
-   * Set the `balance` to some amount
+   * Set the `balance` to a random amount
    
-   * Return the account object
+   * Return this new account object
+
+### Try it Out    
 
 1. Run the `CanteenApplication` from within IntelliJ IDEA
    * Right click on the `CanteenApplication` file and then select "Run..."
@@ -67,6 +97,8 @@ The goal of this lab is for you to implement a "RESTful" API for retrieving info
 * Why is only `id` in the output and not `balance`?
 
 * What happens if you use letters for the account ID instead of numbers?
+
+----
 
 ## Reference
 
