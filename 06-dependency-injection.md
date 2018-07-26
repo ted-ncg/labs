@@ -1,15 +1,20 @@
 # Automatic Dependency Injection
 
-## https://github.com/ted-ncg/labs/blob/master/06-dependency-injection.md
+## https://github.com/ted-ncg/labs/blob/master/06-dependency-injection
 
-**Goal**: Modify your `AccountApiController` so that you can return an `Account` from the `AccountRepository`.
+## Goal
+
+Modify the `AccountApiController` so that you can return an `Account` from the `AccountRepository`.
+
+## Steps
 
 1. Modify the `AccountApiController` constructor to take in a *dependency* on `AccountRepository`
 
-1. Ensure that `AccountRepository` is annotated properly so that Spring can find and create it during the automatic dependency injection process.
+1. Ensure that `AccountRepository` is annotated properly so that Spring can find and create it during the automatic dependency injection ("autowiring") process.
 
 1. In your Account info method, use the `accountId` that's passed in to:
-    * Look up the `Account` from the `AccountRepository`
+
+    * Look up the `Account` from the `AccountRepository` by its *id*
     
     * Convert it to an `AccountResponse` and return it
 
@@ -30,4 +35,4 @@
   
   Then you can run the test.
 
-1. Also try adding more "sample" data to the `AccountDataLoader` and using your browser, or *curl* to hit the endpoint.
+1. Try adding more "sample" data to the `AccountDataLoader` and using your browser, or *curl* to hit the endpoint.
