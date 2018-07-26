@@ -1,6 +1,6 @@
 # Automatic Dependency Injection
 
-## https://github.com/ted-ncg/labs/blob/master/06-dependency-injection
+### This page: https://github.com/ted-ncg/labs/blob/master/06-dependency-injection.md
 
 ## Goal
 

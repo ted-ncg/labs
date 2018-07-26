@@ -1,12 +1,12 @@
 # Spring REST API Response Object
 
-### Link: https://github.com/ted-ncg/labs/blob/master/05a-spring-rest-response
+### This page: https://github.com/ted-ncg/labs/blob/master/05a-spring-rest-response.md
 
-### Goal
+## Goal
 
 Make the `/api/accounts/{id}` endpoint return JSON that contains both the ID and the Balance for an account having the given ID.
 
-### Steps
+## Steps
 
 1. Copy the [AccountRestTest.java](https://github.com/ted-ncg/labs/blob/master/AccountRestTest.java) file into your test/java directory and run the tests. *(Make sure that it fails!)*  
 
