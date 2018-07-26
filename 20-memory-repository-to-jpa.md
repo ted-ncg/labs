@@ -50,7 +50,7 @@ Replace the in-memory, HashMap-based `AccountRepository` that we've been using w
 
 ----
 
-### Query by Name
+## Query by Name
 
 Find by name: List<Account> findByName(String name)
 
