@@ -1,6 +1,10 @@
 ## All Accounts Navigation
 
-## https://github.com/ted-ncg/labs/blob/master/10-web-mvc-accounts-navigation.md
+## This page: https://github.com/ted-ncg/labs/blob/master/10-web-mvc-accounts-navigation.md
+
+## Goal
+
+Now that you've displayed all the accounts, let's add links so you can view the details of the account.
 
 ### References
 
@@ -8,7 +12,7 @@
 
 * Thymeleaf variable replacement: http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-and-displaying-variables
 
-### Create a Root (Home) Page
+## Create a Root (Home) Page
 
 1. Copy the [WebIntegrationTest](WebIntegrationTest.java) class to your test path and run it.
    It should fail.
@@ -34,12 +38,15 @@
 
 1. Also verify it by going to `http://localhost:8080/`.
 
-### Linking to Specific Account Pages
+## Linking to Specific Account Pages
 
-**Goal:**
+### Goal
+
 Use the `th:href` tag to create links to view a specific account page.
 
-1. Update the all-accounts.html template to add a link (an "anchor" or "href") around the account **name** that will link to the details (account-view) page for that account.
+### Steps
+
+1. Update the `all-accounts.html` template to add a link (an "anchor" or "href") around the account **name** that will link to the details (account-view) page for that account.
 
    * With normal static HTML, a link looks like this: `<a href="/account">Bank</a>`. We want to create a link that will point to `/account/3` for an account with an ID of 3, and point to `/account/5` for an account with an ID of 5.
    * We'll need to make the "href" dynamic, which Thymeleaf does through its `th:href` tag.
