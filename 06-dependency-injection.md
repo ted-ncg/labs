@@ -26,9 +26,9 @@ This reference of annotations might be helpful: http://engineering.pivotal.io/po
 
     * For example, hitting this URL
     
-      `http://localhost:8080/api/accounts/1`
+      `http://localhost:8080/api/accounts/0`
     
-      would return the Account with ID of 1, formatted as JSON.
+      would return the Account with ID of 0, formatted as JSON.
 
 1. To "pre-load" data into the `AccountRepository`, you can use the code in the [AccountDataLoader.java](https://github.com/ted-ncg/labs/blob/master/AccountDataLoader.java) file (put it with your other production code).
 

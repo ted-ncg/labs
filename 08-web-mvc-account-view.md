@@ -4,31 +4,38 @@
 
 ### References
 
-* Spring Controllers: https://docs.spring.io/spring/docs/4.3.16.RELEASE/spring-framework-reference/htmlsingle/#mvc-controller
+* Spring Controllers: https://docs.spring.io/spring/docs/4.3.18.RELEASE/spring-framework-reference/htmlsingle/#mvc-controller
 
 * Thymeleaf 3: https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-and-displaying-variables
 
 ## Goal: Create an "account view" page.
 
-### Return a Static Version of the Account View Page
+In this lab you will create a web app that will show account information for a single account.
+
+## Return a Static Version of the Account View Page
+
+First you'll 
 
 1. Modify your `AccountRepository` so that the ID generator (the `AtomicLong`) has an initial value of 1 (instead of the default of 0), e.g.:
 
     `private final AtomicLong idGenerator = new AtomicLong(1L);`
+
+   * **Question**: why would we want to do this?
 
 1. Create a new controller class for the web pages called `AccountWebController`.
 
 1. Add a method that is mapped to a `GET` to `localhost:8080/account/{id}`:
 
     ```java
-        @GetMapping(...)
-        public String accountView(@PathVariable(...) String id,
-                                  Model model) {
+        // ?? What annotation goes here ??
+        public String accountView(/* ?? What annotation goes here ?? */ String accountId) {
           return "account-view";
         }
     ```
 
-1. Create a `templates` directory underneath the `/src/main/resources` directory. Then create an HTML file called `account-view.html` and put it in the `/src/main/resources/templates` directory:
+1. Create a `templates` directory underneath the `/src/main/resources` directory.
+
+1. Create a new HTML file (with the content below) named `account-view.html` and put it in the `/src/main/resources/templates` directory:
 
    ```
     <!DOCTYPE html>
@@ -46,7 +53,11 @@
 
 1. Test out the static page above by going to `localhost:8080/account/1` to make sure you see the page.
 
+** Do not go further until the above works! **
+
 ### Templatize the Page
+
+Instead of returning a static page, you will use Spring MVC to "fill in" parts of the page with information that comes from the account entity.
 
 1. "Templatize" the `<h1>Account</h1>` and the `<p>Balance</p>` elements so that it displays the information from the account by using the `th:text` attribute.
 
@@ -54,19 +65,26 @@
     
         `<h1>Account: <span th:text="${account.id}">99</span></h1>`
 
-1. Look up the Account in the repo, convert to an accountResponse, and then add it into the `Model`.
-   Don't forget to inject (*Auto-Wire*) the `AccountRepository`!
+1. In the `accountView` method, add a new parameter, `Model model`, e.g.:
+
+   ```java
+   public String accountView(@PathVariable("id") String accountId, Model model)
+   ```
+
+1. Look up the Account in the AccountRepository, convert to an accountResponse, and then add it into the `Model`. This is similar to what you did in the API-based lab. For example:
 
     ```java
     // lookup the account in the repository by its ID
-    ...
+    // ...
     // convert to an accountResponse object
-    ...
+    // ...
     // add the accountResponse to the Model
     model.addAttribute("account", accountResponse);
     ```    
 
 1. Restart and test out the page and see what you find by going to `localhost:8080/account/1`.
+
+** Do not go further until the above works! **
 
 ### Accounts Have Names
 
