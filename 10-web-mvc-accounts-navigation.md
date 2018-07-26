@@ -1,6 +1,6 @@
 ## All Accounts Navigation
 
-## This page: https://github.com/ted-ncg/labs/blob/master/10-web-mvc-accounts-navigation.md
+### This page: https://github.com/ted-ncg/labs/blob/master/10-web-mvc-accounts-navigation.md
 
 ## Goal
 
@@ -15,7 +15,8 @@ Now that you've displayed all the accounts, let's add links so you can view the 
 ## Create a Root (Home) Page
 
 1. Copy the [WebIntegrationTest](WebIntegrationTest.java) class to your test path and run it.
-   It should fail.
+
+   * **It should fail.**
 
 1. Create an HTML page named `index.html` and place it in the `/src/main/resources/static` directory:
 
