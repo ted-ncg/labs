@@ -24,10 +24,17 @@ First you'll return a static version of the Account View page to make sure every
 
 1. Create a new controller class for the web pages called `AccountWebController`.
 
+   ```java
+   // ?? What annotation do we need on the class here ??
+   public class AccountWebController {
+     // your GET mapping etc. will go here
+   }
+   ```
+
 1. Add a method that is mapped to a `GET` to `localhost:8080/account/{id}`:
 
     ```java
-        // ?? What annotation goes here ??
+        // ?? What annotation do you need for this method ??
         public String accountView(/* ?? What annotation goes here ?? */ String accountId) {
           return "account-view";
         }
