@@ -33,6 +33,19 @@ Replace the in-memory, HashMap-based `AccountRepository` that we've been using w
 
 1. Clean up code that uses `AccountRepository` so that it's calling the correct methods.
 
+    * Check that both API and Web controllers are using AccountRepository for the fields, and the constructor is autowired with AccountRepository.
+    
+    * The JPA version of the AccountRepository uses `Iterable` for `findAll()`, so you'll need to adapt that.
+    
+      * If you're using Java 8 streams, you can use
+      
+      ```java
+    Iterable<Account> iterable = accountRepository.findAll();
+    List<AccountResponse> responses = StreamSupport.stream(iterable.spliterator(), false)
+                                                   .map(AccountResponse::fromAccount)
+                                                   .collect(Collectors.toList());
+      ``` 
+
 1. Try out the application, everything should continue to work as before!
 
 ----
