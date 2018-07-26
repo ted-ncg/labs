@@ -6,7 +6,13 @@
 
 Modify the `AccountApiController` so that you can return an `Account` from the `AccountRepository`.
 
+## References
+
+This reference of annotations might be helpful: http://engineering.pivotal.io/post/must-know-spring-boot-annotations-controllers/
+
 ## Steps
+
+1. Run *all* your tests to make sure everything is still working
 
 1. Modify the `AccountApiController` constructor to take in a *dependency* on `AccountRepository`
 
