@@ -1,6 +1,8 @@
 # All Accounts View
 
-## https://github.com/ted-ncg/labs/blob/master/09-web-mvc-all-accounts-view.md
+### This page: https://github.com/ted-ncg/labs/blob/master/09-web-mvc-all-accounts-view.md
+
+## Goal
 
 In this lab you'll add some error handling to the previous lab so no more `NullPointerException`s.
 You'll then provide a "home" page for accounts that displays all the accounts in the system.
@@ -11,7 +13,7 @@ You'll then provide a "home" page for accounts that displays all the accounts in
 
 ## First, Some Tests
 
-Add the [AccountViewWebIntegrationTest](https://github.com/ted-ncg/labs/blob/master/AccountViewWebIntegrationTest.java) and run it and make sure it passes.
+Add this [AccountViewWebIntegrationTest](https://github.com/ted-ncg/labs/blob/master/AccountViewWebIntegrationTest.java) and run it and make sure it passes.
 
   * If it doesn't, ensure that you're putting an `AccountResponse` object into the model and not an `Account`.
 
@@ -98,12 +100,13 @@ View a summary of all accounts.
        </tr>
 
    * In the above example, Thymeleaf will iterate over the "products" collection that it got from Spring's Model, and for each element, will assign it to the `product` variable.
+
    * You will need to do something similar, replacing *account* for *product*.
 
-1. Using the same `AccountWebController`, create a `@GetMapping()` method to `/account/` that displays all accounts.
+1. Using the same `AccountWebController`, create a `@GetMapping()` method to `/account/` that displays all accounts. Remember these steps:
 
     * Add a `Model model` as your parameter to the method
     * use the `model.addAttribute()` method to add the account list to the name `"accounts"`
     * Return a `String` with the name of the html template you created in the first step -- **without** the `.html` suffix.
 
-1. If you hit `localhost:8080/account/` you should see all of the accounts as a two-column table.
+1. If you access `localhost:8080/account/` you should see all of the accounts as a two-column table.

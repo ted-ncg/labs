@@ -60,6 +60,8 @@ First you'll return a static version of the Account View page to make sure every
 
 1. Test out the static page above by going to `localhost:8080/account/1` to make sure you see the page.
 
+1. Add the test class 
+
 ** Do not go further until the above works! **
 
 ## Templatize the Page
