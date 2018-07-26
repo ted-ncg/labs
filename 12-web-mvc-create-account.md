@@ -1,12 +1,14 @@
 ## Create Account
 
-### This page is at: `https://github.com/ted-ncg/labs/blob/master/12-web-mvc-create-account.md`
+### This page: https://github.com/ted-ncg/labs/blob/master/12-web-mvc-create-account.md
 
 ### Link to the Create Account Page
 
 **Goal:** Create a link to a Create Account Form to create a new account and save it in the account repository.
 
-1. Add the [CreateAccountWebIntegrationTest](https://github.com/ted-ncg/labs/blob/master/CreateAccountWebIntegrationTest.java) to your project and run the test. **It should fail.**
+1. Add the [CreateAccountWebIntegrationTest](https://github.com/ted-ncg/labs/blob/master/CreateAccountWebIntegrationTest.java) to your project and run the test. 
+
+   * **It should fail.**
 
 1. Modify the index.html page (that you created in `/src/main/resources/static`, from the previous lab) to provide a link to a new endpoint: `/create-account`.
 
