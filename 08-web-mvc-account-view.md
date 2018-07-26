@@ -12,9 +12,9 @@
 
 In this lab you will create a web app that will show account information for a single account.
 
-## Return a Static Version of the Account View Page
+## Return a Static Page
 
-First you'll 
+First you'll return a static version of the Account View page to make sure everything is annotated and configured properly.
 
 1. Modify your `AccountRepository` so that the ID generator (the `AtomicLong`) has an initial value of 1 (instead of the default of 0), e.g.:
 
@@ -55,7 +55,7 @@ First you'll
 
 ** Do not go further until the above works! **
 
-### Templatize the Page
+## Templatize the Page
 
 Instead of returning a static page, you will use Spring MVC to "fill in" parts of the page with information that comes from the account entity.
 
@@ -86,7 +86,7 @@ Instead of returning a static page, you will use Spring MVC to "fill in" parts o
 
 ** Do not go further until the above works! **
 
-### Accounts Have Names
+## Accounts Have Names
 
 1. Add a new member variable to the `Account` called `name` which is a `String`
 
