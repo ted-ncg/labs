@@ -38,13 +38,13 @@ Replace the in-memory `AccountRepository` that we've been using with Spring's JP
     * The JPA version of the `AccountRepository` uses `Iterable` for `findAll()`, so you'll need to adapt that.
     
       * If you're using Java 8 streams, you can use:
-      
-        ```java
-      Iterable<Account> iterable = accountRepository.findAll();
-      List<AccountResponse> responses = StreamSupport.stream(iterable.spliterator(), false)
-                                                     .map(AccountResponse::fromAccount)
-                                                     .collect(Collectors.toList());
-        ``` 
+
+```java
+Iterable<Account> iterable = accountRepository.findAll();
+List<AccountResponse> responses = StreamSupport.stream(iterable.spliterator(), false)
+                                               .map(AccountResponse::fromAccount)
+                                               .collect(Collectors.toList());
+``` 
 
 1. Try out the application, everything should continue to work as before!
 
