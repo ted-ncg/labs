@@ -1,6 +1,8 @@
 # Create Account - Advanced Form
 
-**This page is at:** `https://github.com/ted-ncg/labs/blob/master/15-web-mvc-create-account-form.md`
+### This page: https://github.com/ted-ncg/labs/blob/master/13-web-mvc-create-account-form.md
+
+----
 
 ### References
 
@@ -27,7 +29,7 @@ Allow the user to specify an initial deposit amount, and an overdraft limit, in 
    </form>
    ```
 
-1. Modify the GET method in your web controller that is mapped to `/create-account` to:
+1. Modify the GET method in your web controller that is mapped to `/create-account` to do the following:
    * Instantiate a new `CreateForm` instance
    * Set the values for the instance to default to 10 for the initial deposit, empty for the account name, and 1000 for the overdraft limit.
    * Put the instance into the Spring `Model`, with the correct attribute name to match what's in the form.
@@ -48,7 +50,6 @@ Allow the user to specify an initial deposit amount, and an overdraft limit, in 
 ----
 
 ## Bonus #1
-
 
 1. Update the account view template to use the `th:style` that will conditionally display the account balance in red if the account is overdrawn, e.g.:
 
