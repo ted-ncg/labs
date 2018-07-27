@@ -46,7 +46,8 @@ List<AccountResponse> responses = StreamSupport.stream(iterable.spliterator(), f
                                                .collect(Collectors.toList());
 ``` 
 
-1. Try out the application, everything should continue to work as before!
+
+**Try out the application, everything should continue to work as before!**
 
 ----
 

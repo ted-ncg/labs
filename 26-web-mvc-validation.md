@@ -22,17 +22,15 @@ Validate the incoming form information and tell the user if there are errors.
 
 1. Add the [CreateFormValidationTest](https://github.com/ted-ncg/labs/blob/master/CreateFormValidationTest.java) to your project. When you run it, it should **fail**.
 
-   **Note:** You may need to change the test code to adjust for `int` vs. `BigDecimal`.
-
-1. Annotate the fields (member variables) of the `CreateForm` POJO so that:
+1. Annotate the fields (member variables) of the `CreateForm` JavaBean so that:
 
    * The account name has 2 or more characters, but no more than 63.
    
-   * The initial deposit must be `>= 1` (0 is not OK, but 1 is fine), and no more than 100 (100 is ok, 101 is not)
+   * The initial deposit must be `>= 1` (`0` is not OK, but `1` is fine), and no more than 100 (`100` is ok, `101` is not)
    
-   * The overdraft limit must be `>= 0` (0 is OK), but no more than 10
+   * The overdraft limit must be `>= 0` (`0` is OK), but no more than `10`
 
-1. Re-run the CreateFormValidationTest, which should now **pass**.
+1. Re-run the `CreateFormValidationTest`, which should now **pass**.
 
 1. Turn on validation for the form submission:
  
