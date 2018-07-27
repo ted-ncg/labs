@@ -1,8 +1,8 @@
-## Create Account
+# Create Account
 
 ### This page: https://github.com/ted-ncg/labs/blob/master/12-web-mvc-create-account.md
 
-### Link to the Create Account Page
+## Link to the Create Account Page
 
 **Goal:** Create a link to a Create Account Form to create a new account and save it in the account repository.
 
