@@ -20,6 +20,10 @@ From within IDEA, you'll need to set up the proxy information so you can reach o
 
      `-Dhttp.proxyHost=userproxy.visa.com -Dhttp.proxyPort=80`
 
+* You will **also** need to add this proxy information to your JUnit test's run configuration
+
+  * Look for the test in the list of configurations under the **JUnit** section
+
 ----
 
 ## The Lab
