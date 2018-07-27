@@ -1,6 +1,6 @@
-## Create Account - Validation
+# Create Account - Validation
 
-### This page is at: `https://github.com/ted-ncg/labs/blob/master/26-web-mvc-validation.md`
+### This page: https://github.com/ted-ncg/labs/blob/master/26-web-mvc-validation.md
 
 ### References
 
@@ -8,7 +8,7 @@
 
 * Hibernate Validator reference: https://docs.jboss.org/hibernate/validator/5.3/reference/en-US/html/index.html
 
-* Spring validation reference: https://docs.spring.io/spring/docs/4.3.16.RELEASE/spring-framework-reference/htmlsingle/#validation-beanvalidation
+* Spring validation reference: https://docs.spring.io/spring/docs/4.3.18.RELEASE/spring-framework-reference/htmlsingle/#validation-beanvalidation
 
 * Thymeleaf form tutorial: http://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html#creating-a-form
 
