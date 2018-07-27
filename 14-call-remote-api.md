@@ -4,7 +4,7 @@
 
 ## Reference Docs
 
-* Spring RestTemplate docs: https://docs.spring.io/spring/docs/4.3.16.RELEASE/spring-framework-reference/html/remoting.html#rest-resttemplate
+* Spring RestTemplate docs: https://docs.spring.io/spring/docs/4.3.18.RELEASE/spring-framework-reference/html/remoting.html#rest-resttemplate
 
 * Spring Boot - testing Rest Clients: https://docs.spring.io/spring-boot/docs/1.5.14.RELEASE/reference/html/boot-features-testing.html#boot-features-testing-spring-boot-applications-testing-autoconfigured-rest-client
 
@@ -36,7 +36,7 @@ Convert the account balance from USD ($) to GBP (£) and display it on the accou
     int convertToGbp(int amount)
     ```
 
-1. Create a _fake_ version of this service that simply returns `123`. We'll write the actual implementation later.
+1. Create a _fake_ version of this service that simply returns `123`. We'll write the actual implementation later. (Maybe write a test?)
 
 1. Inject (autowire) the CurrencyService into your Web (Account) Controller.
 
