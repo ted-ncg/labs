@@ -1,6 +1,6 @@
 # Account Repository
 
-### This is at: https://github.com/ted-ncg/labs/blob/master/04-account-repository.md
+### This page: https://github.com/ted-ncg/labs/blob/master/04-account-repository.md
 
 ## Goal
 

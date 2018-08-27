@@ -1,4 +1,4 @@
-## All Accounts Navigation
+# All Accounts Navigation
 
 ### This page: https://github.com/ted-ncg/labs/blob/master/10-web-mvc-accounts-navigation.md
 

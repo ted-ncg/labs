@@ -54,7 +54,7 @@ Let's make sure the correct version of Java is installed:
    javac 1.8.0_161
    ```
 
-   If you don't then double-check your Java installation.
+   If you don't then check that you typed the command correctly, or double-check your Java installation (see above).
 
 ## Clone the Canteen Repository
 
@@ -63,18 +63,29 @@ Let's make sure the correct version of Java is installed:
    * Windows: `mkdir C:\training` and then `cd \training`
    * macOS: `mkdir ~/training` and then `cd ~/training`
 
-1. Clone the project repository from GitHub to your machine by doing:
+1. Clone the project repository from BitBucket to your machine by doing:
 
-   `git clone https://github.com/ted-ncg/denver-201807-canteen.git`
+    ```bash
+    git clone https://bitbucket.org/tedmyoung/austin-201808-canteen.git
+    ```
 
-   * **ssh:** If you can use `ssh`, use this link: `git@github.com:ted-ncg/denver-201807-canteen.git`
+   * **ssh:** If you know what `ssh` is and can use it, you can do:
+       
+       ```bash
+       git clone git@bitbucket.org:tedmyoung/austin-201808-canteen.git
+       ```
 
-   * **NOTE:** If you run into proxying issues, see [proxying git](#proxying-git) for more info
+   **NOTE:** If you run into proxying issues, see [proxying git](#proxying-git) for more info
+
    * If you are still having trouble, download and unzip the project instead of using Git to pull it.
    
-     * You can do this by opening up a browser, and going to this URL: `https://github.com/ted-ncg/denver-201807-canteen.git`
-
-  * BitBucket: if GitHub doesn't work for you, try this BitBucket link: `https://bitbucket.org/tedmyoung/denver-201807-canteen.git`
+     * You can do this by opening up a browser, and going to this URL: 
+     
+       ```
+       https://bitbucket.org/tedmyoung/austin-201808-canteen/downloads/
+       ```
+       
+       Then click on **Download Repository** and unzip the file.
 
 ## Use Maven to Run the Test
 
@@ -176,13 +187,13 @@ Now that all the dependencies have been downloaded and the project works, let's 
 If you finished the above sections and you have time, you can try to make a new branch using Git and then *push* changes to the GitHub repository.
 
 1. Create a new branch with **your last name** and make it the current branch (using `checkout`).
-    You can do this from the command-line by typing the following (be sure replace `*YourLastName*` with, well, *your* last name):
+    You can do this from the command-line by typing the following (be sure replace `*lastname*` with *your* last name):
     
-    `git checkout -b *YourLastName*`
+    `git checkout -b *lastname*`
 
-    For example, if you did `git checkout -b Young`, you would see:
+    For example, if you did `git checkout -b young`, you would see:
 
-    `Switched to a new branch 'Young'`
+    `Switched to a new branch 'young'`
  
 1. Open up the `README.md` file inside of IDEA.
 
@@ -192,7 +203,7 @@ If you finished the above sections and you have time, you can try to make a new 
 
    * Add the file to Git (`git add README.md`)
    * Commit the file (`git commit -m 'Added Ted Young to participants.'`)
-   * Push the file up to GitHub (`git push --set-upstream origin <branch name here>`) -- remember to use the branch name that you created in the first step.
+   * Push the file up to BitBucket (`git push --set-upstream origin **lastname**`) -- remember to use the branch name that you created in the first step.
 
 **NOTE:** You *will* run into a permissions issue. THAT IS OK! Call the instructor over when you run into it.
 

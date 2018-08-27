@@ -37,7 +37,7 @@ Replace the in-memory `AccountRepository` that we've been using with Spring's JP
     
     * The JPA version of the `AccountRepository` uses `Iterable` for `findAll()`, so you'll need to adapt that.
     
-      * If you're using Java 8 streams, you can use:
+      * If you're aware of Java 8 streams, you can use the following to convert from an `Iterable` to a list of `AccountResponse` objects
 
 ```java
 Iterable<Account> iterable = accountRepository.findAll();

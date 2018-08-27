@@ -1,7 +1,6 @@
 # Spring REST Controller
 
-### This page is: https://github.com/ted-ncg/labs/blob/master/05-spring-mvc-rest.md
-
+### This page: https://github.com/ted-ncg/labs/blob/master/05-spring-mvc-rest.md
 
 ## Goal
 

@@ -1,6 +1,6 @@
 # Transfer Service API and Web Form
 
-**This page:** `https://github.com/ted-ncg/labs/blob/master/16-transfer-money.md`
+### This page: https://github.com/ted-ncg/labs/blob/master/16-transfer-money.md
 
 ## Part 1: Transfer Service
 
