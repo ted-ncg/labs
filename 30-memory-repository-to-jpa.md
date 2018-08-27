@@ -1,6 +1,6 @@
 # Use Spring Data's JPA Repository
 
-### This page: https://github.com/ted-ncg/labs/blob/master/20-memory-repository-to-jpa.md
+### This page: https://github.com/ted-ncg/labs/blob/master/30-memory-repository-to-jpa.md
 
 ----
 

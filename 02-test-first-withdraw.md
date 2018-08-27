@@ -1,6 +1,6 @@
 # Test First With Pairing
 
-#### This page: `http://bit.ly/ncg-lab2`
+### This page: `http://bit.ly/ncg-lab2`
 
 ## Goal
 
