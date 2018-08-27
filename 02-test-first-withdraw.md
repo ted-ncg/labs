@@ -6,11 +6,11 @@
 
 Now that you've seen how the Deposit functionality was written in test-first style, you'll write tests and code for the  **withdraw** functionality in the `Account` class.
 
-## Steps
+## Preparation
 
-Make sure you have the latest version, where we "mob programmed" the **deposit** functionality to the `Account` class.
+Make sure you have the latest version, where we "group programmed" the **deposit** functionality to the `Account` class.
 
-1. Download (or `git pull`) the latest code from `https://bitbucket.org/tedmyoung/denver-201807-canteen`
+1. Download (or `git pull`) the latest code from `https://bitbucket.org/tedmyoung/austin-201808-canteen`
 
 1. Make sure all of the tests currently pass before continuing!
 

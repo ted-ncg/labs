@@ -94,7 +94,7 @@ Let's run the test using Maven from the command line.
 1. Change to the directory holding the project:
 
    ```
-   $ cd denver-201807-canteen.git
+   $ cd austin-201808-canteen.git
    ```
     
 1. Run the `test` task in Maven:
@@ -136,7 +136,7 @@ Now that all the dependencies have been downloaded and the project works, let's 
 
    Otherwise...
 
-   * From the `File` menu, choose the `Open...` item to open the pom.xml (*don't* use Import) in the `denver-201807-canteen.git` project directory.
+   * From the `File` menu, choose the `Open...` item to open the pom.xml (*don't* use Import) in the `austin-201808-canteen.git` project directory.
 
 1. IDEA will then ask you how to open this file. Since we want it to be a new **project**, click `Open as Project`.
 
