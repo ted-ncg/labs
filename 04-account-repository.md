@@ -8,7 +8,7 @@ Have a way of storing and finding accounts in a central location.
 
 ## Steps
 
-### Give Account an Identity
+### 1. Give Account an Identity
 
 This will make an Account be an *Entity*.
 
@@ -16,7 +16,7 @@ This will make an Account be an *Entity*.
 
   * **IMPORTANT:** Make sure you name the member variable exactly this way, as a `Long` with the name `id`.
 
-### Create a Repository
+### 2. Create a Repository
 
 * Create a new class `AccountRepository` that implements the methods below.
 

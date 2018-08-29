@@ -19,9 +19,10 @@ The goal of this lab is for you to implement a "RESTful" API for retrieving info
    ```java
    @RestController
    public class AccountApiController {
+   }
    ```
  
-1. Implement a method that is mapped so that it will respond (be "routed" or "mapped") to
+1. Goal: create a method that is mapped so that it will respond (be "routed" or "mapped") to
 
    ```
    http://localhost:8080/api/accounts/123
@@ -34,23 +35,28 @@ The goal of this lab is for you to implement a "RESTful" API for retrieving info
       }
       ```
 
-    * Add the `@GetMapping` annotation to the method
+    * Add the `@GetMapping` annotation to the `accountInfo` method
     
-      ```java
-      // EXAMPLE:
-      // This method would be invoked if a *GET* came in to the path `/users/999`
-      @GetMapping("/users/{id}")
-      public User showUser(...) {...}
-      ```
+      >**GET MAPPING EXAMPLE**
+      >
+      >This method would be invoked if a *GET* came in to the path `/users/999`
+      >
+      >```java
+      >@GetMapping("/users/{id}")
+      >public User showUser(...) {...}
+      >```
     
     * Use the `@PathVariable` annotation for the `accountId` variable
     
-      ```java
-      // EXAMPLE:
-      // This extracts the `id` from the path and puts it in the userId variable
-      @GetMapping("/users/{id}")
-      public User showUser(@PathVariable("id") String userId) {...}
-      ```
+      >**PATH VARIABLE EXAMPLE**
+      >
+      >This extracts the `id` from the path and puts it in the `userId` variable
+      >
+      >```java
+      >
+      >@GetMapping("/users/{id}")
+      >public User showUser(@PathVariable("id") String userId) {...}
+      >```
 
 1. Inside the `accountInfo` method:
  
@@ -62,9 +68,10 @@ The goal of this lab is for you to implement a "RESTful" API for retrieving info
    
    * Return this new account object
 
-### Try it Out    
+## Try it Out    
 
 1. Run the `CanteenApplication` from within IntelliJ IDEA
+
    * Right click on the `CanteenApplication` file and then select "Run..."
  
    * Once you see something like the following, you can go to the next step:
@@ -76,9 +83,9 @@ The goal of this lab is for you to implement a "RESTful" API for retrieving info
 
 1. Make a request against the endpoint by either:
  
-    * **Browser**: opening the URL `http://localhost:8080/api/accounts/123`
+    1. **Browser**: opening the URL `http://localhost:8080/api/accounts/123`
 
-    * **`curl`**: use `curl` to make the request, e.g.:
+    1. **`curl`**: use `curl` to make the request, e.g.:
       ```
       curl --noproxy localhost -v localhost:8080/api/accounts/123
       ```
@@ -101,7 +108,7 @@ The goal of this lab is for you to implement a "RESTful" API for retrieving info
 
 ## Reference
 
-This is an example of a *Controller* "endpoint":
+This is a full example of a *Controller* "endpoint":
   
 ```java
 package com.visa.ncg.canteen;

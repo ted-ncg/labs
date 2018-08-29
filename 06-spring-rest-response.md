@@ -1,6 +1,6 @@
 # Spring REST API Response Object
 
-### This page: https://github.com/ted-ncg/labs/blob/master/05a-spring-rest-response.md
+### This page: https://github.com/ted-ncg/labs/blob/master/06-spring-rest-response.md
 
 ## Goal
 
