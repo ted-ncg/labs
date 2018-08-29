@@ -28,14 +28,14 @@ The goal of this lab is for you to implement a "RESTful" API for retrieving info
    http://localhost:8080/api/accounts/123
    ``` 
 
-   a. Create the 'accountInfo' method
+   A. Create the 'accountInfo' method
    
       ```java
       public Account accountInfo(String accountId) { 
       }
       ```
 
-   a. Add the `@GetMapping` annotation to the `accountInfo` method
+   B. Add the `@GetMapping` annotation to the `accountInfo` method
     
       >**GET MAPPING EXAMPLE**
       >
@@ -46,7 +46,7 @@ The goal of this lab is for you to implement a "RESTful" API for retrieving info
       >public User showUser(...) {...}
       >```
     
-   a. Use the `@PathVariable` annotation for the `accountId` variable
+   C. Use the `@PathVariable` annotation for the `accountId` variable
     
       >**PATH VARIABLE EXAMPLE**
       >
