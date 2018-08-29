@@ -6,7 +6,7 @@
 
 Modify the `AccountApiController` so that you can return an `Account` from the `AccountRepository`.
 
-## References
+### References
 
 This reference of annotations might be helpful: http://engineering.pivotal.io/post/must-know-spring-boot-annotations-controllers/
 

@@ -109,3 +109,6 @@ class Audience {
 > See http://runestoneinteractive.org/build/html/directives.html#parsons-problems
 
 
+{fib} What diagram is this?
+
+[sequence diagram]

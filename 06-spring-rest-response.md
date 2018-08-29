@@ -4,7 +4,7 @@
 
 ## Goal
 
-Make the `/api/accounts/{id}` endpoint return JSON that contains both the ID and the Balance for an account having the given ID.
+Make the `/api/accounts/{id}` endpoint return JSON that contains both the **ID** and the **Balance** for an account having the given ID.
 
 ## Steps
 
