@@ -65,7 +65,7 @@ There are a number of ways to handle problems, we're going to use the ResponseSt
 
 View a summary of all accounts.
 
-## Steps
+### Steps
 
 1. Create an HTML "template" (name it `all-accounts.html') in the `resources/templates` folder:
 
