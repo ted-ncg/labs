@@ -60,9 +60,8 @@ First you'll return a static version of the Account View page to make sure every
 
 1. Test out the static page above by going to `localhost:8080/account/1` to make sure you see the page.
 
-1. Add the test class 
 
-** Do not go further until the above works! **
+#### ** Do not go further until the above works! **
 
 ## Templatize the Page
 
@@ -93,7 +92,7 @@ Instead of returning a static page, you will use Spring MVC to "fill in" parts o
 
 1. Restart and test out the page and see what you find by going to `localhost:8080/account/1`.
 
-** Do not go further until the above works! **
+#### ** Do not go further until the above works! **
 
 ## Accounts Have Names
 

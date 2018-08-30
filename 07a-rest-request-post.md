@@ -60,6 +60,14 @@ Using `curl`, or `Postman`, do a POST with the following JSON data
 {"initialBalance":10,"accountName":"Video Games"}
 ```
 
+For Linux/Mac:
+
 ```bash
-curl -v -d '{"initialBalance":10,"accountName":"Video Games"}' -H 'Content-Type: application/json' "localhost:8080/api/accounts"
+curl -v --noproxy "*" -d '{"initialBalance":10,"accountName":"Video Games"}' -H 'Content-Type: application/json' "localhost:8080/api/accounts"
+```
+
+For Windows:
+
+```
+curl -v --noproxy "*" -d "{\"initialBalance\":10,\"accountName\":\"Video Games\"}" -H "Content-Type: application/json" "localhost:8080/api/accounts"
 ```
