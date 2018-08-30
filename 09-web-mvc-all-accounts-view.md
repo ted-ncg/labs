@@ -99,16 +99,18 @@ View a summary of all accounts.
     ```
 
 1. Add Thymeleaf text substitution (`th:each` and `th:text`) to the `<tr>` and `<td>` tags so that it pulls the content from the list of accounts.
-   For example, if we were working with a collection of `products`:
-
-       <tr th:each="product : ${products}">
-         <td th:text="${product.name}">Onions</td>
-         <td th:text="${product.price}">2.41</td>
-       </tr>
-
-   * In the above example, Thymeleaf will iterate over the "products" collection that it got from Spring's Model, and for each element, will assign it to the `product` variable.
-
-   * You will need to do something similar, replacing *account* for *product*.
+   You will need to do something similar to this example, replacing **account** for **product**.
+   
+   >For example, if we were working with a collection of `products`:
+   >
+   >    ```html
+   >    <tr th:each="product : ${products}">
+   >      <td th:text="${product.name}">Onions</td>
+   >      <td th:text="${product.price}">2.41</td>
+   >    </tr>
+   >    ```
+   >
+   > In this example, Thymeleaf iterates over the "products" collection that it got from Spring's Model, and for each element, will assign it to the `product` variable.
 
 1. Using the same `AccountWebController`, create a `@GetMapping()` method to `/account/` that displays all accounts. Remember these steps:
 
