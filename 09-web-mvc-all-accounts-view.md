@@ -4,8 +4,9 @@
 
 ## Goal
 
-In this lab you'll add some error handling to the previous lab so no more `NullPointerException`s.
-You'll then provide a "home" page for accounts that displays all the accounts in the system.
+In this lab you'll add error handling to the previous lab to get rid of the `NullPointerException`s.
+
+You'll then provide a "home" page that displays **all** the accounts in the system.
 
 ### References
 
