@@ -90,6 +90,11 @@
         .andExpect(model().attribute("account", hasProperty("name", is("Video Games"))));
    ```
 
-   **Note:** You'll need to import the `org.hamcrest` matchers for the new methods above.
+   **Note:** You'll need to import the `org.hamcrest.Matchers` matchers for the new methods above:
+   
+      ```java
+      import static org.hamcrest.Matchers.is;
+      import static org.hamcrest.Matchers.hasProperty;
+      ```
 
 1. And it should now pass.
