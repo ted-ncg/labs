@@ -112,7 +112,7 @@ View a summary of all accounts.
    >
    > In this example, Thymeleaf iterates over the "products" collection that it got from Spring's Model, and for each element, will assign it to the `product` variable.
 
-1. Using the same `AccountWebController`, create a `@GetMapping()` method to `/account/` that displays all accounts. Remember these steps:
+1. Using the same `AccountWebController`, create a `@GetMapping()` method to `/account` that displays all accounts. Remember these steps:
 
     * Add a `Model model` as your parameter to the method
     * Get the list of `Account`s from the `AccountRepository`

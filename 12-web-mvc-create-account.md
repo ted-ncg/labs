@@ -61,14 +61,21 @@
     * Takes a parameter `@ModelAttribute("accountName") String name` that will be the account name.
     * Creates a new `Account` instance with the incoming `name` and does a `save` to the account repository.
     * Redirects back to the "all accounts" view
+        * Instead of return the name of a view, you're returning a URL, e.g.:
+        
+          ```java
+          return "redirect:/account";
+          ```
 
-        * For documentation on the redirect, see https://docs.spring.io/spring/docs/4.3.16.RELEASE/spring-framework-reference/htmlsingle/#mvc-redirecting-redirect-prefix
+        * For documentation on the redirect, see https://docs.spring.io/spring/docs/4.3.18.RELEASE/spring-framework-reference/htmlsingle/#mvc-redirecting-redirect-prefix
 
 1. Run all the tests in `CreateAccountWebIntegrationTest`, and they should all **pass**.
 
 1. Open your browser and go to `localhost:8080/` and see if it works from the browser.
 
-## Bonus
+----
+
+## Bonus: Redirect to Account Details Page
 
 1. Have the form submission redirect to the account view page for the new account.
 
