@@ -36,9 +36,9 @@ This reference of annotations might be helpful: http://engineering.pivotal.io/po
     * Convert it to an `AccountResponse` and return it
 
     * For example, hitting this URL
-    
+
       `http://localhost:8080/api/accounts/0`
-    
+
       would return the Account with ID of 0, formatted as JSON.
 
 1. Try adding more "sample" data to the `AccountDataLoader` and using your browser, or *curl* to hit the endpoint.
