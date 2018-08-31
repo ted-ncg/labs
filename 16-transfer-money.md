@@ -16,7 +16,7 @@
                          int amount)    
     ```
 
-1. Write tests (and then the code to make it pass) for the following:
+1. Write tests first (and then the code to make it pass) for the following:
 
    1. Transferring money from one account (the *source*) to another (the *destination*) works
    
@@ -42,29 +42,40 @@
     * Inside the method, use the `TransferService` that you created above (by injecting it into your controller) to transfer the money.
     * Return `200` if everything works, otherwise a `400` if any exceptions are thrown by the service.
     
-2. Try it out using Postman, or from the command-line using `curl`, with the following JSON:
+2. Try it out using Postman (to the URL `localhost:8080/api/transfers`) with the following JSON:
 
-```json
-{"source": 1, "destination": 2, "amount": 5}
-```
-
+    ```json
+    {"source": 1, "destination": 2, "amount": 5}
+    ```
+    
+   You can also use curl:
+   
+   **curl for Linux/Mac:**
+    
+    ```bash
+    curl -v --noproxy "*" -d '{"source": 1, "destination": 2, "amount": 5}' -H 'Content-Type: application/json' "localhost:8080/api/transfers"
+    ```
+    
+   **curl for Windows:**
+    
+    ```
+    curl -v --noproxy "*" -d "{\"source\": 1, \"destination\": 2, \"amount\": 5}" -H "Content-Type: application/json" "localhost:8080/api/transfers"
+    ```
 ----
 
 ## Part 3: UI For Transferring Money
 
-Create a web form so users can transfer money between accounts.
+**Goal**: Create a web form so users can transfer money between accounts.
 
-1. Add a link to `/deposit/{id}` from the Account details **view** page (account-view.html).
+### Link to the Transfer Page
 
-   The link should point to `/deposit/3` to take you to the Deposit page for the account with an ID of 3, and point to `/deposit/5` for an account with an ID of 5.
+1. On the Account Details **view** page (account-view.html), add a link to `/transfer-from/{id}`, where the `id` will be the id of the account you're viewing.
+
+   > e.g.: The link should point to `/transfer-from/3` to take you to the Transfer page for the account with an ID of 3.
+   > The end result `href` might look like: `<a href="/transfer-from/3">Transfer Money from this account</a>`
      
    * You will make the "href" dynamic, similar to what you did in the "All Accounts Navigation" lab.
 
-      * Remember, Thymeleaf does this through the `th:href` tag.
-        Documentation for that tag can be found here: http://www.thymeleaf.org/doc/articles/standardurlsyntax.html
-
-   * To do this, we need to create a *parameterized* link, which will look similar to the templated path we used in our `GetMapping`.
-   
      As a reminder, to produce a link to a product page using its product ID, we would use the `@{}` expression, with an embedded `${}` variable expression like this:
    
        ```
@@ -80,18 +91,19 @@ Create a web form so users can transfer money between accounts.
         1. Finally, the `/product/{prodId}` then gets the `{prodId}` replaced at runtime with the `prodId` variable.
         
         1. So, if a product object's ID is 12, the `th:href="@{/product/{prodId}(prodId=${product.id})"` would be replaced by Thymeleaf with `href="/product/12"`. 
-   
 
-### Create the Deposit Money Page
+----   
 
-1. Add a new HTML template, named `deposit.html` with a form that let's us add money to an account.
+### Create the Transfer Money Page
+
+1. Add a new HTML template, named `transfer.html` with a form that let's us transfer money to an account from another account.
 
   ```html
   <!DOCTYPE html>
   <html lang="en" xmlns:th="http://www.thymeleaf.org" >
   <head>
     <meta charset="UTF-8">
-    <title>Deposit Money</title>
+    <title>Transfer Money</title>
     <style type="text/css">
       .btn {
         border-radius: 5px;
@@ -107,50 +119,58 @@ Create a web form so users can transfer money between accounts.
     </style>
   </head>
   <body>
-  <h2>Deposit Money to <span th:text="${account.id}">17</span>:</h2>
-  <p>Current Balance: $<span th:text="${account.balance}">100</span></p>
+  <h2>Transfer Money from <span th:text="${account.name}">Allowance</span>:</h2>
+  <p>Available Balance: $<span th:text="${account.balance}">50</span></p>
   <hr/>
-  <h2>How much to deposit?</h2>
-  <form action="#" th:action="@{/deposit}" th:object="${depositForm}" method="post">
-    <input type="hidden" th:field="*{accountId}"/>
+  <form action="#" th:action="@{/transfer}" th:object="${transferForm}" method="post">
+    <input type="hidden" th:field="*{sourceAccountId}"/>
+    <p>To Account ID: <input type="number" th:field="*{targetAccountId}"/></p>
     <p>Amount: $<input th:field="*{amount}"/></p>
-    <p><button class="btn">Deposit!</button></p>
+    <p><button class="btn">Transfer Money</button></p>
   </form>
   </body>
   </html>
   ```
 
-1. Create a `DepositForm` *JavaBean* that has two properties, with getters and setters:
-   * `accountId` (`long`) - ID of the account to deposit into
-   * `amount` (`int`) - how much to deposit
+### Create GetMapping for the Transfer Money Page
+
+1. Create a `TransferForm` *JavaBean* that has three properties, with getters and setters:
+   * `sourceAccountId` (`long`) - ID of the account to transfer money from
+   * `targetAccountId` (`long`) - ID of the account to deposit into
+   * `amount` (`int`) - how much to transfer
 
 1. Create a `@GetMapping` method in the `AccountWebController` that will serve up the form:
 
    ```java
-     @GetMapping("/deposit/{id}")
-     public String depositGet(Model model,
-                              @PathVariable("id") long id) {
-       // 1: Find the account from the repository
+     @GetMapping("/transfer-from/{id}")
+     public String transferFrom(Model model,
+                                @PathVariable("id") long id) {
+       // 1: Find the account from the repository using the id
        // 2: Convert to an AccountReponse
-       // 3: Add the response object into the model
-       // 4: Instantiate a DepositForm and set its accountId
-       // 5: Add the deposit form into the model
-       return "deposit";
+       // 3: Add the response object into the model with the name "account"
+       // 4: Instantiate a TransferForm object
+       // 5: Set the `sourceAccountId` to the "from" account ID
+       // 6: Add the transferForm into the model with the name "transferForm"
+       return "transfer";
      }
    ```
 
-1. Create a `@PostMapping` method for the `/deposit` path that will take the amount *from* the form and deposit it to the account.
+### Execute the Transfer Money Form Submission
+
+1. Create a `@PostMapping` method for the `/transfer` path that will take the amount *from* the form and transfer it between the two accounts.
+
    Then use the `redirect` command to send the browser back to the account view page using `"redirect:/account/{id}"`.
+   
+   **NOTE:** You will be using the `TransferService` to do the transfer, which means you will need to *inject* the TransferService into the AccountWebController.
 
    ```java
-     @PostMapping("/deposit")
-     public String depositPost(@ModelAttribute DepositForm form) {
-       // 1: Get the account ID from the form
-       // 2: Find the account in the repository
-       // 3: execute the deposit on that account
-       // 4: save the account back to the repository
-       // 5: redirect to the account's detail view page
+     @PostMapping("/transfer")
+     public String transfer(@ModelAttribute TransferForm form) {
+       // 1: Get both the sourceAccountId and targetAccountId from the form
+       // 2: Using the TransferService, transfer the amount from the form
+       //    between the two accounts
+       // 3: redirect to the target account's detail view page
      }
    ```
 
-1. You should now be able to go to the account's page, click on the "deposit money" link, enter an amount, and see that the balance for that account has been increased by that amount.
+1. You should now be able to go to the account's page, click on the "transfer money" link, enter an amount, and see money transferred to the target account.
