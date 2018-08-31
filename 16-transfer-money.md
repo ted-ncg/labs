@@ -30,12 +30,12 @@
 
 ## Part 2: REST API for Transferring Money
 
-Create a new endpoint for transferring money between accounts.
+**Goal**: Create a new API endpoint for transferring money between accounts.
 
-1. Create a new `RestController` class (e.g., `TransferMoneyApiController`) that has a method that is:
+1. Create a new `RestController` (e.g., `TransferMoneyApiController`) that has a method that is:
  
     * POST mapped to: `/api/transfers`
-    * Takes a parameter: `TransferRequest`, which is a JavaBean that has these three properties
+    * Takes a parameter: `TransferRequest`, which is a _JavaBean_ that has these three properties
        * `source`, the ID for the source account
        * `destination`, the ID for the destination account
        * `amount`, an `int` for the amount to transfer
@@ -54,38 +54,33 @@ Create a new endpoint for transferring money between accounts.
 
 Create a web form so users can transfer money between accounts.
 
-1. Add a link to `/deposit/{id}` from the Account **view** page.
+1. Add a link to `/deposit/{id}` from the Account details **view** page (account-view.html).
 
-   * With static HTML, a link looks like this:
-   
-     `<a href="/deposit">Deposit</a>`
-    
-     For example, you want the link to point to `/deposit/3` to take you to the Deposit page for the account with an ID of 3, and point to `/deposit/5` for an account with an ID of 5.
+   The link should point to `/deposit/3` to take you to the Deposit page for the account with an ID of 3, and point to `/deposit/5` for an account with an ID of 5.
      
-   * You need to make the "href" dynamic, similar to what you did in the "All Accounts" page.
-   
+   * You will make the "href" dynamic, similar to what you did in the "All Accounts Navigation" lab.
+
       * Remember, Thymeleaf does this through the `th:href` tag.
         Documentation for that tag can be found here: http://www.thymeleaf.org/doc/articles/standardurlsyntax.html
 
    * To do this, we need to create a *parameterized* link, which will look similar to the templated path we used in our `GetMapping`.
    
-     For example, to produce a link to a product page using its product ID, we would use the `@{}` expression, with an embedded `${}` variable expression like this:
+     As a reminder, to produce a link to a product page using its product ID, we would use the `@{}` expression, with an embedded `${}` variable expression like this:
    
-     ```
-     <a th:href="@{/product/{prodId}(prodId=${product.id})}>Product</a>
-     ```
+       ```
+       <a th:href="@{/product/{prodId}(prodId=${product.id})}>Product</a>
+       ```
    
-   As you saw previously, this breaks down to:
+     As you saw previously, this breaks down to:
+     
+        1. The `${product.id}` is the dynamic ID from a `product` object
+        
+        1. The `(prodId=${product.id})` means assign the value of the product's ID to `prodId`.
+        
+        1. Finally, the `/product/{prodId}` then gets the `{prodId}` replaced at runtime with the `prodId` variable.
+        
+        1. So, if a product object's ID is 12, the `th:href="@{/product/{prodId}(prodId=${product.id})"` would be replaced by Thymeleaf with `href="/product/12"`. 
    
-      1. The `${product.id}` is the dynamic ID from a `product` object
-      
-      1. The `(prodId=${product.id})` means assign the value of the product's ID to `prodId`.
-      
-      1. Finally, the `/product/{prodId}` then gets the `{prodId}` replaced at runtime with the `prodId` variable.
-      
-      1. So, if a product object's ID is 12, the `th:href="@{/product/{prodId}(prodId=${product.id})"` would be replaced by Thymeleaf with `href="/product/12"`. 
-   
-
 
 ### Create the Deposit Money Page
 
@@ -124,18 +119,22 @@ Create a web form so users can transfer money between accounts.
   </body>
   </html>
   ```
+
 1. Create a `DepositForm` *JavaBean* that has two properties, with getters and setters:
-   * `accountId` (`long`) - ID of the account to deposit to
+   * `accountId` (`long`) - ID of the account to deposit into
    * `amount` (`int`) - how much to deposit
 
-1. Create a `@GetMapping` method in your web controller that will serve up the form:
+1. Create a `@GetMapping` method in the `AccountWebController` that will serve up the form:
 
    ```java
      @GetMapping("/deposit/{id}")
      public String depositGet(Model model,
-                               @PathVariable("id") long id) {
-       // put the Account object for the id into the model
-       // create a new DepositForm and set its accountId
+                              @PathVariable("id") long id) {
+       // 1: Find the account from the repository
+       // 2: Convert to an AccountReponse
+       // 3: Add the response object into the model
+       // 4: Instantiate a DepositForm and set its accountId
+       // 5: Add the deposit form into the model
        return "deposit";
      }
    ```
@@ -146,12 +145,12 @@ Create a web form so users can transfer money between accounts.
    ```java
      @PostMapping("/deposit")
      public String depositPost(@ModelAttribute DepositForm form) {
-       // get the account ID from the form
-       // execute the deposit on that account
-       // save the account back to the repository
-       return "redirect:/account/" + form.getAccountId();
+       // 1: Get the account ID from the form
+       // 2: Find the account in the repository
+       // 3: execute the deposit on that account
+       // 4: save the account back to the repository
+       // 5: redirect to the account's detail view page
      }
    ```
 
-1. You should now be able to go to the account's page, click on the "deposit money" link, enter an amount, and see that the balance for that account has been increased.
-
+1. You should now be able to go to the account's page, click on the "deposit money" link, enter an amount, and see that the balance for that account has been increased by that amount.

@@ -2,7 +2,7 @@
 
 ### This page: https://github.com/ted-ncg/labs/blob/master/14-call-remote-api.md
 
-## Reference Docs
+### Reference Docs
 
 * Spring RestTemplate docs: https://docs.spring.io/spring/docs/4.3.18.RELEASE/spring-framework-reference/html/remoting.html#rest-resttemplate
 
