@@ -28,7 +28,7 @@
     </body>
    ```
 
-1. Create a method (`createAccountForm()`) that maps to `/create-account` and returns the above html as a view.
+1. Create a method, `createAccountForm()`, that maps `GET` requests to `/create-account` and returns the above html as a view.
 
 1. Re-run the `CreateAccountWebIntegrationTest`, it should now **pass**.
    If it doesn't don't move on until it's fixed!
@@ -53,6 +53,14 @@
       }
     ```
 
+   Make sure to add the following imports for the above code:
+   
+    ```java
+    import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+    import org.springframework.test.web.servlet.MvcResult;
+    import org.springframework.http.MediaType;
+    ```
+
 1. Run this new test, and it should **fail**. 
 
 1. Add a `createAccount()` method to your web controller class that:
@@ -61,13 +69,13 @@
     * Takes a parameter `@ModelAttribute("accountName") String name` that will be the account name.
     * Creates a new `Account` instance with the incoming `name` and does a `save` to the account repository.
     * Redirects back to the "all accounts" view
-        * Instead of return the name of a view, you're returning a URL, e.g.:
+        * **NOTE:** Instead of return the name of a _view_, you're returning a **URL**, e.g.:
         
           ```java
           return "redirect:/account";
           ```
 
-        * For documentation on the redirect, see https://docs.spring.io/spring/docs/4.3.18.RELEASE/spring-framework-reference/htmlsingle/#mvc-redirecting-redirect-prefix
+        * For documentation on redirect, see https://docs.spring.io/spring/docs/4.3.18.RELEASE/spring-framework-reference/htmlsingle/#mvc-redirecting-redirect-prefix
 
 1. Run all the tests in `CreateAccountWebIntegrationTest`, and they should all **pass**.
 
@@ -93,8 +101,9 @@
    **Note:** You'll need to import the `org.hamcrest.Matchers` matchers for the new methods above:
    
       ```java
-      import static org.hamcrest.Matchers.is;
       import static org.hamcrest.Matchers.hasProperty;
+      import static org.hamcrest.Matchers.instanceOf;
+      import static org.hamcrest.Matchers.is;
       ```
 
 1. And it should now pass.
