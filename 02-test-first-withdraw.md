@@ -49,8 +49,10 @@ Make sure you have the latest version, where we "group programmed" the **deposit
 
 1. Now have the other person write any code to make all of the tests pass.
 
-<br/><br/>
+<br/>
 
 ----
 
 <img src="stop-sign.jpg" width="56"/> Once you've completed the above steps, let the instructor know.
+
+<br/>
