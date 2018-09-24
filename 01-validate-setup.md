@@ -182,7 +182,7 @@ Now that all the dependencies have been downloaded and the project works, let's 
 
 ----
 
-> Once you've completed the above steps, let the instructor know **before** moving on.
+> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, let the instructor know **before** moving on.
 
 ----
 
