@@ -1,6 +1,6 @@
 # Validating Your Setup
 
-### Short Link: `http://bit.ly/ncg-setup`
+## This page: `http://bit.ly/ncg-setup`
 
 In this lab you'll ensure that all of the tools that you'll be using during this week's labs are correctly set up on your machine.
 
@@ -51,7 +51,7 @@ Let's make sure the correct version of Java is installed:
    You should get something like:
    
    ```
-   javac 1.8.0_161
+   javac 1.8.0_181
    ```
 
    If you don't then check that you typed the command correctly, or double-check your Java installation (see above).
@@ -66,24 +66,24 @@ Let's make sure the correct version of Java is installed:
 1. Clone the project repository from BitBucket to your machine by doing:
 
     ```bash
-    git clone https://bitbucket.org/tedmyoung/austin-201808-canteen.git
+    git clone https://bitbucket.org/tedmyoung/foster-city-201809-canteen.git
     ```
 
-   * **ssh:** If you know what `ssh` is and can use it, you can do:
+   * (OPTIONAL) **ssh:** If you know what `ssh` is and can use it, you can do:
        
        ```bash
-       git clone git@bitbucket.org:tedmyoung/austin-201808-canteen.git
+       git clone git@bitbucket.org:tedmyoung/foster-city-201809-canteen.git
        ```
 
    **NOTE:** If you run into proxying issues, see [proxying git](#proxying-git) for more info
 
    * If you are still having trouble, download and unzip the project instead of using Git to pull it.
    
-     * You can do this by opening up a browser, and going to this URL: 
+      * You can do this by opening up a browser, and going to this URL: 
      
-       ```
-       https://bitbucket.org/tedmyoung/austin-201808-canteen/downloads/
-       ```
+        ```
+        https://bitbucket.org/tedmyoung/foster-city-201809-canteen/downloads/
+        ```
        
        Then click on **Download Repository** and unzip the file.
 
@@ -94,7 +94,7 @@ Let's run the test using Maven from the command line.
 1. Change to the directory holding the project:
 
    ```
-   $ cd austin-201808-canteen.git
+   $ cd foster-city-201809-canteen
    ```
     
 1. Run the `test` task in Maven:
@@ -103,7 +103,7 @@ Let's run the test using Maven from the command line.
    $ mvn test
    ```
 
-1. Maven will download a **lot** of files, so this **will take a little while (10-20 minutes)**!
+1. Maven will download a **lot** of files, so this could **take a little while (10-20 minutes)**!
    Once it's finished downloading the files, it will compile the code and run the 1 (and only) test in the project.
    If all goes well, you should eventually see something like:
    
@@ -130,9 +130,9 @@ Now that all the dependencies have been downloaded and the project works, let's 
 
 1. Launch IntelliJ IDEA
 
-1. Open the pom.xml file, either:
+1. Open the `pom.xml` file, either:
 
-   * If you see the Welcome screen, choose `Open`
+   * If you see the Welcome screen, choose `Open` (**not** Import)
 
    Otherwise...
 
@@ -179,6 +179,10 @@ Now that all the dependencies have been downloaded and the project works, let's 
 1. If all goes well, you'll see the test run and pass in a console as shown below:
 
     ![](intellij-maven-test-task-run.png)
+
+----
+
+> Once you've completed the above steps, let the instructor know **before** moving on.
 
 ----
 
