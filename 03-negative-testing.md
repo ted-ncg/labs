@@ -1,6 +1,6 @@
 # Negative (Exception) Tests
 
-### Link to this page: https://github.com/ted-ncg/labs/blob/master/03-negative-testing.md
+### This page: https://github.com/ted-ncg/labs/blob/master/03-negative-testing.md
 
 ## Goal
 
@@ -9,8 +9,6 @@ Add "negative" tests to the Account class testing with exceptions.
 ## Prepare
 
 1. Make sure **all** of the tests currently pass!
-
-### Invalid Withdrawal Amount
 
 ----
 
@@ -22,6 +20,8 @@ Start with the test: make the test fail, fix the exception being thrown in code,
 Don't forget to run all tests
 
 ----
+
+### Invalid Withdrawal Amount
 
 Write a test and then make it pass for **each** scenario (**REMEMBER**: ping-pong pair!): 
 
