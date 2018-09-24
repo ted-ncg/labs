@@ -32,7 +32,9 @@
 
 **Goal**: Create a new API endpoint for transferring money between accounts.
 
-1. Create a new `RestController` (e.g., `TransferMoneyApiController`) that has a method that is:
+1. Create a new `RestController` (e.g., `TransferMoneyApiController`) that `AutoWire`s both the `AccountRepository` and your new `TransferService`.
+
+1. Create a new method that is:
  
     * POST mapped to: `/api/transfers`
     * Takes a parameter: `TransferRequest`, which is a _JavaBean_ that has these three properties
@@ -40,9 +42,9 @@
        * `destination`, the ID for the destination account
        * `amount`, an `int` for the amount to transfer
     * Inside the method, use the `TransferService` that you created above (by injecting it into your controller) to transfer the money.
-    * Return `200` if everything works, otherwise a `400` if any exceptions are thrown by the service.
+    * Return `200` if everything works, otherwise a `400` if any exceptions (such as `InsufficientBalanceException`) are thrown by the transfer service.
     
-2. Try it out using Postman (to the URL `localhost:8080/api/transfers`) with the following JSON:
+1. Try it out using Postman (to the URL `localhost:8080/api/transfers`) with the following JSON:
 
     ```json
     {"source": 1, "destination": 2, "amount": 5}
@@ -61,6 +63,7 @@
     ```
     curl -v --noproxy "*" -d "{\"source\": 1, \"destination\": 2, \"amount\": 5}" -H "Content-Type: application/json" "localhost:8080/api/transfers"
     ```
+
 ----
 
 ## Part 3: UI For Transferring Money
@@ -174,3 +177,15 @@
    ```
 
 1. You should now be able to go to the account's page, click on the "transfer money" link, enter an amount, and see money transferred to the target account.
+
+----
+
+**NOTE:** Don't continue with these bonuses until you've had the instructor look over your code.
+
+----
+
+## Bonus #1: Tests
+
+* Write a Spring Boot integration test for the REST API from Part 1.
+
+* 

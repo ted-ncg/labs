@@ -16,7 +16,7 @@
 
 ## Goal
 
-Validate the incoming form information and tell the user if there are errors.
+Validate the **Create Account** form to tell the user if there are errors.
 
 ## Steps
 
