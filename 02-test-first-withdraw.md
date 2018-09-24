@@ -10,15 +10,25 @@ Now that you've seen how the Deposit functionality was written in test-first sty
 
 Make sure you have the latest version, where we "group programmed" the **deposit** functionality to the `Account` class.
 
-1. Download (or `git pull`) the latest code from `https://bitbucket.org/tedmyoung/austin-201808-canteen`
+1. Download or `git pull` the latest code from
+
+   ```
+   https://bitbucket.org/tedmyoung/foster-city-201809-canteen
+   ```
 
 1. Make sure all of the tests currently pass before continuing!
+
+----
 
 ### Using Ping-Pong Pairing
 
 1. Add a new test class `AccountWithdrawTest`
 
-   * **Note:** Make sure to properly import AssertJ's `assertThat` method: `import static org.assertj.core.api.Assertions.assertThat;`
+   * **Note:** Make sure to properly import AssertJ's `assertThat` method:
+   
+     ```
+     import static org.assertj.core.api.Assertions.assertThat;
+     ```
 
 1. Add a test method such as
  
@@ -27,7 +37,9 @@ Make sure you have the latest version, where we "group programmed" the **deposit
     public void withdraw3DollarsFromAccountHaving7DollarsResultsIn4DollarBalance() throws Exception
     ```
    
-   * AssertJ JavaDoc can be found here: http://joel-costigliola.github.io/assertj/core/api/index.html
+   * Write a test that matches the intent of the method name.
+   
+     > AssertJ JavaDoc can be found here: http://joel-costigliola.github.io/assertj/core/api/index.html
 
 1. Make sure the test **fails** before continuing.
 
