@@ -24,7 +24,11 @@ This will make an Account an *Entity*.
 
 ### B. Create Repository Interface
 
-Create a new *interface* named `AccountRepository` using the following code:
+Create a new *interface* named `AccountRepository` (using `New > Java Class` from the menu)
+
+<img src="create-accountrepository-interface.png" width="50%">
+
+Add the following code:
 
 ```java
 public interface AccountRepository {
@@ -40,7 +44,7 @@ public interface AccountRepository {
 
 ### C. Create AccountRepository Implementation
 
-1. Create a new class `FakeAccountRepository` that implements the `AccountRepository` interface and start with:
+1. Create a new *class* named `FakeAccountRepository` that implements the `AccountRepository` interface and start with the following code:
 
     ```java
     public class FakeAccountRepository implements AccountRepository {
