@@ -70,6 +70,8 @@ public interface AccountRepository {
 
 1. Implement the `findAll()` method (**remember** to write failing tests first):
 
+   > NOTE: Put tests for `findAll` into a new Test class named `AccountRepositoryFindTest`
+
    * If there are no accounts, return an *empty* `List`
    
      * What test would you write for this?
@@ -94,6 +96,8 @@ public interface AccountRepository {
 
 1. Implement the `findOne()` method (**remember** to write failing tests first):
 
+   > NOTE: Add tests for `findOne` into `AccountRepositoryFindTest`
+
    * **Think:** What is appropriate Java Collection class to use to store the accounts so that it's easy to find `Account`'s by their `id`?
 
    * If there's no `Account` with that `id`, return `null`.
@@ -101,6 +105,8 @@ public interface AccountRepository {
    * Make sure all tests **pass** before continuing.
 
 1. Implement the `save()` method, which stores the given account in the repository so it can be found later.
+
+   > NOTE: Put tests for `save` into a new Test class named `AccountRepositorySaveTest`
 
    * If the incoming account object's `id` property is ALREADY set, DON'T modify it, just store it.
       
@@ -136,7 +142,7 @@ public interface AccountRepository {
 
 <img src="stop-sign.jpg" width="56" />
 
-# STOP
+## STOP
 
 Don't go further until you've checked in with the instructor.
 
@@ -150,21 +156,23 @@ Don't go further until you've checked in with the instructor.
     void delete(Account account);
     ```
 
-1. Implement the following behavior in your `FakeAccountRepository`, remember to write a failing test **first**: 
+1. Implement the following behavior in your `FakeAccountRepository`, remember to write a failing test **first**:
+
+   > NOTE: Put tests for `delete` into a new Test class named `AccountRepositoryDeleteTest`
   
-    * Deleting an account means that trying to find it by its `id` will return `null` -- as if the account was never saved.
+   * Deleting an account means that trying to find it by its `id` will return `null` -- as if the account was never saved.
     
-      * Note: don't modify the account object that's being deleted -- it will continue to have the id that was assigned upon `save`
+     > NOTE: Don't modify the account object that's being deleted -- it will continue to have the id that was assigned upon `save`
     
-    * If `null` reference for the `Account` is passed in, throw an `IllegalArgumentException`
+   * If `null` reference for the `Account` is passed in, throw an `IllegalArgumentException`
     
-    * If an `Account` with an `id` that's not found is passed in, throw an `IllegalArgumentException` 
+   * If an `Account` with an `id` that's not found is passed in, throw an `IllegalArgumentException` 
   
 ----
 
 <img src="stop-sign.jpg" width="56" />
 
-# STOP
+## STOP
 
 If you're done, have the instructor review your code.
 
