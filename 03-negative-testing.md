@@ -21,11 +21,11 @@ Don't forget to run all tests
 
 ----
 
-### Invalid Withdrawal Amount
+### Invalid Deposit Amount
 
 Write a test and then make it pass for **each** scenario (**REMEMBER**: ping-pong pair!): 
 
-  1. Depositing a negative or zero amount must also `throw` the `InvalidAmountException` -- what might you need to refactor to make this change?
+  1. Depositing a negative or zero amount must `throw` the `InvalidAmountException` -- what might you need to refactor to make this change?
 
      **NOTE:** Use AssertJ's exception assertion mechanism, e.g.:
   
@@ -33,6 +33,10 @@ Write a test and then make it pass for **each** scenario (**REMEMBER**: ping-pon
      assertThatThrownBy(() -> { account.withdraw(-1); })
              .isInstanceOf(InvalidAmountException.class);
      ```
+
+    **NOTE:** Create the Exception class by subclassing `RuntimeException`
+
+### Invalid Withdrawal Amount
 
   1. Withdrawing a negative or zero amount must `throw` an `InvalidAmountException` (which you need to create as a *subclass* of `RuntimeException`)
    
