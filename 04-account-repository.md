@@ -4,98 +4,136 @@
 
 ## Goal
 
-Have a way of storing and finding accounts in a central location.
+Have a way of storing and finding accounts in memory, behind a single interface.
 
 ## Steps
 
-### 1. Give Account an Identity
+Be sure to skim through all of the steps before getting started, especially the Notes & Questions.
 
-This will make an Account be an *Entity*.
+### A. Give Account Identity
 
-* Add a `Long id` member variable to the `Account` class.
+This will make an Account an *Entity*.
 
-  * **IMPORTANT:** Make sure you name the member variable exactly this way, as a `Long` with the name `id`.
+1. Add a `Long id` private member variable to the `Account` class.
 
-### 2. Create a Repository
+   * **IMPORTANT:** Make sure you name the member variable exactly this way, as a `Long` with the name `id`.
 
-* Create a new class `AccountRepository` that implements the methods below.
+1. Create a setter & getter for the `id` property. 
 
-  * Write the code **Test First** to implement each piece of functionality (for **each** method): writing a failing test, and then just enough code to make the test pass.
+### B. Create Repository Interface
 
-  ```java
-  public class AccountRepository {
+Create a new *interface* named `AccountRepository` using the following code:
+
+```java
+public interface AccountRepository {
+
+  Account findOne(Long id);
+  
+  Account save(Account entity);
+  
+  List<Account> findAll();
+
+}
+```
+
+### C. Create AccountRepository Implementation
+
+1. Create a new class `FakeAccountRepository` that implements the `AccountRepository` interface:
+
+    ```java
+    public class FakeAccountRepository implements AccountRepository {
+    
+      public FakeAccountRepository() {}
+      
+      public FakeAccountRepository(Account... accounts) {
+      }
   
       public Account findOne(Long id) {
-        // Returns the Account that is identified by the given id.
-        // If there's no Account with that id, return null.
       }
   
       public Account save(Account entity) {
-        // Stores the given account in the repository so it can be found later.
-        //      
-        // If the account came in with NO id, SET it with a UNIQUE one that
-        // you (that is, the repository) generates
-        //
-        // If the incoming account object's id is ALREADY set, DON'T modify it
-        //
-        // return the Account object that must now have its id set (i.e., is NOT null)
       }
   
       public List<Account> findAll() {
-        // Return all accounts as a List
-        // If there are no accounts, return empty List 
       }
   
-  }
-  ```
+    }
+    ```
+
+1. Implement the `findAll()` method (**remember** to write failing tests first):
+
+   * If there are no accounts, return an *empty* `List`
+   * Otherwise, return all of the accounts in a `List`
+
+     * Use this test to get you started:   
+       ```java
+       @Test
+       public void findAllShouldReturn2Accounts() {
+         Account account1 = new Account();
+         account1.setId(1L);
+         Account account2 = new Account();
+         account2.setId(2L);
+       
+         AccountRepository repo = new FakeAccountRepository(account1, account2);
+         assertThat(repo.findAll())
+           .hasSize(2);
+       }
+       ```
+   * Make sure all tests **pass** before continuing.
+
+1. Implement the `findOne()` method (**remember** to write failing tests first):
+
+   * **Think:** What is appropriate Java Collection class to use to store the accounts so that it's easy to find `Account`'s by their `id`?
+
+   * If there's no `Account` with that `id`, return `null`.
+   * If there exists an `Account` with the given `id`, return it
+   * Make sure all tests **pass** before continuing.
+
+1. Implement the `save()` method, which stores the given account in the repository so it can be found later.
+
+   * If the incoming account object's `id` property is ALREADY set, DON'T modify it, just store it.
+      
+   * If the account came in with NO `id` (`null`), SET it with a UNIQUE one that the repository generates
+   
+     * **Think:** How will you guarantee uniqueness?
+      
+   * Return the Account object that must now have its id set (i.e., is NOT null)
+
+   * Here's a test to use to ensure that each newly saved Account is given an ID that's different from other newly saved Accounts.
+  
+      ```java
+      @Test
+      public void newlySavedAccountsHaveUniqueIds() {
+        AccountRepository accountRepository = new AccountRepository();
+        Account account1 = new Account();
+        accountRepository.save(account1);
+        Account account2 = new Account();
+        accountRepository.save(account2);
+      
+        assertThat(account1.getId())
+            .isNotEqualTo(account2.getId());
+      }
+      ```
 
 ----
 
-### Notes and Questions
-
-* What is appropriate Java Collection class to use to store the accounts so that it's easy to find `Account`'s by their `id`?
-
-* You will want an `AccountRepository` constructor that can take a `List<Account>` to "pre-load" the repository with data. For example, you should be able to (in your test) create an AccountRepository like this:
-
-  ```java
-  @Test
-  public void findAllShouldReturn2Accounts() {
-    List<Account> accounts = new ArrayList<>();
-   
-    Account a1 = new Account();
-    a1.setId(1L);
-    Account a2 = new Account();
-    a2.setId(2L);
-    accounts.add(a1);
-    accounts.add(a2);
-  
-    AccountRepository repo = new AccountRepository(accounts);
-    assertThat(repo.findAll())
-      .hasSize(2);
-  }
-  ```
-
-* You'll want to also check that each newly saved Account is given an ID that's different from other newly saved Accounts.
-
-  ```java
-  @Test
-  public void newlySavedAccountsHaveUniqueIds() {
-    AccountRepository accountRepository = new AccountRepository();
-    Account account1 = new Account();
-    accountRepository.save(account1);
-    Account account2 = new Account();
-    accountRepository.save(account2);
-  
-    assertThat(account1.getId())
-        .isNotEqualTo(account2.getId());
-  }
-  ```
+### Negative Tests
 
 * Be sure and think about other *negative* tests that you can add and write them!
 
+----
+
+<img src="stop-sign.jpg" width="56" />
+
+# STOP
+
+Don't go further until you've checked in with the instructor.
+
+----
+
 ## Optional
 
-Implement the "delete" functionality by implementing this method:
+Implement the "delete" functionality by adding this method to the interface and implementing it in your `FakeAccountRepository`:
 
   ```java
   public void delete(Account account)
