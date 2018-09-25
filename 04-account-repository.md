@@ -140,21 +140,21 @@ Don't go further until you've checked in with the instructor.
 
 ## Optional
 
-Implement the "delete" functionality by adding the following method to the `AccountRepository` interface:
+1. Implement the "delete" functionality by adding the following method to the `AccountRepository` interface:
 
-  ```java
-  void delete(Account account);
-  ```
+    ```java
+    void delete(Account account);
+    ```
+
+1. Implement the following behavior in your `FakeAccountRepository`, remember to write a failing test **first**: 
   
-Implement the following behavior in your `FakeAccountRepository`, remember to write a failing test **first**: 
-  
-  * Deleting an account means that trying to find it by its `id` will return `null` -- as if the account was never saved.
-  
-    * Note: don't modify the account object that's being deleted -- it will continue to have the id that was assigned upon `save`
-  
-  * If `null` reference for the `Account` is passed in, throw an `IllegalArgumentException`
-  
-  * If an `Account` with an `id` that's not found is passed in, throw an `IllegalArgumentException` 
+    * Deleting an account means that trying to find it by its `id` will return `null` -- as if the account was never saved.
+    
+      * Note: don't modify the account object that's being deleted -- it will continue to have the id that was assigned upon `save`
+    
+    * If `null` reference for the `Account` is passed in, throw an `IllegalArgumentException`
+    
+    * If an `Account` with an `id` that's not found is passed in, throw an `IllegalArgumentException` 
   
 ----
 
