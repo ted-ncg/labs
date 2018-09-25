@@ -26,7 +26,7 @@ This will make an Account an *Entity*.
 
 Create a new *interface* named `AccountRepository` (using `New > Java Class` from the menu)
 
-<img src="create-accountrepository-interface.png" width="50%">
+<img src="create-accountrepository-interface.png" width="89">
 
 Add the following code:
 
