@@ -4,13 +4,13 @@
 
 ## Goal
 
-The goal of this lab is for you to implement a "RESTful" API for retrieving information about a specific account, using Spring's MVC framework.
+In this lab you will implement a "RESTful" API for retrieving information about a specific account, using Spring's MVC framework.
 
-## Your Task
+### Reference
 
 **Note:** Keep this reference handy: http://engineering.pivotal.io/post/must-know-spring-boot-annotations-controllers/
 
-### Create the REST Controller Class
+## A. Create the REST Controller Class
 
 1. Create a class named `AccountApiController`
 
@@ -21,56 +21,55 @@ The goal of this lab is for you to implement a "RESTful" API for retrieving info
    public class AccountApiController {
    }
    ```
+
+## B. Create Method for GET Request
+
+Inside the `AccountApiController` class, create a method that will respond (be "routed" or "mapped") to an API request made to `http://localhost:8080/api/accounts/123` by following these steps: 
+
+1. Create an `accountInfo` method
+
+    ```java
+    public Account accountInfo(String accountId) { 
+    }
+    ```
+
+1. Add the `@GetMapping` annotation to the `accountInfo` method
+
+    >**GET MAPPING EXAMPLE**
+    >
+    >This method would be invoked if a *GET* came in to the path `/users/999`
+    >
+    > ```java
+    > @GetMapping("/users/{id}")
+    > public User showUser(...) {...}
+    > ```
+
+1. Add the `@PathVariable` annotation for the `accountId` variable
+
+    >**PATH VARIABLE EXAMPLE**
+    >
+    >This extracts the `id` from the path and puts it in the `userId` variable
+    >
+    >```java
+    >@GetMapping("/users/{id}")
+    >public User showUser(@PathVariable("id") String userId) {...}
+    >```
+
+## C. Implement AccountInfo
+
+Inside the `accountInfo` method:
  
-1. Goal: create a method that is mapped so that it will respond (be "routed" or "mapped") to
+1. Create a **new** `Account` object
 
-   ```
-   http://localhost:8080/api/accounts/123
-   ``` 
+1. Set its ID to the `accountId` (the ID that came in from the `@PathVariable`)
 
-   A. Create the 'accountInfo' method
-   
-      ```java
-      public Account accountInfo(String accountId) { 
-      }
-      ```
+1. Set the `balance` to a random amount
 
-   B. Add the `@GetMapping` annotation to the `accountInfo` method
-    
-      >**GET MAPPING EXAMPLE**
-      >
-      >This method would be invoked if a *GET* came in to the path `/users/999`
-      >
-      >```java
-      >@GetMapping("/users/{id}")
-      >public User showUser(...) {...}
-      >```
-    
-   C. Use the `@PathVariable` annotation for the `accountId` variable
-    
-      >**PATH VARIABLE EXAMPLE**
-      >
-      >This extracts the `id` from the path and puts it in the `userId` variable
-      >
-      >```java
-      >
-      >@GetMapping("/users/{id}")
-      >public User showUser(@PathVariable("id") String userId) {...}
-      >```
+1. Return this new account object
 
-1. Inside the `accountInfo` method:
- 
-   * Create a **new** `Account` object
-   
-   * Set its ID to the `accountId` (the ID that came in from the path)
-   
-   * Set the `balance` to a random amount
-   
-   * Return this new account object
+## D. Try it Out    
 
-## Try it Out    
-
-1. Run the `CanteenApplication` from within IntelliJ IDEA
+1. Run the `CanteenApplication` from within IntelliJ IDEA by doing this:
 
    * Right click on the `CanteenApplication` file and then select "Run..."
  
@@ -127,4 +126,4 @@ public class HelloController {
 
 ### Spring Docs:
 
-* Extracting path and query info from the URI: http://docs.spring.io/spring/docs/4.3.16.RELEASE/spring-framework-reference/htmlsingle/#mvc-ann-requestmapping-uri-templates
+* Extracting path and query info from the URI: http://docs.spring.io/spring/docs/4.3.19.RELEASE/spring-framework-reference/htmlsingle/#mvc-ann-requestmapping-uri-templates

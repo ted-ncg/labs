@@ -30,7 +30,7 @@ Write a test and then make it pass for **each** scenario (**REMEMBER**: ping-pon
      **NOTE:** Use AssertJ's exception assertion mechanism, e.g.:
   
      ```java
-     assertThatThrownBy(() -> { account.withdraw(-1); })
+     assertThatThrownBy(() -> { account.deposit(-1); })
              .isInstanceOf(InvalidAmountException.class);
      ```
 
@@ -46,3 +46,9 @@ Write a test and then make it pass for **each** scenario (**REMEMBER**: ping-pon
 
 1. Add tests and code to ensure that the Account's balance can not go negative when you **withdraw**. 
    If you try to overdraw the account, throw an exception: (`InsufficientBalanceException`).
+
+    ```java
+    // Curly braces around the "account.withdraw" method call are optional because it's 1 line of code 
+    assertThatThrownBy(() -> account.withdraw(12))
+        .isInstanceOf(InsufficientBalanceException.class);
+    ```

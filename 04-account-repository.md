@@ -8,7 +8,7 @@ Have a way of storing and finding accounts in memory, behind a single interface.
 
 ## Steps
 
-Be sure to skim through all of the steps before getting started, especially the Notes & Questions.
+Be sure to skim through all of the steps before getting started.
 
 ### A. Give Account Identity
 
@@ -16,9 +16,11 @@ This will make an Account an *Entity*.
 
 1. Add a `Long id` private member variable to the `Account` class.
 
-   * **IMPORTANT:** Make sure you name the member variable exactly this way, as a `Long` with the name `id`.
+   * **IMPORTANT:** Make sure you name the member variable exactly this way, as a `Long` with the name `id` (all lower-case).
 
-1. Create a setter & getter for the `id` property. 
+1. Create a getter & setter for the `id` property.
+
+   * Use IntelliJ to generate the getter & setter using `Command + N` (Mac) or `Alt + Insert` (Windows)
 
 ### B. Create Repository Interface
 
@@ -38,7 +40,7 @@ public interface AccountRepository {
 
 ### C. Create AccountRepository Implementation
 
-1. Create a new class `FakeAccountRepository` that implements the `AccountRepository` interface:
+1. Create a new class `FakeAccountRepository` that implements the `AccountRepository` interface and start with:
 
     ```java
     public class FakeAccountRepository implements AccountRepository {
@@ -49,9 +51,11 @@ public interface AccountRepository {
       }
   
       public Account findOne(Long id) {
+        throw new UnsupportedOperationException(); 
       }
   
       public Account save(Account entity) {
+        throw new UnsupportedOperationException(); 
       }
   
       public List<Account> findAll() {
@@ -63,7 +67,10 @@ public interface AccountRepository {
 1. Implement the `findAll()` method (**remember** to write failing tests first):
 
    * If there are no accounts, return an *empty* `List`
-   * Otherwise, return all of the accounts in a `List`
+   
+     * What test would you write for this?
+   
+   * If there are accounts, return all of them in a `List`
 
      * Use this test to get you started:   
        ```java
@@ -104,11 +111,11 @@ public interface AccountRepository {
       ```java
       @Test
       public void newlySavedAccountsHaveUniqueIds() {
-        AccountRepository accountRepository = new AccountRepository();
+        AccountRepository accountRepository = new FakeAccountRepository();
         Account account1 = new Account();
-        accountRepository.save(account1);
+        account1 = accountRepository.save(account1);
         Account account2 = new Account();
-        accountRepository.save(account2);
+        account2 = accountRepository.save(account2);
       
         assertThat(account1.getId())
             .isNotEqualTo(account2.getId());
@@ -133,22 +140,31 @@ Don't go further until you've checked in with the instructor.
 
 ## Optional
 
-Implement the "delete" functionality by adding this method to the interface and implementing it in your `FakeAccountRepository`:
+Implement the "delete" functionality by adding the following method to the `AccountRepository` interface:
 
   ```java
-  public void delete(Account account)
+  void delete(Account account);
   ```
+  
+Implement the following behavior in your `FakeAccountRepository`, remember to write a failing test **first**: 
   
   * Deleting an account means that trying to find it by its `id` will return `null` -- as if the account was never saved.
   
     * Note: don't modify the account object that's being deleted -- it will continue to have the id that was assigned upon `save`
   
-  * If `null` Account is passed in, throw an `IllegalArgumentException`
+  * If `null` reference for the `Account` is passed in, throw an `IllegalArgumentException`
   
-  * If an Account with an `id` that's not found is passed in, throw an `IllegalArgumentException` 
+  * If an `Account` with an `id` that's not found is passed in, throw an `IllegalArgumentException` 
   
-  
-  
+----
+
+<img src="stop-sign.jpg" width="56" />
+
+# STOP
+
+If you're done, have the instructor review your code.
+
+----  
 
 ## References
 

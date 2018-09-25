@@ -1,0 +1,17 @@
+@startuml
+actor Client as "<<client code>>"
+create Account
+database Repo as "AccountRepository"
+...
+Client -> Account: new Account()
+activate Account
+Client <-- Account: account
+note left: account does NOT have an ID
+|||
+Client -> Repo: save(account)
+Repo -> Repo: hold on to account
+Repo --> Client: savedAccount
+deactivate Account
+note left: savedAccount has an ID
+...
+@enduml
