@@ -19,7 +19,14 @@ Make the `/api/accounts/{id}` endpoint return JSON that contains both the **ID**
 
 1. Try out the new code from the browser via `http://localhost:8080/api/accounts/456`
 
-1. Now make the AccountRestTest tests pass.
+1. Now make the `AccountRestTest` tests pass.
+
+
+----
+
+> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, you are done, so let the instructor know.
+
+----
 
 ## Documentation/Reference
 
