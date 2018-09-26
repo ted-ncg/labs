@@ -12,6 +12,8 @@ Modify the `AccountApiController` so that you can return an `Account` from the `
 
 This reference of annotations might be helpful: http://engineering.pivotal.io/post/must-know-spring-boot-annotations-controllers/
 
+----
+
 ### Latest Code
 
 If you want to download the latest code that the instructor did in class, it can be found at:
@@ -22,28 +24,44 @@ https://bitbucket.org/tedmyoung/foster-city-201809-canteen
 
 ----
 
-## Steps
+> <img src="stop-sign.jpg" width="56" /> Run *all* your tests to make sure everything is still working before continuing.
 
-1. Run *all* your tests to make sure everything is still working
+----
 
-1. Open `AccountApiController` and create a constructor that takes a *dependency* on `AccountRepository`
+## Add Repository Dependency
+
+1. Open `AccountApiController` and create a constructor that takes a *dependency* on `AccountRepository` as a parameter.
 
    * Make sure to save the incoming reference to a member (instance) variable
 
-1. Add the `@Repository` annotation to `FakeAccountRepository` so that Spring can find and create it during the automatic dependency injection ("autowire") process.
+1. Create a new test class named `AccountApiControllerTest` and copy the contents below
 
-1. To ensure that your code works properly via the tests, **you must** change the annotations on the `AccountRestTest` by **replacing** the `@WebMvcTest` with these two annotations:
+   ```java
+   package com.visa.ncg.canteen;
+   
+   import org.junit.Test;
+   
+   import static org.assertj.core.api.Assertions.assertThat;
+   
+   public class AccountApiControllerTest {
+     @Test
+     public void testGetMapping() throws Exception {
+       AccountRepository accountRepository = new FakeAccountRepository();
+       Account account = new Account(10);
+       account.setId(123L);
+       accountRepository.save(account);
 
-      ```java
-      @SpringBootTest
-      @AutoConfigureMockMvc
-      ```
+       AccountApiController controller = new AccountApiController(accountRepository);
     
-   Then run the test and see if it passes.
+       AccountResponse accountResponse = controller.accountInfo("123");
 
-## Sample Data in Repository
+       assertThat(accountResponse.getId())
+           .isEqualTo(123L);
+     }
+   }
+   ```
 
-To "pre-load" some account data into the repository, copy the entire file [AccountDataLoader.java](https://github.com/ted-ncg/labs/blob/master/AccountDataLoader.java) into the `src` production code directory.
+1. Run this test, which should **fail**. The next section will make it pass.
 
 ## Lookup Account ID in Repository
 
@@ -54,6 +72,27 @@ To "pre-load" some account data into the repository, copy the entire file [Accou
     * Find the `Account` from the `AccountRepository` by the *id* using `findOne()`
     
     * Convert it to an `AccountResponse` and return it
+
+1. The `AccountApiControllerTest` should now pass.
+
+## Autowire Repository
+
+1. Add the `@Repository` annotation to `FakeAccountRepository` so that Spring can find and create it during the automatic dependency injection ("autowire") process.
+
+## Sample Data in Repository
+
+To "pre-load" some account data into the repository, copy the entire file [AccountDataLoader.java](https://github.com/ted-ncg/labs/blob/master/AccountDataLoader.java) into the `src` production code directory.
+
+## Updating REST Test
+
+1. To ensure that dependencies are wired by Spring when running tests, **you must** change the annotations in the `AccountRestTest` class by **replacing** the `@WebMvcTest` with these two annotations:
+
+      ```java
+      @SpringBootTest
+      @AutoConfigureMockMvc
+      ```
+
+1. Make sure all tests pass.
 
 ## Try it Out
 
