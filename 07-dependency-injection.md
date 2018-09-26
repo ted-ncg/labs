@@ -14,7 +14,7 @@ This reference of annotations might be helpful: http://engineering.pivotal.io/po
 
 ### Latest Code
 
-If you want to download the latest code that the instructor did in class, it can be found at
+If you want to download the latest code that the instructor did in class, it can be found at:
 
 ```
 https://bitbucket.org/tedmyoung/foster-city-201809-canteen
@@ -39,7 +39,7 @@ https://bitbucket.org/tedmyoung/foster-city-201809-canteen
       @AutoConfigureMockMvc
       ```
     
-   Then you can run the test.
+   Then run the test and see if it passes.
 
 ## Sample Data in Repository
 
@@ -51,7 +51,7 @@ To "pre-load" some account data into the repository, copy the entire file [Accou
 
 1. In the `accountInfo` method, use the `accountId` that's passed in to:
 
-    * Find the `Account` from the `AccountRepository` by the *id*
+    * Find the `Account` from the `AccountRepository` by the *id* using `findOne()`
     
     * Convert it to an `AccountResponse` and return it
 
