@@ -47,7 +47,7 @@ https://bitbucket.org/tedmyoung/foster-city-201809-canteen
      @Test
      public void testGetMapping() throws Exception {
        AccountRepository accountRepository = new FakeAccountRepository();
-       Account account = new Account(10);
+       Account account = new Account(73);
        account.setId(123L);
        accountRepository.save(account);
 
@@ -55,8 +55,8 @@ https://bitbucket.org/tedmyoung/foster-city-201809-canteen
     
        AccountResponse accountResponse = controller.accountInfo("123");
 
-       assertThat(accountResponse.getId())
-           .isEqualTo(123L);
+       assertThat(accountResponse.getBalance())
+           .isEqualTo(account.balance());
      }
    }
    ```
