@@ -92,7 +92,9 @@ To "pre-load" some account data into the repository, copy the entire file [Accou
       @AutoConfigureMockMvc
       ```
 
-1. Make sure all tests pass.
+1. To make the tests pass, change the first test in `AccountRestTest` to reflect the account data loaded in the data loader.
+
+1. Make sure all other tests pass, too.
 
 ## Try it Out
 
