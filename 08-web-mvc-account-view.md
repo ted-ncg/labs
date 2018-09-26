@@ -25,7 +25,7 @@ First you'll return a static version of the Account View page to make sure every
 1. Create a new controller class for the web pages called `AccountWebController`.
 
    ```java
-   // ?? What annotation do we need on the class here ??
+   // ?? What annotation do you need on the class here ??
    public class AccountWebController {
      // your GET mapping etc. will go here
    }
@@ -93,33 +93,6 @@ Instead of returning a static page, you will use Spring MVC to "fill in" parts o
 1. Restart and test out the page and see what you find by going to `localhost:8080/account/1`.
 
 #### ** Do not go further until the above works! **
-
-## Accounts Have Names
-
-1. Add a new member variable to the `Account` called `name` which is a `String`
-
-   * Instead of adding a setter/getter, add methods:
-   
-     * `name()` that returns its name
-     * `changeNameTo(String newName)` that update the name to the new value
-
-1. Modify the `AccountDataLoader` class so that each account has a name, e.g.:
-
-    ```java
-      public void run(ApplicationArguments args) throws Exception {
-        Account account = new Account();
-        account.deposit(12);
-        account.changeNameTo("Luxuries");
-        accountRepository.save(account);
-        account = new Account();
-        account.deposit(25);
-        account.changeNameTo("Necessities");
-        accountRepository.save(account);
-        ...
-      }
-    ```
-
-1. Modify the `AccountResponse` object to have a property (the variable and its getter & setter) for `name`.
 
 1. Update the `account-view.html` template and **replace** showing the account's ID with showing the account's **name** (e.g., `account.name`).
 
