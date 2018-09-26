@@ -6,17 +6,31 @@
 
 Modify the `AccountApiController` so that you can return an `Account` from the `AccountRepository`.
 
+----
+
 ### References
 
 This reference of annotations might be helpful: http://engineering.pivotal.io/post/must-know-spring-boot-annotations-controllers/
+
+### Latest Code
+
+If you want to download the latest code that the instructor did in class, it can be found at
+
+```
+https://bitbucket.org/tedmyoung/foster-city-201809-canteen
+```
+
+----
 
 ## Steps
 
 1. Run *all* your tests to make sure everything is still working
 
-1. Modify the `AccountApiController` constructor to take in a *dependency* on `AccountRepository`
+1. Open `AccountApiController` and create a constructor that takes a *dependency* on `AccountRepository`
 
-1. Ensure that `AccountRepository` is annotated properly (e.g., `@Repository`) so that Spring can find and create it during the automatic dependency injection ("autowiring") process.
+   * Make sure to save the incoming reference to a member (instance) variable
+
+1. Add the `@Repository` annotation to `FakeAccountRepository` so that Spring can find and create it during the automatic dependency injection ("autowire") process.
 
 1. To ensure that your code works properly via the tests, **you must** change the annotations on the `AccountRestTest` by **replacing** the `@WebMvcTest` with these two annotations:
 
@@ -27,18 +41,32 @@ This reference of annotations might be helpful: http://engineering.pivotal.io/po
     
    Then you can run the test.
 
-1. To "pre-load" data into the `AccountRepository`, use the code in the [AccountDataLoader.java](https://github.com/ted-ncg/labs/blob/master/AccountDataLoader.java) file (put it with your other production code).
+## Sample Data in Repository
 
-1. In your Account info method, use the `accountId` that's passed in to:
+To "pre-load" some account data into the repository, copy the entire file [AccountDataLoader.java](https://github.com/ted-ncg/labs/blob/master/AccountDataLoader.java) into the `src` production code directory.
 
-    * Look up the `Account` from the `AccountRepository` by its *id*
+## Lookup Account ID in Repository
+
+1. Open `AccountApiController`
+
+1. In the `accountInfo` method, use the `accountId` that's passed in to:
+
+    * Find the `Account` from the `AccountRepository` by the *id*
     
     * Convert it to an `AccountResponse` and return it
 
-    * For example, hitting this URL
+## Try it Out
 
-      `http://localhost:8080/api/accounts/0`
+1. See if you get the data by hitting this URL endpoint:
 
-      would return the Account with ID of 0, formatted as JSON.
+   ```
+   http://localhost:8080/api/accounts/1
+   ```
+   
+   You should see the JSON representation of the Account with ID of `1` that has a balance of `10`.
 
-1. Try adding more "sample" data to the `AccountDataLoader` and using your browser, or *curl* to hit the endpoint.
+1. Try adding more "sample" data to the `AccountDataLoader`'s `run()` method and the use your browser, or *curl* to hit the endpoint with different IDs.
+
+----
+
+> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, you're done, so let the instructor know.
