@@ -1,0 +1,23 @@
+@startuml
+
+start
+
+if (has @SpringBootApplication) then (\nyes)
+  partition Class_Scanning {
+    while (More Classes?)
+      if (\nhas __annotation__\n@Component,\n@Service\n@Repository?\n) then (yes)
+        if (\nCan Instantiate?\n) then (yes)
+          :Add Class to App Context;
+        else (no)
+          :Error;
+        endif
+      endif
+    endwhile
+  }
+endif
+
+:Start_App;
+
+stop
+
+@enduml

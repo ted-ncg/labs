@@ -63,7 +63,7 @@ Inside the `accountInfo` method:
 
 1. Set its ID to the `accountId` (the ID that came in from the `@PathVariable`)
 
-1. Set the `balance` to a random amount
+1. Set the `balance` to a hard-coded amount
 
 1. Return this new account object
 

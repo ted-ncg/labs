@@ -20,7 +20,7 @@ This will make an Account an *Entity*.
 
 1. Create a getter & setter for the `id` property.
 
-   * Use IntelliJ to generate the getter & setter using `Command + N` (Mac) or `Alt + Insert` (Windows)
+   * Use IntelliJ to generate the getter & setter using `⌘ + N` (Mac) or `Alt + Insert` (Windows)
 
 ### B. Create Repository Interface
 
