@@ -10,17 +10,20 @@ Make the `/api/accounts/{id}` endpoint return JSON that contains both the **ID**
 
 1. Copy the [AccountRestTest.java](https://github.com/ted-ncg/labs/blob/master/AccountRestTest.java) file into your test/java directory and run the tests. *(Make sure that it fails!)*  
 
-1. Instead of returning the "domain" `Account` instance, you will return a *JavaBean* object (also known as just a *Bean*) that has *properties* for both ID and for Balance:
+1. Instead of returning the "domain" `Account` instance, you will return a *JavaBean* object (also known as just a *Bean*) that has *properties* for both ID and Balance:
 
-   * Create a *new* class, e.g., `AccountResponse`, that has two *JavaBean* properties: `Id`, and `Balance`.
-     * Remember, you'll need a getter and setter, named properly, for each property
-   * Change the `accountInfo()` method (in your controller class) to return the `AccountResponse` instance, instead of returning an `Account` object.
+   * Create a *new* class named `AccountResponse`, that has two *JavaBean* properties:
+     * `id`, of type `long`
+     * `balance` of type `int`
+     
+     **Remember:** you'll need both getters **and** setters, named properly, for each property by using `Command + N` (Mac) or `Alt + Insert` (Windows) to *generate* the Getter and Setters.
+   * Change the `accountInfo()` method (in the `AccountApiController` class) to return an `AccountResponse` instance, instead of returning an `Account` object.
      * e.g.: `public AccountResponse accountInfo(...`
+   * Instantiate an `AccountResponse` object and copy the ID and Balance from the `Account` object to the response by using the setters.
 
 1. Try out the new code from the browser via `http://localhost:8080/api/accounts/456`
 
 1. Now make the `AccountRestTest` tests pass.
-
 
 ----
 
@@ -30,11 +33,15 @@ Make the `/api/accounts/{id}` endpoint return JSON that contains both the **ID**
 
 ## Documentation/Reference
 
+Some useful documentation for learning more:
+
 * Annotations reference: http://engineering.pivotal.io/post/must-know-spring-boot-annotations-controllers/
 
-* Spring Docs on `@RestController`: http://docs.spring.io/spring/docs/4.3.16.RELEASE/spring-framework-reference/htmlsingle/#mvc-ann-restcontroller
+* Spring Docs on `@RestController`: http://docs.spring.io/spring/docs/4.3.19.RELEASE/spring-framework-reference/htmlsingle/#mvc-ann-restcontroller
 
-* Returning status codes via `ResponseEntity` (JavaDoc): https://docs.spring.io/spring/docs/4.3.16.RELEASE/javadoc-api/org/springframework/http/ResponseEntity.html
+### Returning Custom Status Codes
+
+* Returning status codes via `ResponseEntity` (JavaDoc): https://docs.spring.io/spring/docs/4.3.19.RELEASE/javadoc-api/org/springframework/http/ResponseEntity.html
 
   **Example:**
 

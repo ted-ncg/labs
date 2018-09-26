@@ -97,11 +97,39 @@ Inside the `accountInfo` method:
     {"id": 123}
     ```
 
+## E. Run Tests
+
+Add this test
+
+```java
+package com.visa.ncg.canteen;
+
+import org.junit.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class AccountApiControllerTest {
+
+  @Test
+  public void testGetMapping() throws Exception {
+    AccountApiController controller = new AccountApiController();
+    Account account = controller.accountInfo("123");
+    assertThat(account.getId())
+        .isEqualTo(123L);
+  }
+
+}
+```
+
 ## Questions
 
 * Why is only `id` in the output and not `balance`?
 
 * What happens if you use letters for the account ID instead of numbers?
+
+----
+
+> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, you're done, so let the instructor know.
 
 ----
 
