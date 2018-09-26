@@ -81,7 +81,7 @@ https://bitbucket.org/tedmyoung/foster-city-201809-canteen
 
 ## Sample Data in Repository
 
-To "pre-load" some account data into the repository, copy the entire file [AccountDataLoader.java](https://github.com/ted-ncg/labs/blob/master/AccountDataLoader.java) into the `src` production code directory.
+To "pre-load" some account data into the repository, copy the entire file [AccountDataLoader.java](https://github.com/ted-ncg/labs/blob/master/AccountDataLoader.java) into the production code directory with the other classes.
 
 ## Updating REST Test
 
