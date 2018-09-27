@@ -10,7 +10,11 @@
 
    * **It should fail.**
 
-1. Modify the index.html page (that you created in `/src/main/resources/static`, from the previous lab) to provide a link to a new endpoint: `/create-account`.
+1. Modify the index.html page (that you created in `/src/main/resources/static`, from the previous lab) to provide a link to a new endpoint: `/create-account`, e.g. add this to the `index.html` page;
+
+    ```HTML
+    <a href="/create-account">Create New Account</a>
+    ```
 
 1. Create an HTML template called `create-account.html` and put it in the `templates` directory.
    The body of the HTML file is as follows:
@@ -32,6 +36,8 @@
 
 1. Re-run the `CreateAccountWebIntegrationTest`, it should now **pass**.
    If it doesn't don't move on until it's fixed!
+
+1. Try it from the browser by going to `locahost:8080/create-account` and you should see the form.
 
 ----
 
@@ -79,14 +85,13 @@
 
 1. Run all the tests in `CreateAccountWebIntegrationTest`, and they should all **pass**.
 
-1. Open your browser and go to `localhost:8080/` and see if it works from the browser.
+1. Open your browser and go to `localhost:8080/create-account` and see if it works from the browser.
 
 
 ----
 
 > <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, do **not** move on until you have checked in with the instructor.
 
-----
 ----
 
 ## Bonus: Redirect to Account Details Page
@@ -113,3 +118,5 @@
       ```
 
 1. And it should now pass.
+
+1. Try it from the browser by going to `locahost:8080/create-account` and you should see the form.
