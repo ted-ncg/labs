@@ -47,18 +47,18 @@ First you'll return a static version of the Account View page to make sure every
 
 1. Create a new HTML file (with the content below) named `account-view.html` and put it in the `/src/main/resources/templates` directory:
 
-   ```
-    <!DOCTYPE html>
-    <html lang="en" xmlns:th="http://www.thymeleaf.org" >
-    <head>
-      <meta charset="UTF-8">
-      <title>Account Information</title>
-    </head>
-    <body>
-    <h1>Account 99</h1>
-    <p>Balance: $100</p>
-    </body>
-    </html>
+   ```HTML
+   <!DOCTYPE html>
+   <html lang="en" xmlns:th="http://www.thymeleaf.org" >
+   <head>
+     <meta charset="UTF-8">
+     <title>Account Information</title>
+   </head>
+   <body>
+   <h1>Account 99</h1>
+   <p>Balance: $100</p>
+   </body>
+   </html>
    ```
 
 1. Test out the static page above by going to `localhost:8080/account/1` to make sure you see the page.
@@ -78,6 +78,8 @@ Instead of returning a static page, you will use Spring MVC to "fill in" parts o
     * For example, if you wanted to templatize the 99 for the account number and have it be replaced with the actual account ID, you'd surround the 99 with a `span` tag like this:
     
         `<h1>Account: <span th:text="${account.id}">99</span></h1>`
+
+    * Make sure to do the same for the `Balance` 
 
 1. In the `accountView` method, add a new parameter, `Model model`, e.g.:
 
