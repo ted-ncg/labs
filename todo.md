@@ -1,5 +1,11 @@
 # To Do's
 
+## Java 11 Compatibility
+
+Need Spring Boot 2.x or later?
+
+## Java 9/10 Compatibility
+
 Add this to pom.xml to be compatible with Java 9/10
 
     <dependency>
@@ -12,7 +18,7 @@ Add this to pom.xml to be compatible with Java 9/10
 
 ## Slides
 
-* JavaBean (differentiate from POJO?)
+* POJO details (to differentiate from JavaBean)
 
 * Dependency injection
 

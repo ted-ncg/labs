@@ -81,6 +81,12 @@
 
 1. Open your browser and go to `localhost:8080/` and see if it works from the browser.
 
+
+----
+
+> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, do **not** move on until you have checked in with the instructor.
+
+----
 ----
 
 ## Bonus: Redirect to Account Details Page

@@ -6,11 +6,15 @@
 
 Now that you've displayed all the accounts, let's add links so you can view the details of the account.
 
+----
+
 ### References
 
 * Thymeleaf URL (href) Syntax: http://www.thymeleaf.org/doc/articles/standardurlsyntax.html
 
 * Thymeleaf variable replacement: http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-and-displaying-variables
+
+----
 
 ## Create a Root (Home) Page
 
@@ -76,6 +80,13 @@ Use the `th:href` tag to create links to view a specific account page.
    
 1. Verify that clicking on a link from the "all accounts" page takes you to the specific page for that account.
 
+
+----
+
+> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, let the instructor know before moving on.
+
+----
+
 ## Bonus
 
 1. You can use the "pre-processing" syntax to generate the href, which for this particular use case is easier:
@@ -83,3 +94,10 @@ Use the `th:href` tag to create links to view a specific account page.
     `th:href="@{/account/__${account.id}__}"`
     
    In case you're interested, the documentation for the pre-processing syntax is here: http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#preprocessing
+
+
+----
+
+> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, you're done, so let the instructor know.
+
+----
