@@ -1,10 +1,10 @@
-# View Account
+# MVC View Account
 
 ### This page: https://github.com/ted-ncg/labs/blob/master/08-web-mvc-account-view.md
 
 ### References
 
-* Spring Controllers: https://docs.spring.io/spring/docs/4.3.18.RELEASE/spring-framework-reference/htmlsingle/#mvc-controller
+* Spring Controllers: https://docs.spring.io/spring/docs/4.3.19.RELEASE/spring-framework-reference/htmlsingle/#mvc-controller
 
 * Thymeleaf 3: https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-and-displaying-variables
 
@@ -16,18 +16,12 @@ In this lab you will create a web app that will show account information for a s
 
 First you'll return a static version of the Account View page to make sure everything is annotated and configured properly.
 
-1. Modify your `AccountRepository` so that the ID generator (the `AtomicLong`) has an initial value of 1 (instead of the default of 0), e.g.:
-
-    `private final AtomicLong idGenerator = new AtomicLong(1L);`
-
-   * **Question**: why would we want to do this?
-
 1. Create a new controller class for the web pages called `AccountWebController`.
 
    ```java
    // ?? What annotation do you need on the class here ??
    public class AccountWebController {
-     // your GET mapping etc. will go here
+     // your GET mapping etc. goes here
    }
    ```
 
@@ -60,8 +54,11 @@ First you'll return a static version of the Account View page to make sure every
 
 1. Test out the static page above by going to `localhost:8080/account/1` to make sure you see the page.
 
+----
 
 #### ** Do not go further until the above works! **
+
+----
 
 ## Templatize the Page
 
@@ -92,8 +89,16 @@ Instead of returning a static page, you will use Spring MVC to "fill in" parts o
 
 1. Restart and test out the page and see what you find by going to `localhost:8080/account/1`.
 
+----
+
 #### ** Do not go further until the above works! **
+
+----
 
 1. Update the `account-view.html` template and **replace** showing the account's ID with showing the account's **name** (e.g., `account.name`).
 
-1. Restart and test out the page and see what you find by going to `localhost:8080/account/1` and then `localhost:8080/account/2`.
+1. Restart and test out the page and see what you find by going to `localhost:8080/account/0` and then `localhost:8080/account/1`.
+
+----
+
+> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, you're done, so let the instructor know.

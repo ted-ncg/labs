@@ -1,28 +1,27 @@
 @startuml
+
 participant client
 activate client
 activate SpringBoot
 activate ApiController
+
 client -> SpringBoot: GET /api/accounts/123
 
+SpringBoot -> SpringBoot: {id} = 123
 SpringBoot -> ApiController: accountInfo("123")
 create Account
 ApiController -> Account: new Account()
 activate Account
-create AccountResponse
-ApiController -> AccountResponse: transform(account)
-activate AccountResponse
-deactivate Account
 
-ApiController -> SpringBoot: response
-SpringBoot -> Jackson: map(response)
-Jackson -> AccountResponse: getters
-AccountResponse -> Jackson: id &balance
+ApiController --> SpringBoot: account
+SpringBoot -> Jackson: mapToJson(account)
+Jackson -> Account: getId (id)
+Account -> Jackson: id
 Jackson -> Jackson: generate JSON
-Jackson -> SpringBoot: {json}
+deactivate Account
+Jackson --> SpringBoot: {json}
 
-deactivate AccountResponse
-SpringBoot -> client: {json}
+SpringBoot --> client: {json}
 deactivate ApiController
 deactivate SpringBoot
 deactivate client

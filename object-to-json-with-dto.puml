@@ -1,0 +1,32 @@
+@startuml
+participant client
+activate client
+activate SpringBoot
+activate ApiController
+client -> SpringBoot: GET /api/accounts/123
+
+SpringBoot -> SpringBoot: {id} = 123
+SpringBoot -> ApiController: accountInfo("123")
+create Account
+ApiController -> Account: new Account()
+activate Account
+create AccountResponse
+ApiController -> AccountResponse: transform(account)
+activate AccountResponse
+deactivate Account
+
+ApiController --> SpringBoot: response
+SpringBoot -> Jackson: map(response)
+Jackson -> AccountResponse: getId()
+AccountResponse --> Jackson: id
+Jackson -> AccountResponse: getBalance()
+AccountResponse --> Jackson: balance
+Jackson -> Jackson: generate JSON
+deactivate AccountResponse
+Jackson --> SpringBoot: {json}
+
+SpringBoot --> client: {json}
+deactivate ApiController
+deactivate SpringBoot
+deactivate client
+@enduml

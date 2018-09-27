@@ -1,0 +1,38 @@
+@startuml
+actor client
+activate client
+activate SpringBoot
+boundary ApiController
+database Repository as "Account\nRepository"
+
+client -> SpringBoot: GET /api/accounts/123
+
+SpringBoot -> SpringBoot: {id} = 123
+SpringBoot -> ApiController: accountInfo("123")
+ApiController -> Repository: findOne(123)
+activate Account
+Account --> ApiController: account
+create AccountResponse
+ApiController -> AccountResponse: transform(account)
+deactivate Account
+
+activate AccountResponse
+AccountResponse --> SpringBoot: response
+SpringBoot -> Jackson: mapToJson(response)
+activate Jackson
+Jackson -> Jackson: generate JSON
+activate Jackson
+Jackson -> AccountResponse: getId()
+AccountResponse --> Jackson: id
+Jackson -> AccountResponse: getBalance()
+AccountResponse --> Jackson: balance
+deactivate Jackson
+destroy AccountResponse
+Jackson --> SpringBoot: {json}
+deactivate Jackson
+
+SpringBoot --> client: {json}
+deactivate ApiController
+deactivate SpringBoot
+deactivate client
+@enduml
