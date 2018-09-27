@@ -2,17 +2,21 @@
 
 ### This page: https://github.com/ted-ncg/labs/blob/master/08-web-mvc-account-view.md
 
+----
+
 ### References
 
 * Spring Controllers: https://docs.spring.io/spring/docs/4.3.19.RELEASE/spring-framework-reference/htmlsingle/#mvc-controller
 
 * Thymeleaf 3: https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-and-displaying-variables
 
+----
+
 ## Goal: Create an "account view" page.
 
 In this lab you will create a web app that will show account information for a single account.
 
-## Return a Static Page
+## A. Return a Static Page
 
 First you'll return a static version of the Account View page to make sure everything is annotated and configured properly.
 
@@ -60,7 +64,7 @@ First you'll return a static version of the Account View page to make sure every
 
 ----
 
-## Templatize the Page
+## B. Templatize the Page
 
 Instead of returning a static page, you will use Spring MVC to "fill in" parts of the page with information that comes from the account entity.
 
@@ -95,6 +99,8 @@ Instead of returning a static page, you will use Spring MVC to "fill in" parts o
 
 ----
 
+## C. Replace ID With Name
+
 1. Update the `account-view.html` template and **replace** showing the account's ID with showing the account's **name** (e.g., `account.name`).
 
 1. Restart and test out the page and see what you find by going to `localhost:8080/account/0` and then `localhost:8080/account/1`.
@@ -102,3 +108,5 @@ Instead of returning a static page, you will use Spring MVC to "fill in" parts o
 ----
 
 > <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, you're done, so let the instructor know.
+
+----
