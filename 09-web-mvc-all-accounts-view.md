@@ -8,11 +8,15 @@ In this lab you'll add error handling to the previous lab to get rid of the `Nul
 
 You'll then provide a "home" page that displays **all** the accounts in the system.
 
+----
+
 ### References
 
 * Thymeleaf 3: http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-and-displaying-variables
 
-## First, Some Tests
+----
+
+## A. First, Some Tests
 
 Add this [AccountViewWebIntegrationTest](https://github.com/ted-ncg/labs/blob/master/AccountViewWebIntegrationTest.java) and run it and make sure it passes.
 
@@ -22,7 +26,7 @@ Add this [AccountViewWebIntegrationTest](https://github.com/ted-ncg/labs/blob/ma
 
 ----
 
-## Handle Not Found
+## B. Handle Not Found
 
 Add error handling when an account isn't found.
 
@@ -30,72 +34,72 @@ There are a number of ways to handle problems, we're going to use the ResponseSt
 
 ### Steps
 
-  * Let's add a test that will fail, and then we'll make it pass.
-    Add this test to the `AccountViewWebIntegrationTest` class, run it and it should fail.
+1. Let's add a test that will fail, and then we'll make it pass.
+   Add this test to the `AccountViewWebIntegrationTest` class, run it and it should fail.
+
+   ```java
+   @Test
+   public void getOfNonExistentAccountReturns404() throws Exception {
+     mockMvc.perform(get("/account/9999"))
+            .andExpect(status().isNotFound());
+   }
+   ```
+
+1. Make sure the above test **fails** before writing the code to make it pass.
+
+1. Inside of your `AccountWebController`, add code to the `accountView` method so that if the `findOne` method from the repository returns `null`, you will throw a special exception class that you'll create.
+   Create an exception like this:
+
+   ```java
+   import org.springframework.http.HttpStatus;
+   import org.springframework.web.bind.annotation.ResponseStatus;
   
-    ```java
-      @Test
-      public void getOfNonExistentAccountReturns404() throws Exception {
-        mockMvc.perform(get("/account/9999"))
-               .andExpect(status().isNotFound());
-      }
+   @ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "No account with that ID was found.")
+   public class NoSuchAccountException extends RuntimeException {
+     
+   }
+   ```
+
+1. When you get null from calling `findOne` on the repository, throw an instance of the above exception.
+
+1. Try running the `AccountViewWebIntegrationTest` tests now.
+
+1. Try it out from the browser: you should get a 404 page when requesting:
+
     ```
-
-  * Make sure the above test **fails** before writing the code to make it pass.
-
-  * Inside of your `AccountWebController`, add code to the `accountView` method so that if the `findOne` method from the repository returns `null`, you will throw a special exception class that you'll create.
-    Create an exception like this:
-  
-    ```java
-    import org.springframework.http.HttpStatus;
-    import org.springframework.web.bind.annotation.ResponseStatus;
-    
-    @ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "No account with that ID was found.")
-    public class NoSuchAccountException extends RuntimeException {
-      
-    }
+    http://localhost:8080/account/9999
     ```
-
-  * When you get null from calling `findOne` on the repository, throw an instance of the above exception.
-  
-  * Try running the `AccountViewWebIntegrationTest` tests now.
-  
-  * Try it out from the browser: you should get a 404 page when requesting:
-  
-      ```
-      http://localhost:8080/account/9999
-      ```
 
 ----
 
-## Account Summary
+## C. Account Summary
 
 View a summary of all accounts.
 
 ### Steps
 
-1. Create an HTML "template" (name it `all-accounts.html') in the `resources/templates` folder:
+1. Create an HTML "template" (name it `all-accounts.html') in the `src/main/resources/templates` folder:
 
-    ```
-      <!DOCTYPE html>
-      <html lang="en" xmlns:th="http://www.thymeleaf.org" >
-      <head>
-        <meta charset="UTF-8">
-        <title>Accounts</title>
-      </head>
-      <body>
-      <table>
-        <tr>
-          <th>Account Name</th>
-          <th>Balance</th>
-        </tr>
-        <tr>
-          <td>Luxuries</td>
-          <td>99</td>
-        </tr>
-      </table>
-      </body>
-      </html>
+    ```HTML
+    <!DOCTYPE html>
+    <html lang="en" xmlns:th="http://www.thymeleaf.org" >
+    <head>
+      <meta charset="UTF-8">
+      <title>Accounts</title>
+    </head>
+    <body>
+    <table>
+      <tr>
+        <th>Account Name</th>
+        <th>Balance</th>
+      </tr>
+      <tr>
+        <td>Luxuries</td>
+        <td>99</td>
+      </tr>
+    </table>
+    </body>
+    </html>
     ```
 
 1. Add Thymeleaf text substitution (`th:each` and `th:text`) to the `<tr>` and `<td>` tags so that it pulls the content from the list of accounts.
@@ -121,3 +125,9 @@ View a summary of all accounts.
     * Return a `String` with the name of the html template you created in the first step -- **without** the `.html` suffix.
 
 1. If you access `localhost:8080/account/` you should see all of the accounts as a two-column table.
+
+----
+
+> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, you're done, so let the instructor know.
+
+----
