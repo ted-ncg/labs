@@ -6,10 +6,15 @@
 
 ### References
 
-* Spring Controllers: https://docs.spring.io/spring/docs/4.3.19.RELEASE/spring-framework-reference/htmlsingle/#mvc-controller
+* **Spring Web Controller**: https://docs.spring.io/spring/docs/4.3.19.RELEASE/spring-framework-reference/htmlsingle/#mvc-controller
 
-* Thymeleaf 3: https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-and-displaying-variables
+* **Thymeleaf 3**: https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-and-displaying-variables
 
+* **Test Annotations**: more details about how `@SpringBootTest`, etc. work:
+    * https://spring.io/guides/gs/testing-web/
+    * https://spring.io/blog/2016/04/15/testing-improvements-in-spring-boot-1-4
+    * https://spring.io/blog/2016/08/30/custom-test-slice-with-spring-boot-1-4
+ 
 ----
 
 ## Goal: Create an "account view" page.
