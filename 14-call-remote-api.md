@@ -103,19 +103,37 @@ You will write code in `convertToGbp()` to use the `RestTemplate` Spring class a
 
 1. The `getForObject()` will return an instance of the `ConvertedCurrency`, so you will take the `converted` property (which is a `double`) and return it as an `int` (you can just cast it or use the `intValue()`).
 
-   * Here is the Trivia example that we saw:
-   
-    ```java
-    RestTemplate restTemplate = new RestTemplate();
-    String numberFactsUrl = "http://numbersapi.com/{number}?json";
-
-    Map<String, String> params = new HashMap<>();
-    params.put("number", "6");
-    Trivia fact = restTemplate
-        .getForObject(numberFactsUrl, Trivia.class, params);
-    ```
-
-    And here's the Trivia JavaBean that's used above: https://github.com/ted-ncg/labs/blob/master/Trivia.java
+   > **Example**
+   >
+   > _Learning from examples is great, but don't copy-n-paste..._
+   >
+   > Here is the Weather example:
+   >
+   > ```java
+   > RestTemplate restTemplate = new RestTemplate();
+   > String weatherUrl = "https://basic-weather.herokuapp.com/api/weather/{zip}";
+   >
+   > Map<String, String> uriVariables = new HashMap<>();
+   > uriVariables.put("zip", "94404");
+   >
+   > WeatherResponse response =
+   >     restTemplate.getForObject(weatherUrl, 
+   >                               WeatherResponse.class,
+   >                               uriVariables);
+   > ```
+   >
+   >
+   > And here's the JavaBean that's used above:
+   > 
+   > ```java
+   > public class WeatherResponse {
+   >   private String location;
+   >   private String updated;
+   >   private Float temp;
+   >   private String condition;
+   >   // getters and setters would go here
+   > }
+   > ```
 
 1. Now try viewing an account and see that the GBP converted value is correct.
 
