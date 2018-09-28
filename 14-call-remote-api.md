@@ -53,7 +53,7 @@ Convert the account balance from USD ($) to GBP (£) and display it on the accou
 
 1. Update the `AccountResponse` object so it has a property for the GBP balance. (Don't forget the getter and setter.)
 
-1. When transforming the `Account` to an `AccountReponse` (in `accountView()`), use the `CurrencyService` to convert the balance and store that into the `AccountResponse`.
+1. In the `accountView()` method, after transforming the `Account` to an `AccountReponse` (in `accountView()`), use the `CurrencyService` to convert the balance and store that into the `AccountResponse` as well.
 
 1. Update the Account View HTML page to display both USD and GBP on the page, like this:
      ```
