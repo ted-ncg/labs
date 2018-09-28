@@ -2,21 +2,24 @@
 
 ### This page: https://github.com/ted-ncg/labs/blob/master/13-web-mvc-create-account-form.md
 
-In this lab we'll use a JavaBean object to represent the form instead of individual attributes.
+In this lab we'll use a JavaBean object to represent the form instead of a single attribute.
 
 ----
 
 ### References
 
-* Thymeleaf form tutorial: http://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html#creating-a-form
+**Thymeleaf form tutorial**: http://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html#creating-a-form
 
 ----
 
 ## Goal
 
-Allow the user to specify an initial deposit amount, in addition to the name. We'd also like to pre-fill the form with a default deposit amount of $10.
+Allow the user to specify an initial deposit amount, in addition to the name, when creating an account.
+We'd also like to pre-fill the form with a default deposit amount of $100.
 
-## Steps
+----
+
+## Update Form HTML to JavaBean
 
 1. Create a new `CreateForm` JavaBean class that has properties for `accountName` and `initialDeposit`.`
 
@@ -30,30 +33,45 @@ Allow the user to specify an initial deposit amount, in addition to the name. We
    </form>
    ```
 
-1. Modify the GET method in your web controller that is mapped to `/create-account` to do the following:
-   * Instantiate a new `CreateForm` instance
-   * Set the initial deposit to 10
-   * Set the account name to an empty string
-   * Put the instance into the Spring `Model`, with the correct attribute name to match what's in the form (`createForm`).
-   
-1. Modify the `POST` method mapped to `/create-account` to:
-   * Take in a `CreateForm` as a parameter (replacing the `ModelAttribute` parameter)
-   * Create a new `Account` instance based on the information from the `createForm` JavaBean and save it in the repository
-   * Make sure to redirect the user to the account view page for the newly created account
+## Modify Web Controller GET
 
-1. Try it out...
+Open the web controller class and modify the method that is "GET" mapped to `/create-account` to do the following:
 
-### Questions
+1. Instantiate a new `CreateForm` instance
+
+1. Set the initial deposit property to 100
+
+1. Set the account name property to an empty string
+
+1. Put the instance into the Spring `Model`, with the correct attribute name to match what's in the form: `"createForm"`.
+
+## Modify Web Controller POST
+
+Modify the `POST` method mapped to `/create-account` to:
+
+1. Take in a `CreateForm` instance as a parameter (replace the `ModelAttribute` parameter)
+
+1. Create a new `Account` instance based on the information from the `createForm` JavaBean and save it in the repository
+
+1. Make sure to **redirect** the user to the account view page for the newly created account.
+
+## Try it out...
+
+Go to the home page or `localhost:8080/create-account` and see if the form works properly.
+
+----
+
+## Questions
 
 > How might you write a test (or modify existing tests) to test the above in an automated way?
 
 ----
 
-**Do not move on to the bonus until the instructor has reviewed your code.**
+> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, do **not** move on until you have checked in with the instructor.
 
 ----
 
-## Bonus #1
+## Bonus
 
 You can use the `@ModelAttribute` annotation on a "factory" method for instantiating the `CreateForm` object, like this:
 
@@ -74,3 +92,9 @@ You can now **remove** the initialization that you were doing in the create form
   public String createForm()
   ...etc...
   ```
+
+----
+
+> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, you're done, so let the instructor know.
+
+----

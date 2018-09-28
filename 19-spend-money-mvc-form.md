@@ -1,6 +1,6 @@
-## Spend Some Money
+# Spend Some Money
 
-### This page is at: `https://github.com/ted-ncg/labs/blob/master/spend-money.md`
+### This lab: https://github.com/ted-ncg/labs/blob/master/19-spend-money-mvc-form.md
 
 ----
 
@@ -51,6 +51,7 @@
   </body>
   </html>
   ```
+
 1. Create a `WithdrawForm` *POJO* (Plain Old Java Object) that has two properties, with getters and setters:
    * `accountId` (`long`) - ID of the account to withdraw from
    * `amount` (`int`) - how much to spend
@@ -80,3 +81,8 @@
 
 1. You should now be able to go to the home page, select an account, click on the "spend money" link, enter an amount, and see that the balance for that account has been reduced.
 
+----
+
+> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, you're done, so let the instructor know.
+
+----

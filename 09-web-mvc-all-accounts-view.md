@@ -47,20 +47,19 @@ There are a number of ways to handle problems, we're going to use the ResponseSt
 
 1. Make sure the above test **fails** before writing the code to make it pass.
 
-1. Inside of your `AccountWebController`, add code to the `accountView` method so that if the `findOne` method from the repository returns `null`, you will throw a special exception class that you'll create.
-   Create an exception like this:
+1. Create a new exception class like this:
 
    ```java
    import org.springframework.http.HttpStatus;
    import org.springframework.web.bind.annotation.ResponseStatus;
   
    @ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "No account with that ID was found.")
-   public class NoSuchAccountException extends RuntimeException {
+   public class NoSuchAccountHttpException extends RuntimeException {
      
    }
    ```
 
-1. When you get null from calling `findOne` on the repository, throw an instance of the above exception.
+1. Inside of your `AccountWebController`, add code to the `accountView` method so that if the `findOne` method from the repository returns `null`, you will throw the `NoSuchAccountHttpException` that you created above.
 
 1. Try running the `AccountViewWebIntegrationTest` tests now.
 
