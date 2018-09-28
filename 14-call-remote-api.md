@@ -4,9 +4,12 @@
 
 ### Reference Docs
 
-* Spring RestTemplate docs: https://docs.spring.io/spring/docs/4.3.18.RELEASE/spring-framework-reference/html/remoting.html#rest-resttemplate
+* Spring RestTemplate docs:
+  * https://docs.spring.io/spring/docs/4.3.19.RELEASE/spring-framework-reference/html/remoting.html#rest-resttemplate
+  * https://docs.spring.io/spring-framework/docs/4.3.19.RELEASE/javadoc-api/org/springframework/web/client/RestTemplate.html
 
-* Spring Boot - testing Rest Clients: https://docs.spring.io/spring-boot/docs/1.5.14.RELEASE/reference/html/boot-features-testing.html#boot-features-testing-spring-boot-applications-testing-autoconfigured-rest-client
+* Spring Boot - testing Rest Clients: 
+  * https://docs.spring.io/spring-boot/docs/1.5.16.RELEASE/reference/html/boot-features-testing.html#boot-features-testing-spring-boot-applications-testing-autoconfigured-rest-client
 
 ## Preparation
 
@@ -40,7 +43,7 @@ Convert the account balance from USD ($) to GBP (£) and display it on the accou
     int convertToGbp(int amount)
     ```
 
-1. Create a _fake_ version of this service that simply returns `123`. We'll write the actual implementation later. (Maybe write a test?)
+1. Create a _stub_ version of this service that simply returns `123`. We'll write the actual implementation later.
 
 1. Inject (autowire) the CurrencyService into your Web (Account) Controller.
 
@@ -48,7 +51,7 @@ Convert the account balance from USD ($) to GBP (£) and display it on the accou
    >
    > **(??)** What annotations are necessary?
 
-1. Update the `AccountResponse` object so it has a property for the GBP balance.
+1. Update the `AccountResponse` object so it has a property for the GBP balance. (Don't forget the getter and setter.)
 
 1. When transforming the `Account` to an `AccountReponse` (in `accountView()`), use the `CurrencyService` to convert the balance and store that into the `AccountResponse`.
 
@@ -58,7 +61,7 @@ Convert the account balance from USD ($) to GBP (£) and display it on the accou
      GBP Balance: £123
      ```
 
-> Remember, the converted GBP value is faked, so will always be 123.
+> Remember, the converted GBP value is hard-coded, so will always be 123.
 
 
 **Do not proceed further until you have the account view page displaying both USD and GBP balance**
@@ -73,43 +76,6 @@ Convert the account balance from USD ($) to GBP (£) and display it on the accou
 
 Now you will implement the `CurrencyService` so it will call out to the remote API.
 
-You will write code in `convertToGbp()` to use the `RestTemplate` Spring class and a JavaBean (described below) that will call out to the currency converter at `http://jitterted-currency-conversion.herokuapp.com/convert`.
-
-1. Create a JavaBean `ConvertedCurrency` that represents the returned JSON called `ConvertedCurrency`.
-   The *properties* for your JavaBean must *match* the JSON names, i.e., it will have 2 properties for the currency and the converted result.
-   
-   * The JSON returned from this API looks like this:
-   
-     ```json
-     {
-       "currency": "GBP",
-       "converted": 71.00
-     }
-     ```
-
-1. Instantiate a `RestTemplate` that you'll use
-
-1. Create a URI Template string for the remote API.
-
-   * It will send three *query* parameters:
-       * `from` - the source currency, e.g., `USD`
-       * `to` - the converted currency, e.g., `GBP`
-       * `amount` - the amount to convert, e.g., 10
-
-   * **Example:**
-       * To convert $100 to GBP, the URL would look like this:
-         ```
-         http://jitterted-currency-conversion.herokuapp.com/convert?from=USD&to=GBP&amount=100
-         ```
-
-   > Think about what parts of the string need to become template variables.
-   > A URI Template Variable looks like `{amount}`.
-   
-1. Use the `RestTemplate`'s `getForObject()` method to pass in the URL, the `ConvertedCurrency.class`, and the query parameters.
-
-   > Docs for RestTemplate are here: https://docs.spring.io/spring-framework/docs/4.3.18.RELEASE/javadoc-api/org/springframework/web/client/RestTemplate.html
-
-1. The `getForObject()` will return an instance of the `ConvertedCurrency`, so you will take the `converted` property (which is a `double`) and return it as an `int` (you can just cast it or use the `intValue()`).
 
    > **Example**
    >
@@ -118,12 +84,16 @@ You will write code in `convertToGbp()` to use the `RestTemplate` Spring class a
    > Here is the Weather example:
    >
    > ```java
+   > // instantiate a RestTemplate instance
    > RestTemplate restTemplate = new RestTemplate();
+   > // create a Template URL for the API
    > String weatherUrl = "https://basic-weather.herokuapp.com/api/weather/{zip}";
    >
+   > // put the variables in a Map
    > Map<String, String> uriVariables = new HashMap<>();
    > uriVariables.put("zip", "94404");
    >
+   > // call out to the remote API and get back a JavaBean
    > WeatherResponse response =
    >     restTemplate.getForObject(weatherUrl, 
    >                               WeatherResponse.class,
@@ -142,6 +112,39 @@ You will write code in `convertToGbp()` to use the `RestTemplate` Spring class a
    >   // getters and setters would go here
    > }
    > ```
+
+
+1. Create a JavaBean `ConvertedCurrency` that represents the returned JSON called `ConvertedCurrency`.
+   The *properties* for your JavaBean must *match* the JSON names, i.e., it will have 2 properties for the currency and the converted result.
+   
+   * The JSON returned from this API looks like this:
+   
+     ```json
+     {
+       "currency": "GBP",
+       "converted": 71.00
+     }
+     ```
+
+1. Create a URI Template string for the remote API:
+
+   * It will send three *query* parameters:
+       * `from` - the source currency, e.g., `USD`
+       * `to` - the converted currency, e.g., `GBP`
+       * `amount` - the amount to convert, e.g., 10
+
+   * **Example:**
+       * To convert $100 to GBP, the URL would look like this:
+         ```
+         http://jitterted-currency-conversion.herokuapp.com/convert?from=USD&to=GBP&amount=100
+         ```
+
+   > Think about what parts of the string need to become template variables.
+   > A URI Template Variable looks like `{amount}`.
+   
+1. Instantiate a `RestTemplate` class and use the `getForObject()` method to pass in: the URL, the `ConvertedCurrency.class`, and the query parameters.
+
+1. The `getForObject()` will return an instance of the `ConvertedCurrency`, so you will take the `converted` property (which is a `double`) and return it as an `int` (you can just cast it or use the `intValue()`).
 
 1. Now try viewing an account and see that the GBP converted value is correct.
 
