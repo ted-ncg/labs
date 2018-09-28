@@ -65,6 +65,10 @@ Convert the account balance from USD ($) to GBP (£) and display it on the accou
 
 ----
 
+> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, do **not** move on until you have checked in with the instructor.
+
+----
+
 ### Use the Real Currency Conversion Service
 
 Now you will implement the `CurrencyService` so it will call out to the remote API.
@@ -91,8 +95,12 @@ You will write code in `convertToGbp()` to use the `RestTemplate` Spring class a
        * `from` - the source currency, e.g., `USD`
        * `to` - the converted currency, e.g., `GBP`
        * `amount` - the amount to convert, e.g., 10
+
    * **Example:**
-       * To convert $100 to GBP, the URL would look like this: `http://jitterted-currency-conversion.herokuapp.com/convert?from=USD&to=GBP&amount=100`
+       * To convert $100 to GBP, the URL would look like this:
+         ```
+         http://jitterted-currency-conversion.herokuapp.com/convert?from=USD&to=GBP&amount=100
+         ```
 
    > Think about what parts of the string need to become template variables.
    > A URI Template Variable looks like `{amount}`.
@@ -137,7 +145,9 @@ You will write code in `convertToGbp()` to use the `RestTemplate` Spring class a
 
 1. Now try viewing an account and see that the GBP converted value is correct.
 
-**Do not proceed further unless this is working**
+----
+
+> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, do **not** move on until you have checked in with the instructor.
 
 ----
 
@@ -148,6 +158,12 @@ The server at http://jitterted-currency-conversion.herokuapp.com also supports c
 What would you need to do to have the account view page show the balance in Bitcoin in addition to USD and GBP?
 
 * Think about what new method you want in your CurrencyService
+
+----
+
+> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, do **not** move on until you have checked in with the instructor.
+
+----
 
 ## Bonus #2
 
