@@ -20,7 +20,7 @@ Make sure you have the latest version, where we "group programmed" the **deposit
 
 ----
 
-### Using Ping-Pong Pairing
+## Using Ping-Pong Pairing
 
 1. Add a new test class `AccountWithdrawTest`
 
@@ -43,13 +43,24 @@ Make sure you have the latest version, where we "group programmed" the **deposit
 
 1. Make sure the test **fails** before continuing.
 
-1. Pass the computer to your pair and they should write the code to make the test pass.
+1. Pass the computer to your pair, and they should write the code to make the test pass.
 
-1. Have the person who wrote the code, write another test to further exercise the code.
+1. Have the person who just wrote the code, write another test to further exercise the code.
 
 1. Now have the other person write any code to make all of the tests pass.
 
 <br/>
+
+----
+
+## Test To Write
+
+You should write at least 3 tests. Think about:
+
+* Withdrawing a single amount
+* Withdrawing twice
+* Withdrawing too much
+* Withdrawing zero
 
 ----
 
