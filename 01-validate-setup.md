@@ -1,31 +1,12 @@
 # Validating Your Setup
 
-## This page: `http://bit.ly/ncg-setup`
+## This page is at: `http://bit.ly/ncg-setup`
 
 In this lab you'll ensure that all of the tools that you'll be using during this week's labs are correctly set up on your machine.
 
 > Yes, this process can be a bit frustrating, but stick with it and ask your neighbors or the instructor for help!
 
-
 ## Pre-Requisites
-
-### Developer Setup
-
-If you haven't already done this as part of your developer on-boarding, you need to look at this page for **Maven-Artifactory** setup as well as **Git** and **Proxying** information.
-
-Go to: https://visawiki.trusted.visa.com/display/VDP/New+Developer+Onboarding+Checklist
-
-Search the page for the sections of interest (below) and follow those instructions:
-
-#### Sections of Interest:
-
-- Proxy Settings in Terminal
-- Git Config Settings
-- Maven Settings -- **Note:** The Maven `settings.xml` must go in your user directory
-  * On Windows, this is in the `.m2` directory underneath `C:\Users\YOUR_USER_NAME`, e.g., `C:\Users\tedyoung\.m2\settings.xml`
-  * On Mac/Linux, this is in `~/.m2`
-
-----
 
 You might already have the following tools installed on your machine.
 If you don't have them installed, follow the links next to each item to install:
@@ -35,6 +16,24 @@ If you don't have them installed, follow the links next to each item to install:
 * Maven 3 - [installing Maven](https://github.com/ted-ncg/austin-spl-june-26/blob/master/install-maven3.md)
 * IntelliJ IDEA - [installing IDEA](https://github.com/ted-ncg/austin-spl-june-26/blob/master/install-intellij.md) -- **NOTE** install the *Ultimate* Edition for the 30-day trial as it has Spring-specific tools.
 * curl (*optional*) - [installing curl](https://github.com/ted-ncg/austin-spl-june-26/blob/master/install-curl.md)
+
+----
+
+## Developer Setup
+
+If you haven't already done this as part of your developer on-boarding, you need to look at this page for **Maven-Artifactory** setup as well as **Git** and **Proxying** information.
+
+Go to: https://visawiki.trusted.visa.com/display/VDP/New+Developer+Onboarding+Checklist
+
+Search the page for the sections of interest (below) and follow those instructions:
+
+### Sections of Interest:
+
+- Maven Settings -- **Note:** The Maven `settings.xml` must go in your user directory
+  * On Windows, this is in the `.m2` directory underneath `C:\Users\YOUR_USER_NAME`, e.g., `C:\Users\tedyoung\.m2\settings.xml`
+  * On Mac/Linux, this is in `~/.m2`
+- Proxy Settings in Terminal
+- Git Config Settings
 
 ----
 
