@@ -4,11 +4,12 @@
 
 ## Goal
 
-Now that you've seen how the Deposit functionality was written in test-first style, you'll write tests and code for the  **withdraw** functionality in the `Account` class.
+Now that you've seen how the Deposit functionality was written in test-driven style,
+you'll write tests and code for the  **withdraw** functionality in the `Account` class.
 
 ## Preparation
 
-Make sure you have the latest version, where we "group programmed" the **deposit** functionality to the `Account` class.
+Make sure you have the latest version, where we "group coded" the **deposit** functionality in the `Account` class.
 
 1. Download or `git pull` the latest code from
 
@@ -16,7 +17,7 @@ Make sure you have the latest version, where we "group programmed" the **deposit
    https://bitbucket.org/tedmyoung/austin-201906-canteen
    ```
 
-1. Make sure all of the tests currently pass before continuing!
+1. Make sure all of the tests **pass** before continuing!
 
 ----
 
@@ -59,7 +60,7 @@ You should write at least 3 tests. Think about:
 
 * Withdrawing a single amount
 * Withdrawing twice
-* Withdrawing too much
+* Withdrawing more than available balance
 * Withdrawing zero
 
 ----
