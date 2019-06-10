@@ -67,4 +67,85 @@ You should write at least 3 tests. Think about:
 
 <img src="stop-sign.jpg" width="56"/> Once you've completed the above steps, let the instructor know.
 
+----
+
+## Account Class and Test
+
+Here's the test we wrote together (the `Account` is below):
+
+```java
+package com.visa.ncg.canteen;
+
+import org.junit.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class DepositTest {
+
+  @Test
+  public void newAccountBalanceIsZero() throws Exception {
+    Account account = new Account();
+
+    assertThat(account.balance())
+        .isZero();
+  }
+
+  @Test
+  public void deposit10ResultsInBalanceOf10() throws Exception {
+    // Given a new account
+    Account account = new Account();
+
+    // when I deposit 10
+    account.deposit(10);
+
+    // Then I expect balance to be 10
+    assertThat(account.balance())
+        .isEqualTo(10);
+  }
+
+  @Test
+  public void deposit7ToAccountWith12ResultsInBalanceOf19() throws Exception {
+    // Given
+    Account account = new Account();
+    account.deposit(12);
+
+    // When
+    account.deposit(7);
+
+    // Then
+    assertThat(account.balance())
+        .isEqualTo(19);
+  }
+
+  @Test
+  public void depositZeroHasNoAffectOnBalance() throws Exception {
+    Account account = new Account();
+    account.deposit(3);
+
+    account.deposit(0);
+
+    assertThat(account.balance())
+        .isEqualTo(3);
+  }
+
+}
+```
+
+and the Account
+
+```java
+package com.visa.ncg.canteen;
+
+public class Account {
+  private int balance;
+
+  public int balance() {
+    return balance;
+  }
+
+  public void deposit(int amount) {
+    balance = balance + amount;
+  }
+}
+```
 <br/>
