@@ -27,7 +27,7 @@ This reference of annotations might be helpful: http://engineering.pivotal.io/po
 If you want to download the latest code that the instructor did in class, it can be found at:
 
 ```
-https://bitbucket.org/tedmyoung/foster-city-201809-canteen
+https://bitbucket.org/tedmyoung/austin-201906-canteen
 ```
 
 ----

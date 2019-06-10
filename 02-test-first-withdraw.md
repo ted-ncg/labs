@@ -13,7 +13,7 @@ Make sure you have the latest version, where we "group programmed" the **deposit
 1. Download or `git pull` the latest code from
 
    ```
-   https://bitbucket.org/tedmyoung/foster-city-201809-canteen
+   https://bitbucket.org/tedmyoung/austin-201906-canteen
    ```
 
 1. Make sure all of the tests currently pass before continuing!

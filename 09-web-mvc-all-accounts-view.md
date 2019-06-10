@@ -54,8 +54,7 @@ There are a number of ways to handle problems, we're going to use the ResponseSt
    import org.springframework.web.bind.annotation.ResponseStatus;
   
    @ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "No account with that ID was found.")
-   public class NoSuchAccountHttpException extends RuntimeException {
-     
+   public class NoSuchAccountHttpException extends RuntimeException {   
    }
    ```
 

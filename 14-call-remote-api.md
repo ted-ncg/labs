@@ -162,7 +162,7 @@ The `to` currency for Bitcoin is `BTC` (instead of `GBP`).
 
 What would you need to do to have the account view page show the balance in Bitcoin in addition to USD and GBP?
 
-* Think about what new method you want in your CurrencyService
+* Think about what new method you want in your `CurrencyService` interface and then implement it in the stub and the real service.
 
 ----
 

@@ -27,8 +27,8 @@ Search the page for the sections of interest (below) and follow those instructio
 
 ----
 
-You should already have the following tools installed on your machine from the pre-course work.
-If you don't have them installed, follow the links next to each item:
+You might already have the following tools installed on your machine.
+If you don't have them installed, follow the links next to each item to install:
 
 * Git - [installing git](https://github.com/ted-ncg/austin-spl-june-26/blob/master/install-git.md)
 * Java 8 - [installing Java](https://github.com/ted-ncg/austin-spl-june-26/blob/master/install-java8.md)
@@ -44,21 +44,21 @@ If you don't have them installed, follow the links next to each item:
 
 Let's make sure the correct version of Java is installed:
 
-1. Open a command prompt or terminal
+1. Open a command prompt or terminal window
 
 1. Type `javac -version`
 
    You should get something like:
    
    ```
-   javac 1.8.0_181
+   javac 1.8.0_212
    ```
 
    If you don't then check that you typed the command correctly, or double-check your Java installation (see above).
 
 ## Clone the Canteen Repository
 
-1. Change to your projects directory, or make one for this training class, e.g.:
+1. Make a `trainign` directory for this training class, e.g.:
 
    * Windows: `mkdir C:\training` and then `cd \training`
    * macOS: `mkdir ~/training` and then `cd ~/training`
@@ -66,23 +66,17 @@ Let's make sure the correct version of Java is installed:
 1. Clone the project repository from BitBucket to your machine by doing:
 
     ```bash
-    git clone https://bitbucket.org/tedmyoung/foster-city-201809-canteen.git
+    git clone https://bitbucket.org/tedmyoung/austin-201906-canteen.git
     ```
-
-   * (OPTIONAL) **ssh:** If you know what `ssh` is and can use it, you can do:
-       
-       ```bash
-       git clone git@bitbucket.org:tedmyoung/foster-city-201809-canteen.git
-       ```
 
    **NOTE:** If you run into proxying issues, see [proxying git](#proxying-git) for more info
 
-   * If you are still having trouble, download and unzip the project instead of using Git to pull it.
+   * If you are still having trouble, download and unzip the project instead of using Git:
    
-      * You can do this by opening up a browser, and going to this URL: 
+      * Go to this URL: 
      
         ```
-        https://bitbucket.org/tedmyoung/foster-city-201809-canteen/downloads/
+        https://bitbucket.org/tedmyoung/austin-201906-canteen/downloads/
         ```
        
        Then click on **Download Repository** and unzip the file.
@@ -94,7 +88,7 @@ Let's run the test using Maven from the command line.
 1. Change to the directory holding the project:
 
    ```
-   $ cd foster-city-201809-canteen
+   $ cd austin-201906-canteen
    ```
     
 1. Run the `test` task in Maven:
@@ -183,34 +177,6 @@ Now that all the dependencies have been downloaded and the project works, let's 
 ----
 
 > <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, let the instructor know **before** moving on.
-
-----
-
-## Add Your Name [OPTIONAL!]
-
-If you finished the above sections and you have time, you can try to make a new branch using Git and then *push* changes to the GitHub repository.
-
-1. Create a new branch with **your last name** and make it the current branch (using `checkout`).
-    You can do this from the command-line by typing the following (be sure replace `*lastname*` with *your* last name):
-    
-    `git checkout -b *lastname*`
-
-    For example, if you did `git checkout -b young`, you would see:
-
-    `Switched to a new branch 'young'`
- 
-1. Open up the `README.md` file inside of IDEA.
-
-1. Underneath where it says `## Participants`, add your name.
-
-1. From with IDEA (or via the command-line):
-
-   * Add the file to Git (`git add README.md`)
-   * Commit the file (`git commit -m 'Added Ted Young to participants.'`)
-   * Push the file up to BitBucket (`git push --set-upstream origin **lastname**`) -- remember to use the branch name that you created in the first step.
-
-**NOTE:** You *will* run into a permissions issue. THAT IS OK! Call the instructor over when you run into it.
-
 
 ----
 

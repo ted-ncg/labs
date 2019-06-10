@@ -1,0 +1,32 @@
+@startuml
+participant client
+activate client
+activate SpringBoot
+activate ApiController
+client -> SpringBoot: GET /api/coffeeorders/123
+
+SpringBoot -> SpringBoot: {id} = 123
+SpringBoot -> ApiController: coffeeOrderInfo("123")
+create CoffeeOrder
+ApiController -> CoffeeOrder: new CoffeeOrder()
+activate CoffeeOrder
+create CoffeeOrderResponse
+ApiController -> CoffeeOrderResponse: transform(coffeeOrder)
+activate CoffeeOrderResponse
+deactivate CoffeeOrder
+
+ApiController --> SpringBoot: response
+SpringBoot -> Jackson: map(response)
+Jackson -> CoffeeOrderResponse: getId()
+CoffeeOrderResponse --> Jackson: id
+Jackson -> CoffeeOrderResponse: getPrice()
+CoffeeOrderResponse --> Jackson: price
+Jackson -> Jackson: generate JSON
+deactivate CoffeeOrderResponse
+Jackson --> SpringBoot: {json}
+
+SpringBoot --> client: {json}
+deactivate ApiController
+deactivate SpringBoot
+deactivate client
+@enduml
