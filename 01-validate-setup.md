@@ -57,7 +57,7 @@ Let's make sure the correct version of Java is installed:
 
 ## Clone the Canteen Repository
 
-1. Make a `trainign` directory for this training class, e.g.:
+1. Make a `training` directory to hold your code for this training class, e.g.:
 
    * Windows: `mkdir C:\training` and then `cd \training`
    * macOS: `mkdir ~/training` and then `cd ~/training`
