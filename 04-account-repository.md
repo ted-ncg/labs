@@ -177,11 +177,12 @@ Don't go further until you've checked in with the instructor.
   
 ----
 
-<img src="stop-sign.jpg" width="56" />
-
-## STOP
-
-If you're done, have the instructor review your code.
+<div style="padding-right: 8px;">
+  <p style="text-align: left; font-size: 110%; font-weight: 700;">
+    <img src="/stop-sign.jpg" style="float: left; vertical-align: middle; width: 80px; padding-right: 10px">Once you've completed the above steps,<br/>
+    check in with the instructor to review your code.
+  </p>
+</div>
 
 ----  
 
