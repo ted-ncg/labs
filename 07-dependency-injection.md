@@ -115,7 +115,8 @@ into the production code directory with the other domain classes.
    > Note: the IDs here will depend on how your `FakeAccountRepository` generates IDs in the
      `save()` method when the `AccountDataLoader.run()` is called.
 
-1. Try adding more "sample" data to the `AccountDataLoader`'s `run()` method and the use your browser, or *curl* to hit the endpoint with different IDs.
+1. Try adding more "sample" data to the `AccountDataLoader`'s `run()` method 
+   and then use your browser to hit the endpoint with different IDs.
 
 ----
 
