@@ -4,26 +4,37 @@
 
 ## Goal
 
-Make the `/api/accounts/{id}` endpoint return JSON that contains both the **ID** and the **Balance** for an account having the given ID.
+Make the `/api/accounts/{id}` endpoint return JSON that contains both the **ID** and the **Balance**
+for an account having the given ID.
 
-## Steps
+## A. Failing Integration Test
 
-1. Copy the [AccountRestTest.java](https://github.com/ted-ncg/labs/blob/master/AccountRestTest.java) file into your test/java directory and run the tests. *(Make sure that it fails!)*  
+1. Copy the [AccountRestTest.java](https://github.com/ted-ncg/labs/blob/master/AccountRestTest.java)
+   file into your test/java directory and run the tests. *(Make sure that it fails!)*  
 
-1. Instead of returning the "domain" `Account` instance, you will return a *JavaBean* object (also known as just a *Bean*) that has *properties* for both ID and Balance:
+## B. Return JavaBean (DTO)
 
-   * Create a *new* class named `AccountResponse`, that has two *JavaBean* properties:
-     * `id`, of type `long`
-     * `balance` of type `int`
-     
-     **Remember:** you'll need both getters **and** setters, named properly, for each property by using `Command + N` (Mac) or `Alt + Insert` (Windows) to *generate* the Getter and Setters.
-   * Change the `accountInfo()` method (in the `AccountApiController` class) to return an `AccountResponse` instance, instead of returning an `Account` object.
-     * e.g.: `public AccountResponse accountInfo(...`
-   * Instantiate an `AccountResponse` object and copy the ID and Balance from the `Account` object to the response by using the setters.
+Instead of returning the "domain" `Account` instance, you will return a *JavaBean* object
+(also known as just a *DTO*) that has *properties* for both ID and Balance:
+
+1. Create a *new* class named `AccountResponse`, that has two *JavaBean* properties:
+    * `id`, of type `long`
+    * `balance` of type `int`
+
+1. Create both getters **and** setters, named properly, for each property by using
+   `Command + N` (Mac) or `Alt + Insert` (Windows) to *generate* the Getter and Setters.
+
+1. Change the `accountInfo()` method (in the `AccountApiController` class) to return an `AccountResponse` instance, instead of returning an `Account` object.
+    * e.g.: `public AccountResponse accountInfo(...`
+
+1. Instantiate an `AccountResponse` object and **copy** the ID and Balance from the `Account`
+   object to the response by using the setters.
 
 1. Try out the new code from the browser via `http://localhost:8080/api/accounts/456`
 
-1. Now make the `AccountRestTest` tests pass.
+## C. Make the Test Pass
+
+Run the `AccountRestTest` test, see why it fails, and change **only the code** to make the test pass.
 
 ----
 
