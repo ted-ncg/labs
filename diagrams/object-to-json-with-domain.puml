@@ -19,9 +19,9 @@ Jackson -> Account: getId (id)
 Account -> Jackson: id
 Jackson -> Jackson: generate JSON
 deactivate Account
-Jackson --> SpringBoot: {json}
+Jackson --> SpringBoot: {"id": 123}
 
-SpringBoot --> client: {json}
+SpringBoot --> client: {"id": 123}
 deactivate ApiController
 deactivate SpringBoot
 deactivate client

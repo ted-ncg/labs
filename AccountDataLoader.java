@@ -15,9 +15,11 @@ public class AccountDataLoader implements ApplicationRunner {
   @Override
   public void run(ApplicationArguments args) throws Exception {
     // create a couple of accounts with initial balance and save them to the repository
-    Account account1 = new Account(10);
+    Account account1 = new Account();
+    account1.deposit(10);
     accountRepository.save(account1);
-    Account account2 = new Account(20);
+    Account account2 = new Account();
+    account2.deposit(20);
     accountRepository.save(account2);
   }
 }

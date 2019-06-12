@@ -47,7 +47,8 @@ https://bitbucket.org/tedmyoung/austin-201906-canteen
      @Test
      public void testGetMapping() throws Exception {
        AccountRepository accountRepository = new FakeAccountRepository();
-       Account account = new Account(73);
+       Account account = new Account();
+       account.deposit(73);
        account.setId(123L);
        accountRepository.save(account);
 
