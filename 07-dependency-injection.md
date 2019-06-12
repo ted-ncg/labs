@@ -120,4 +120,11 @@ into the production code directory with the other domain classes.
 
 ----
 
-> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, you're done, so let the instructor know.
+<div style="padding-right: 8px;">
+  <p style="text-align: left; font-size: 110%; font-weight: 700;">
+    <img src="/stop-sign.jpg" style="float: left; vertical-align: middle; width: 80px; padding-right: 10px">Once you've completed the above steps,<br/>
+    check in with the instructor to review your code.
+  </p>
+</div>
+
+----  
