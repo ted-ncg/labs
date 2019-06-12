@@ -45,16 +45,16 @@ https://bitbucket.org/tedmyoung/austin-201906-canteen
    * `initialBalance` as an `int`
    * `accountName` as a `String`
 
-1. Generate *getters* and *setters* for the two properties.
+1. Generate *getters* and *setters* for these two properties.
 
 ### Accounts Have Names
 
-1. Add a new member variable to the `Account` called `name` which is a `String`
+1. Add a new member variable to the `Account` class called `name` which is a `String`
 
-   * Instead of adding a setter/getter, add methods:
+   * **NOTE:** Instead of adding a setter/getter, add query/command methods:
    
      * `name()` that returns its name
-     * `changeNameTo(String newName)` that update the name to the new value
+     * `changeNameTo(String newName)` that updates the name to the new value
 
 1. Modify the `AccountDataLoader` class so that each account has a name, e.g.:
 
@@ -62,11 +62,13 @@ https://bitbucket.org/tedmyoung/austin-201906-canteen
       public void run(ApplicationArguments args) throws Exception {
         // create a couple of accounts with initial balance and names,
         // save each to the repository
-        Account account1 = new Account(10);
-        account1.changeNameTo("Luxuries");
+        Account account1 = new Account();
+        account1.deposit(10);
+        account1.changeNameTo("Fun stuff");
         accountRepository.save(account1);
      
-        Account account2 = new Account(20);
+        Account account2 = new Account();
+        account2.deposit(20);
         account2.changeNameTo("Necessities");
         accountRepository.save(account2);
       }
@@ -77,7 +79,8 @@ https://bitbucket.org/tedmyoung/austin-201906-canteen
    ```java
    public void testGetMapping() throws Exception {
      AccountRepository accountRepository = new FakeAccountRepository();
-     Account account = new Account(73);
+     Account account = new Account();
+     account.deposit(73);
      account.setId(123L);
      account.changeNameTo("Test");
      accountRepository.save(account);
@@ -87,17 +90,20 @@ https://bitbucket.org/tedmyoung/austin-201906-canteen
      AccountResponse accountResponse = controller.accountInfo("123"); 
 
      assertThat(accountResponse.getBalance())
-         .isEqualTo(account.balance());
+         .isEqualTo(73);
      assertThat(accountResponse.getName())
-         .isEqualTo(account.name());
+         .isEqualTo("Test");
    }   
    ```
 
 1. This test should *fail*.
 
-1. Modify the `AccountResponse` object to have a property (a `String` variable and its getter & setter) for `name`.
+1. Modify the `AccountResponse` object to have a property 
+   (a `String` variable and its getter & setter) for `name`.
 
-1. Open the `AccountApiController` class and in the `accountInfo` method, copy the new `name` property from the `Account` to the `AccountResponse` instance that is returned. 
+1. Open the `AccountApiController` class and in the `accountInfo` method, 
+   copy the new `name` property from the `Account` to the `AccountResponse` 
+   instance that is returned. 
 
 1. The above test should now *pass*.
 
