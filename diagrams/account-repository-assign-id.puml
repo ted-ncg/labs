@@ -9,7 +9,7 @@ Client <-- Account: account
 note left: account does NOT have an ID
 |||
 Client -> Repo: save(account)
-Repo -> Repo: assign ID if needed
+Repo -> Repo: assign **unique** ID
 Repo -> Repo: hold on to account
 Repo --> Client: savedAccount
 deactivate Account

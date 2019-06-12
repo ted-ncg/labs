@@ -63,13 +63,13 @@ Inside the `accountInfo` method:
 
 1. Set its ID to the `accountId` (the ID that came in from the `@PathVariable`)
 
-1. Set the `balance` to a hard-coded amount
+1. Deposit 13 to the account via the `.deposit()` method
 
 1. Return this new account object
 
 ## D. Try it Out    
 
-1. Run the `CanteenApplication` from within IntelliJ IDEA by doing this:
+1. Run the `CanteenApplication` from within IntelliJ IDEA:
 
    * Right click on the `CanteenApplication` file and then select "Run..."
  
@@ -80,16 +80,9 @@ Inside the `accountInfo` method:
    2017-08-27 09:37:21.355  INFO 11472 --- [  Main] com.visa.ncg.canteen.CanteenApplication  : Started CanteenApplication in 3.433 seconds (JVM running for 4.064)
    ```
 
-1. Make a request against the endpoint by either:
- 
-    1. **Browser**: opening the URL `http://localhost:8080/api/accounts/123`
+1. Make a request against the endpoint in your browser by going to the URL
 
-    1. **`curl`**: use `curl` to make the request, e.g.:
-      ```
-      curl --noproxy localhost -v localhost:8080/api/accounts/123
-      ```
-
-      * **Note:** the `--noproxy localhost` tells `curl` to bypass the proxy for `localhost`
+    `http://localhost:8080/api/accounts/123`
 
 1. You should see something like
 
@@ -99,7 +92,7 @@ Inside the `accountInfo` method:
 
 ## E. Run Tests
 
-Add this test
+Create a new test class as follows:
 
 ```java
 package com.visa.ncg.canteen;
@@ -120,6 +113,8 @@ public class AccountApiControllerTest {
 
 }
 ```
+
+Now run the test, it should pass.
 
 ## Questions
 

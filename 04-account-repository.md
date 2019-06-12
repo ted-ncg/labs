@@ -116,14 +116,40 @@ public interface AccountRepository {
    > NOTE: Put tests for `save` into a new Test class named `AccountRepositorySaveTest`
 
    * If the incoming account object's `id` property is ALREADY set, DON'T modify it, just store it.
+   
+      * If the `id` is set, then the `save` is really an **update**,
+        i.e., you should be able to find an Account by its ID, modify it, and save it **back** to the repository. 
+
+      * This test demonstrates the idea of the **update**:
+       
+        ```java
+        @Test
+        public void saveAccountWithIdHasChangedAttributesWhenFound() throws Exception {
+          AccountRepository accountRepository = new AccountRepository();
+          Account account = new Account();
+          account.deposit(15);
+          account.setId(12L);
+          accountRepository.save(account);
       
-   * If the account came in with NO `id` (`null`), SET it with a UNIQUE one that the repository generates
+          Account found = accountRepository.findOne(12L);
+          found.withdraw(7);
+          accountRepository.save(found);
+      
+          Account account12 = accountRepository.findOne(12L);
+          assertThat(account12.balance())
+              .isEqualTo(8);
+        }
+        ```
+
+1. Once the above works where the `account` already has an ID, then you can work on an account that does **not** have an ID:
+
+   * Rule: If the account came in with NO `id` (it is `null`), SET it with a UNIQUE one that the repository generates
    
      * **Think:** How will you guarantee uniqueness?
       
    * Return the Account object that must now have its id set (i.e., is NOT null)
 
-   * Here's a test to use to ensure that each newly saved Account is given an ID that's different from other newly saved Accounts.
+   * Here's a test to ensure that each newly saved Account is given an ID that's different from other newly saved Accounts.
   
       ```java
       @Test
@@ -139,6 +165,7 @@ public interface AccountRepository {
       }
       ```
 
+
 ----
 
 ### Negative Tests
@@ -147,11 +174,13 @@ public interface AccountRepository {
 
 ----
 
-<img src="stop-sign.jpg" width="56" />
-
-## STOP
-
-Don't go further until you've checked in with the instructor.
+<div style="padding-right: 8px;">
+  <p style="text-align: left; font-size: 110%; font-weight: 700;">
+    <img src="/stop-sign.jpg" style="float: left; vertical-align: middle; width: 80px; padding-right: 10px">
+    Once you've completed the above steps,<br/>
+    check in with the instructor to review your code.
+  </p>
+</div>
 
 ----
 

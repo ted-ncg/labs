@@ -1,0 +1,24 @@
+@startuml
+actor Client as "<<client code>>"
+entity Account
+database Repo as "AccountRepository"
+...
+Client -> Repo: findOne(12L)
+note left: account ID obtained elsewhere
+Client <-- Repo: account
+activate Account
+note left: account still has an ID
+|||
+Client -> Account: deposit(15)
+Client -> Repo: save(account)
+deactivate Account
+Repo --> Client: savedAccount(id = 12)
+...
+...
+Client -> Repo: findOne(12L)
+Client <-- Repo: account(id:12)
+activate Account
+Client -> Account: balance()
+Client <- Account: 15
+...
+@enduml
