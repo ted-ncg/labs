@@ -2,6 +2,13 @@
 
 ### This page: https://github.com/ted-ncg/labs/blob/master/07a-rest-request-post.md
 
+## Requirements
+
+This lab will require you to do an HTTP `POST`, which you can't do in a browser,
+so we need to use a tool like **curl** or **Postman**.
+
+If you don't have these installed, make sure you install it before starting this lab.
+
 ## Goal
 
 A POST API that will create new `Account` instances and are stored in the Account Repository.
@@ -127,20 +134,22 @@ In this section, you'll create a *new* Account via an incoming POST request.
 
 ### Try it out
 
-Using `curl`, or `Postman`, do a POST with the following JSON data
+* Using **Postman**, use the following JSON
 
-```json
-{"initialBalance":13,"accountName":"Video Games"}
-```
+    ```json
+    {"initialBalance":13,"accountName":"Video Games"}
+    ```
 
-**For Linux/Mac:**
+* Using **curl**, do the following:
 
-```bash
-curl -v --noproxy "*" -d '{"initialBalance":13,"accountName":"Video Games"}' -H 'Content-Type: application/json' "localhost:8080/api/accounts"
-```
+    **For Linux/Mac:**
+    
+    ```bash
+    curl -v --noproxy "*" -d '{"initialBalance":13,"accountName":"Video Games"}' -H 'Content-Type: application/json' "localhost:8080/api/accounts"
+    ```
 
-**For Windows:**
-
-```
-curl -v --noproxy "*" -d "{\"initialBalance\":13,\"accountName\":\"Video Games\"}" -H "Content-Type: application/json" "localhost:8080/api/accounts"
-```
+    **For Windows:**
+    
+    ```
+    curl -v --noproxy "*" -d "{\"initialBalance\":13,\"accountName\":\"Video Games\"}" -H "Content-Type: application/json" "localhost:8080/api/accounts"
+    ```
