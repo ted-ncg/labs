@@ -82,18 +82,23 @@ https://bitbucket.org/tedmyoung/austin-201906-canteen
 
 ## Sample Data in Repository
 
-To "pre-load" some account data into the repository, copy the entire file [AccountDataLoader.java](https://github.com/ted-ncg/labs/blob/master/AccountDataLoader.java) into the production code directory with the other classes.
+To "pre-load" some account data into the repository, copy the entire file
+[AccountDataLoader.java](https://github.com/ted-ncg/labs/blob/master/AccountDataLoader.java)
+into the production code directory with the other domain classes.
 
 ## Updating REST Test
 
-1. To ensure that dependencies are wired by Spring when running tests, **you must** change the annotations in the `AccountRestTest` class by **replacing** the `@WebMvcTest` with these two annotations:
+1. To ensure that dependencies are wired by Spring when running tests,
+   **you must** change the annotations in the `AccountRestTest` 
+   class by **replacing** the `@WebMvcTest` with these two annotations:
 
       ```java
       @SpringBootTest
       @AutoConfigureMockMvc
       ```
 
-1. To make the tests pass, change the first test in `AccountRestTest` to reflect the account data loaded in the data loader.
+1. To make the tests pass, change the first test in `AccountRestTest` 
+   to reflect the account data loaded in the data loader.
 
 1. Make sure all other tests pass, too.
 
@@ -105,7 +110,10 @@ To "pre-load" some account data into the repository, copy the entire file [Accou
    http://localhost:8080/api/accounts/1
    ```
    
-   You should see the JSON representation of the Account with ID of `1` that has a balance of `10`.
+   You should see the JSON representation of the Account with ID of `1` that has a balance of `20`.
+
+   > Note: the IDs here will depend on how your `FakeAccountRepository` generates IDs in the
+     `save()` method when the `AccountDataLoader.run()` is called.
 
 1. Try adding more "sample" data to the `AccountDataLoader`'s `run()` method and the use your browser, or *curl* to hit the endpoint with different IDs.
 
