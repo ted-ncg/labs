@@ -57,7 +57,7 @@ https://bitbucket.org/tedmyoung/austin-201906-canteen
        AccountResponse accountResponse = controller.accountInfo("123");
 
        assertThat(accountResponse.getBalance())
-           .isEqualTo(account.balance());
+           .isEqualTo(73);
      }
    }
    ```
