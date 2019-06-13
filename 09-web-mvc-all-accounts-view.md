@@ -4,7 +4,7 @@
 
 ## Goal
 
-In this lab you'll add error handling to the previous lab to get rid of the `NullPointerException`s.
+In this lab you'll add error handling to the previous lab to get rid of `NullPointerException`s.
 
 You'll then provide a "home" page that displays **all** the accounts in the system.
 
@@ -58,9 +58,11 @@ There are a number of ways to handle problems, we're going to use the ResponseSt
    }
    ```
 
-1. Inside of your `AccountWebController`, add code to the `accountView` method so that if the `findOne` method from the repository returns `null`, you will throw the `NoSuchAccountHttpException` that you created above.
+1. Inside of your `AccountWebController`, add code to the `accountView` method
+   so that if the `findOne` method from the repository returns `null`, 
+   you will throw the `NoSuchAccountHttpException` that you created above.
 
-1. Try running the `AccountViewWebIntegrationTest` tests now.
+1. Try running the `AccountViewWebIntegrationTest` now and it should **pass**.
 
 1. Try it out from the browser: you should get a 404 page when requesting:
 
@@ -76,7 +78,8 @@ View a summary of all accounts.
 
 ### Steps
 
-1. Create an HTML "template" (name it `all-accounts.html') in the `src/main/resources/templates` folder:
+1. Create an HTML "template" named `all-accounts.html` in the `src/main/resources/templates`
+   directory:
 
     ```HTML
     <!DOCTYPE html>

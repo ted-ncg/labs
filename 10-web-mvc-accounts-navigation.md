@@ -4,7 +4,8 @@
 
 ## Goal
 
-Now that you've displayed all the accounts, let's add links so you can view the details of the account.
+Now that you've displayed all the accounts, let's add links so you can view 
+the details of the account.
 
 ----
 
@@ -22,7 +23,8 @@ Now that you've displayed all the accounts, let's add links so you can view the 
 
    * **It should fail.**
 
-1. Create an HTML page named `index.html` and place it in the `/src/main/resources/static` directory:
+1. Create an HTML page named `index.html` and place it in the `/src/main/resources/static` 
+   directory:
 
     ```html
     <!DOCTYPE html>
@@ -70,11 +72,12 @@ Use the `th:href` tag to create links to view a specific account page.
    
       `<a href="/product/2">Product</a>`
    
-1. Since we want each account name cell to have both the name of the account and a link, we'll need to pull the `th:text` out of the `<td>` tag and into a `<span>`.
+1. Since we want each account name cell to have both the name of the account and a link, 
+   we'll need to pull the `th:text` out of the `<td>` tag and into a `<span>`.
 
    The resulting HTML that we want to be generated is:
 
-    `<td><a href="/account/3"><span>Luxuries</span></a></td>`
+      `<td><a href="/account/3"><span>Luxuries</span></a></td>`
    
    Use the concepts you've learned to translate the above into Thymeleaf attributes.
    
