@@ -7,11 +7,19 @@ activate ApiController
 database Repository as "Account\nRepository"
 activate Repository
 
-client -> SpringBoot: GET /api/accounts/123
+client -> SpringBoot: POST /api/accounts/123\n{"initialBalance": 100,\n "accountName": "Video Games"}
 
 SpringBoot -> SpringBoot: {id} = 123
-SpringBoot -> ApiController: accountInfo("123")
-ApiController -> Repository: findOne(123)
+activate Jackson
+SpringBoot -> Jackson: readJson {...}
+create AccountCreateRequest
+Jackson -> AccountCreateRequest: new
+activate AccountCreateRequest
+Jackson -> AccountCreateRequest: setInitialBalance(100)
+Jackson -> AccountCreateRequest: setName("Video Games")
+SpringBoot <- Jackson: AccountCreateRequest
+SpringBoot -> ApiController: createAccount("123", request)
+ApiController -> Repository: save(123)
 activate Account
 Account --> ApiController: account
 create AccountResponse
@@ -21,7 +29,6 @@ deactivate Account
 activate AccountResponse
 AccountResponse --> SpringBoot: response
 SpringBoot -> Jackson: mapToJson(response)
-activate Jackson
 Jackson -> Jackson: generate JSON
 activate Jackson
 Jackson -> AccountResponse: getId()

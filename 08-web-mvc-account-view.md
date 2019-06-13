@@ -6,7 +6,7 @@
 
 ### References
 
-* **Spring Web Controller**: https://docs.spring.io/spring/docs/4.3.19.RELEASE/spring-framework-reference/htmlsingle/#mvc-controller
+* **Spring Web Controller**: https://docs.spring.io/spring/docs/5.1.8.RELEASE/spring-framework-reference/web.html#mvc-controller
 
 * **Thymeleaf 3**: https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-and-displaying-variables
 
@@ -87,7 +87,9 @@ Instead of returning a static page, you will use Spring MVC to "fill in" parts o
    public String accountView(@PathVariable("id") String accountId, Model model)
    ```
 
-1. Look up the Account in the AccountRepository, convert to an accountResponse, and then add it into the `Model`. This is similar to what you did in the API-based lab. For example:
+1. Look up the Account in the AccountRepository, convert to an accountResponse, 
+   and then add it into the `Model`. This is similar to what you did in the API-based lab.
+   For example:
 
     ```java
     // lookup the account in the repository by its ID
@@ -108,9 +110,11 @@ Instead of returning a static page, you will use Spring MVC to "fill in" parts o
 
 ## C. Replace ID With Name
 
-1. Update the `account-view.html` template and **replace** showing the account's ID with showing the account's **name** (e.g., `account.name`).
+1. Update the `account-view.html` template and **replace** showing 
+   the account's ID with showing the account's **name** (e.g., `account.name`).
 
-1. Restart and test out the page and see what you find by going to `localhost:8080/account/0` and then `localhost:8080/account/1`.
+1. Restart and test out the page and see what you find by going to `localhost:8080/account/0` 
+   and then `localhost:8080/account/1`.
 
 ----
 
