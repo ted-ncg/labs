@@ -72,6 +72,16 @@ There are a number of ways to handle problems, we're going to use the ResponseSt
 
 ----
 
+<div style="padding-right: 8px;">
+  <p style="text-align: left; font-size: 110%; font-weight: 700;">
+    <img src="/stop-sign.jpg" style="float: left; vertical-align: middle; width: 80px; padding-right: 10px">Once you've completed the above steps,<br/>
+    check in with the instructor to review your code.
+  </p>
+</div>
+
+----  
+
+
 ## C. Account Summary
 
 View a summary of all accounts.
@@ -95,7 +105,7 @@ View a summary of all accounts.
         <th>Balance</th>
       </tr>
       <tr>
-        <td>Luxuries</td>
+        <td>Fun Stuff</td>
         <td>99</td>
       </tr>
     </table>
@@ -106,7 +116,7 @@ View a summary of all accounts.
 1. Add Thymeleaf text substitution (`th:each` and `th:text`) to the `<tr>` and `<td>` tags so that it pulls the content from the list of accounts.
    You will need to do something similar to this example, replacing **account** for **product**.
    
-   >For example, if we were working with a collection of `products`:
+   >EXAMPLE: if we were working with a collection of `products`:
    >
    >    ```html
    >    <tr th:each="product : ${products}">
