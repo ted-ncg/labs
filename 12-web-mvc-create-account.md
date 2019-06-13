@@ -2,19 +2,22 @@
 
 ### This page: https://github.com/ted-ncg/labs/blob/master/12-web-mvc-create-account.md
 
+## Goal
+Create a link to a Create Account Form to create a new account and save it in the account repository.
+
 ## Link to the Create Account Page
-
-**Goal:** Create a link to a Create Account Form to create a new account and save it in the account repository.
-
-1. Add the [CreateAccountWebIntegrationTest](https://github.com/ted-ncg/labs/blob/master/CreateAccountWebIntegrationTest.java) to your project and run the test. 
-
-   * **It should fail.**
 
 1. Modify the index.html page (that you created in `/src/main/resources/static`, from the previous lab) to provide a link to a new endpoint: `/create-account`, e.g. add this to the `index.html` page;
 
     ```HTML
     <a href="/create-account">Create New Account</a>
     ```
+
+## Add Create Account Page
+
+1. Add the [CreateAccountWebIntegrationTest](https://github.com/ted-ncg/labs/blob/master/CreateAccountWebIntegrationTest.java) to your project and run the test. 
+
+   * **It should fail.**
 
 1. Create an HTML template called `create-account.html` and put it in the `templates` directory.
    The body of the HTML file is as follows:
@@ -39,7 +42,7 @@
 
 1. Try it from the browser by going to `locahost:8080/create-account` and you should see the form.
 
-----
+## Process Create Account POST Request
 
 1. Add the following test case to the `CreateAccountWebIntegrationTest` class:
 
@@ -59,7 +62,7 @@
     }
     ```
 
-   Make sure to add the following imports for the above code:
+   Make sure to add the following imports for the above test code:
    
     ```java
     import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -94,7 +97,7 @@
 
 ----
 
-## Bonus: Redirect to Account Details Page
+## Redirect to Account Details Page
 
 1. Have the form submission redirect to the account view page for the new account.
 
