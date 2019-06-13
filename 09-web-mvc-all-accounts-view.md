@@ -30,7 +30,8 @@ Add this [AccountViewWebIntegrationTest](https://github.com/ted-ncg/labs/blob/ma
 
 Add error handling when an account isn't found.
 
-There are a number of ways to handle problems, we're going to use the ResponseStatus annotation on a custom Exception to indicate that there's a problem.
+There are a number of ways to handle problems, we're going to use the `@ResponseStatus` annotation
+on a custom `Exception` to indicate that there's a problem.
 
 ### Steps
 
@@ -69,6 +70,22 @@ There are a number of ways to handle problems, we're going to use the ResponseSt
     ```
     http://localhost:8080/account/9999
     ```
+
+### Exception Handling Alternatives
+
+Other ways to handle exceptions with a specific view (HTML page) can be found here:
+
+`https://docs.spring.io/spring/docs/5.1.8.RELEASE/spring-framework-reference/web.html#mvc-ann-exceptionhandler`
+
+For example:
+
+```java
+@ExceptionHandler
+public String handleNotFound(NoSuchAccountException ex, Model model) {
+  model.addAttribute("message", "Couldn't find account.");
+  return "404";
+}
+```
 
 ----
 

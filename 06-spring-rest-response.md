@@ -68,6 +68,6 @@ Some useful documentation for learning more:
 
   ```
 
-* Extracting path and query info from the URI: https://docs.spring.io/spring/docs/4.3.16.RELEASE/spring-framework-reference/htmlsingle/#mvc-ann-requestmapping-uri-templates
+* Extracting path and query info from the URI: https://docs.spring.io/spring/docs/5.1.8.RELEASE/spring-framework-reference/web.html#mvc-ann-requestmapping-uri-templates
 
-* Handling exceptions using @ExceptionHandler: https://docs.spring.io/spring/docs/4.3.16.RELEASE/spring-framework-reference/html/mvc.html#mvc-ann-exceptionhandler
+* Handling exceptions using @ExceptionHandler: https://docs.spring.io/spring/docs/5.1.8.RELEASE/spring-framework-reference/web.html#mvc-ann-exceptionhandler
