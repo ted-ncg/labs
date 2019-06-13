@@ -21,7 +21,7 @@ We'd also like to pre-fill the form with a default deposit amount of $100.
 
 ## Update Form HTML to JavaBean
 
-1. Create a new `CreateForm` JavaBean class that has properties for `accountName` and `initialDeposit`.`
+1. Create a new `CreateForm` JavaBean ("command") class that has properties for `accountName` and `initialDeposit`.
 
 1. Update the `create-account.html` to be a Thymeleaf *template*, by replacing the `form` section as follows:
 
