@@ -25,9 +25,7 @@ public class CreateAccountWebIntegrationTest {
 
   @Test
   public void getToCreateAccountReturnsForm() throws Exception {
-    mockMvc.perform(
-        get("/create-account")
-    )
+    mockMvc.perform(get("/create-account"))
         .andExpect(status().isOk())
         .andExpect(view().name("create-account"));
   }

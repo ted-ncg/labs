@@ -44,19 +44,19 @@
 1. Add the following test case to the `CreateAccountWebIntegrationTest` class:
 
     ```java
-      @Test
-      public void postToCreateAccountCreatesAccountAndRedirects() throws Exception {
-        MvcResult mvcResult = mockMvc.perform(
-            post("/create-account")
-                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                .param("accountName", "Video Games")
-            )
-            .andExpect(status().is3xxRedirection())
-            .andReturn();
-        mockMvc.perform(get(mvcResult.getResponse().getRedirectedUrl()))
-            .andExpect(status().isOk())
-            .andExpect(view().name("all-accounts"));
-      }
+    @Test
+    public void postToCreateAccountCreatesAccountAndRedirects() throws Exception {
+      MvcResult mvcResult = mockMvc.perform(
+          post("/create-account")
+              .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+              .param("accountName", "Video Games")
+          )
+          .andExpect(status().is3xxRedirection())
+          .andReturn();
+      mockMvc.perform(get(mvcResult.getResponse().getRedirectedUrl()))
+          .andExpect(status().isOk())
+          .andExpect(view().name("all-accounts"));
+    }
     ```
 
    Make sure to add the following imports for the above code:
