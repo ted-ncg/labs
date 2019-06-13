@@ -99,9 +99,7 @@ Create a link to a Create Account Form to create a new account and save it in th
 
 ## Redirect to Account Details Page
 
-1. Have the form submission redirect to the account view page for the new account.
-
-1. Update the 2nd part of the Web integration test to be:
+1. Update the 2nd part of the `CreateAccountWebIntegrationTest` to be:
 
    ```java
     mockMvc.perform(get(mvcResult.getResponse().getRedirectedUrl()))
@@ -112,7 +110,7 @@ Create a link to a Create Account Form to create a new account and save it in th
         .andExpect(model().attribute("account", hasProperty("name", is("Video Games"))));
    ```
 
-   **Note:** You'll need to import the `org.hamcrest.Matchers` matchers for the new methods above:
+   **Note:** You'll need to import the following matchers for the new methods above:
    
       ```java
       import static org.hamcrest.Matchers.hasProperty;
@@ -120,6 +118,13 @@ Create a link to a Create Account Form to create a new account and save it in th
       import static org.hamcrest.Matchers.is;
       ```
 
-1. And it should now pass.
+1. Run the test, it should **fail**.
+
+1. Have the form submission (your `@PostMapping` method) use the "redirect:" String to redirect
+   to the account view page for the new account.
+   You'll need to use the newly created account's ID, 
+   along with string concatenation to create a new redirect URL.
+
+1. And it should now **pass**.
 
 1. Try it from the browser by going to `locahost:8080/create-account` and you should see the form.
