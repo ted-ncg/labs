@@ -116,6 +116,7 @@ Create a link to a Create Account Form to create a new account and save it in th
       import static org.hamcrest.Matchers.hasProperty;
       import static org.hamcrest.Matchers.instanceOf;
       import static org.hamcrest.Matchers.is;
+      import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
       ```
 
 1. Run the test, it should **fail**.

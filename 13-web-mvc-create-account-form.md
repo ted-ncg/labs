@@ -53,11 +53,11 @@ Modify the `POST` method mapped to `/create-account` to:
 
 1. Create a new `Account` instance based on the information from the `createForm` JavaBean and save it in the repository
 
-1. Make sure to **redirect** the user to the account view page for the newly created account.
+1. Make sure to continue to **redirect** the user to the account details view page for the newly created account.
 
 ## Try it out...
 
-Go to the home page or `localhost:8080/create-account` and see if the form works properly.
+Go to the home page or directly to `localhost:8080/create-account` and see if the form works properly.
 
 ----
 

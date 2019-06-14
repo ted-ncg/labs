@@ -5,11 +5,10 @@
 ### Reference Docs
 
 * Spring RestTemplate docs:
-  * https://docs.spring.io/spring/docs/4.3.19.RELEASE/spring-framework-reference/html/remoting.html#rest-resttemplate
-  * https://docs.spring.io/spring-framework/docs/4.3.19.RELEASE/javadoc-api/org/springframework/web/client/RestTemplate.html
+  * https://docs.spring.io/spring/docs/5.1.8.RELEASE/spring-framework-reference/integration.html#rest-resttemplate
 
 * Spring Boot - testing Rest Clients: 
-  * https://docs.spring.io/spring-boot/docs/1.5.16.RELEASE/reference/html/boot-features-testing.html#boot-features-testing-spring-boot-applications-testing-autoconfigured-rest-client
+  * https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-testing.html#boot-features-testing-spring-boot-applications-testing-autoconfigured-rest-client
 
 ## Preparation
 
@@ -156,11 +155,11 @@ Now you will implement the `CurrencyService` so it will call out to the remote A
 
 ## Bonus #1
 
-The server at http://jitterted-currency-conversion.herokuapp.com also supports converting to Bitcoin.
+The server at http://jitterted-currency-conversion.herokuapp.com also supports converting to Japanese Yen.
 
-The `to` currency for Bitcoin is `BTC` (instead of `GBP`).
+The `to` currency for the Yen is `JPY` (instead of `GBP`).
 
-What would you need to do to have the account view page show the balance in Bitcoin in addition to USD and GBP?
+What would you need to do to have the account view page show the balance in Yen in addition to USD and GBP?
 
 * Think about what new method you want in your `CurrencyService` interface and then implement it in the stub and the real service.
 
