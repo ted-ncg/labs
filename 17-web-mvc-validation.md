@@ -1,6 +1,6 @@
 # Create Account - Validation
 
-### This page: https://github.com/ted-ncg/labs/blob/master/18-web-mvc-validation.md
+### This page: https://github.com/ted-ncg/labs/blob/master/17-web-mvc-validation.md
 
 ### References
 

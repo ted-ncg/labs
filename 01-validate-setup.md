@@ -65,7 +65,7 @@ Let's make sure the correct version of Java is installed:
 1. Clone the project repository from BitBucket to your machine by doing:
 
     ```bash
-    git clone https://bitbucket.org/tedmyoung/austin-201906-canteen.git
+    git clone https://bitbucket.org/tedmyoung/fostercity-201908-canteen.git
     ```
 
    **NOTE:** If you run into proxying issues, see [proxying git](#proxying-git) for more info
@@ -75,7 +75,7 @@ Let's make sure the correct version of Java is installed:
       * Go to this URL: 
      
         ```
-        https://bitbucket.org/tedmyoung/austin-201906-canteen/downloads/
+        https://bitbucket.org/tedmyoung/fostercity-201908-canteen/downloads/
         ```
        
        Then click on **Download Repository** and unzip the file.
@@ -87,7 +87,7 @@ Let's run the test using Maven from the command line.
 1. Change to the directory holding the project:
 
    ```
-   $ cd austin-201906-canteen
+   $ cd fostercity-201908-canteen
    ```
     
 1. Run the `test` task in Maven:
@@ -129,7 +129,7 @@ Now that all the dependencies have been downloaded and the project works, let's 
 
    Otherwise...
 
-   * From the `File` menu, choose the `Open...` item to open the pom.xml (*don't* use Import) in the `austin-201808-canteen.git` project directory.
+   * From the `File` menu, choose the `Open...` item to open the pom.xml (*don't* use Import) in the `fostercity-201908-canteen` project directory.
 
 1. IDEA will then ask you how to open this file. Since we want it to be a new **project**, click `Open as Project`.
 

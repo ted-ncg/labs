@@ -1,6 +1,6 @@
 # Spend Some Money
 
-### This lab: https://github.com/ted-ncg/labs/blob/master/19-spend-money-mvc-form.md
+### This lab: https://github.com/ted-ncg/labs/blob/master/18-spend-money-mvc-form.md
 
 ----
 

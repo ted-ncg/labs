@@ -1,6 +1,6 @@
 # POST to Create New Account
 
-### This page: https://github.com/ted-ncg/labs/blob/master/07a-rest-request-post.md
+### This page: https://github.com/ted-ncg/labs/blob/master/08-rest-request-post.md
 
 ## Requirements
 
@@ -34,7 +34,7 @@ This reference of annotations might be helpful: http://engineering.pivotal.io/po
 If you want to download the latest code that the instructor did in class, it can be found at:
 
 ```
-https://bitbucket.org/tedmyoung/austin-201906-canteen
+https://bitbucket.org/tedmyoung/fostercity-201908-canteen
 ```
 
 ----

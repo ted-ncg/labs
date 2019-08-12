@@ -1,6 +1,6 @@
 # All Accounts View
 
-### This page: https://github.com/ted-ncg/labs/blob/master/09-web-mvc-all-accounts-view.md
+### This page: https://github.com/ted-ncg/labs/blob/master/10-web-mvc-all-accounts-view.md
 
 ## Goal
 
