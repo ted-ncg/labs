@@ -54,7 +54,7 @@ public interface AccountRepository {
       public FakeAccountRepository(Account... accounts) {
         // You can iterate through the accounts array like this:
         for (Account account : accounts) {
-          // process each account here
+          // store each account here so it can be found later
         }
         // You can also convert it directly to a List:
         // See: https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#asList-T...-
@@ -75,13 +75,14 @@ public interface AccountRepository {
     }
     ```
 
-1. Implement the `findAll()` method (**remember** to write failing tests first):
+1. First, you'll focus on creating the `findAll()` functionality, writing failing tests first:
 
    > NOTE: Put tests for `findAll` into a new Test class named `AccountRepositoryFindTest`
 
-   * If there are no accounts, return an *empty* `List`
+   * Write a *failing* test that verifies that if there are no accounts (an empty Repository),
+     you will get an *empty* `List`
    
-     * What test would you write for this?
+     * Once it fails, write just enough code to make it pass
    
    * If there are accounts, return all of them in a `List`
 
@@ -99,25 +100,40 @@ public interface AccountRepository {
            .hasSize(2);
        }
        ```
-   * Make sure all tests **pass** before continuing.
+     
+     * Make sure the above test fails, and then write just enough code to make it pass
 
-1. Implement the `findOne()` method (**remember** to write failing tests first):
+   * Make sure **all tests** pass before continuing.
+
+----
+
+1. Next, you'll create the `findOne()` functionality, writing failing tests first:
 
    > NOTE: Add tests for `findOne` into `AccountRepositoryFindTest`
 
-   * **Think:** What is appropriate Java Collection class to use to store the accounts so that it's easy to find `Account`'s by their `id`?
+   * **Think:** What is appropriate Java Collection class to use to store the accounts
+     so that it's easy to find `Account`'s by their `id`?
+     
+   * What is a **failing** test that you can write for each of these scenarios:
 
-   * If there's no `Account` with that `id`, return `null`.
-   * If there exists an `Account` with the given `id`, return it
+       * If there's no `Account` with that `id`, return `null`.
+       * If there exists an `Account` with the given `id`, return it
+
+   * Write a failing test, then the minimal amount of code to make them pass.
+
    * Make sure all tests **pass** before continuing.
 
-1. Implement the `save()` method, which stores the given account in the repository so it can be found later.
+----
+
+1. Now you can work on the `save()` functionality, which stores the given account
+   in the repository so it can be found later.
 
    > NOTE: Put tests for `save` into a new Test class named `AccountRepositorySaveTest`
 
    * If the incoming account object's `id` property is ALREADY set, DON'T modify it, just store it.
+     This is the same as an UPDATE.
    
-      * If the `id` is set, then the `save` is really an **update**,
+      * If the `id` is set, then the `save` is an **update**,
         i.e., you should be able to find an Account by its ID, modify it, and save it **back** to the repository. 
 
       * This test demonstrates the idea of the **update**:
@@ -141,7 +157,8 @@ public interface AccountRepository {
         }
         ```
 
-1. Once the above works where the `account` already has an ID, then you can work on an account that does **not** have an ID:
+1. Once the above works where the `account` already has an ID, 
+   then you can work on an account that does **not** have an ID:
 
    * Rule: If the account came in with NO `id` (it is `null`), SET it with a UNIQUE one that the repository generates
    
