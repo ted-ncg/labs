@@ -16,7 +16,7 @@ activate AccountResponse
 deactivate Account
 
 ApiController --> SpringBoot: response
-SpringBoot -> Jackson: map(response)
+SpringBoot -> Jackson: mapToJson(response)
 Jackson -> AccountResponse: getId()
 AccountResponse --> Jackson: 123
 Jackson -> AccountResponse: getBalance()

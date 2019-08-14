@@ -34,7 +34,7 @@ https://bitbucket.org/tedmyoung/fostercity-201908-canteen
 
    * Make sure to save the incoming reference to a member (instance) variable
 
-1. Create a new test class named `AccountApiControllerTest` and copy the contents below
+1. Replace the test class named `AccountApiControllerTest` with the contents below:
 
    ```java
    package com.visa.ncg.canteen;
@@ -45,7 +45,7 @@ https://bitbucket.org/tedmyoung/fostercity-201908-canteen
    
    public class AccountApiControllerTest {
      @Test
-     public void testGetMapping() throws Exception {
+     public void accountInfoReturnsAccountResponseWithSpecifiedId() throws Exception {
        AccountRepository accountRepository = new FakeAccountRepository();
        Account account = new Account();
        account.deposit(73);
