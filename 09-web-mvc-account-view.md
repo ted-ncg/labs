@@ -30,11 +30,11 @@ First you'll return a static version of the Account View page to make sure every
    ```java
    // ?? What annotation do you need on the class here ??
    public class AccountWebController {
-     // your GET mapping etc. goes here
+     // your GET mapping method goes here
    }
    ```
 
-1. Add a method that is mapped to a `GET` to `localhost:8080/account/{id}`:
+1. Add a method that is mapped to a `GET` to `localhost:8080/account/{id}` (**NOTE** this is a *different* URL than from the API):
 
     ```java
         // ?? What annotation do you need for this method ??
@@ -45,7 +45,8 @@ First you'll return a static version of the Account View page to make sure every
 
 1. Create a `templates` directory underneath the `/src/main/resources` directory.
 
-1. Create a new HTML file (with the content below) named `account-view.html` and put it in the `/src/main/resources/templates` directory:
+1. Create a new HTML file (with the content below) named `account-view.html` 
+   and put it in the `/src/main/resources/templates` directory:
 
    ```HTML
    <!DOCTYPE html>
@@ -71,9 +72,11 @@ First you'll return a static version of the Account View page to make sure every
 
 ## B. Templatize the Page
 
-Instead of returning a static page, you will use Spring MVC to "fill in" parts of the page with information that comes from the account entity.
+Instead of returning a static page, you will use Spring MVC to "fill in" parts of the page
+with information that comes from the account entity.
 
-1. "Templatize" the `<h1>Account</h1>` and the `<p>Balance</p>` elements so that it displays the information from the account by using the `th:text` attribute.
+1. "Templatize" the `<h1>Account</h1>` and the `<p>Balance</p>` elements so that it displays
+   the information from the account by using the `th:text` attribute.
 
     * For example, if you wanted to templatize the 99 for the account number and have it be replaced with the actual account ID, you'd surround the 99 with a `span` tag like this:
     
@@ -92,11 +95,11 @@ Instead of returning a static page, you will use Spring MVC to "fill in" parts o
    For example:
 
     ```java
-    // lookup the account in the repository by its ID
+    // lookup the account in the repository by the accountId
     // ...
     // convert to an accountResponse object
     // ...
-    // add the accountResponse to the Model
+    // add the accountResponse to the Model, e.g.:
     model.addAttribute("account", accountResponse);
     ```    
 
@@ -111,7 +114,7 @@ Instead of returning a static page, you will use Spring MVC to "fill in" parts o
 ## C. Replace ID With Name
 
 1. Update the `account-view.html` template and **replace** showing 
-   the account's ID with showing the account's **name** (e.g., `account.name`).
+   the account ID with showing the account's **name** (e.g., `account.name`).
 
 1. Restart and test out the page and see what you find by going to `localhost:8080/account/0` 
    and then `localhost:8080/account/1`.
