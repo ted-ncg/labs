@@ -81,10 +81,13 @@ https://bitbucket.org/tedmyoung/fostercity-201908-canteen
       }
     ```
 
+1. Modify the `AccountResponse` object to have a property 
+   (a `String` variable and its getter & setter) for `name`.
+
 1. Update `AccountApiControllerTest` to use names by updating the test to:
 
    ```java
-   public void testGetMapping() throws Exception {
+   public void accountInfoReturnsAccountResponseWithSpecifiedId() throws Exception {
      AccountRepository accountRepository = new FakeAccountRepository();
      Account account = new Account();
      account.deposit(73);
@@ -105,18 +108,36 @@ https://bitbucket.org/tedmyoung/fostercity-201908-canteen
 
 1. This test should *fail*.
 
-1. Modify the `AccountResponse` object to have a property 
-   (a `String` variable and its getter & setter) for `name`.
-
-1. Open the `AccountApiController` class and in the `accountInfo` method, 
+1. Open the `AccountApiController` class and in the `accountInfo` method,
+   as part of transforming the domain object to the DTO, 
    copy the new `name` property from the `Account` to the `AccountResponse` 
-   instance that is returned. 
+   instance that is returned.
 
 1. The above test should now *pass*.
 
 ### Add POST Method in the Controller
 
 In this section, you'll create a *new* Account via an incoming POST request.
+
+1. Add the following test method to the `AccountRestTest` class:
+
+      ```java
+      @Test
+      public void postWithBalanceAndNameCreatesNewAccountInRepository() throws Exception {
+        mockMvc.perform(post("/api/accounts")
+                          .contentType(MediaType.APPLICATION_JSON_UTF8)
+                          .content("{\"initialBalance\":32,\"accountName\":\"Video Games\"}"))
+               .andExpect(status().isOk())
+               .andExpect(jsonPath("$.name").value("Video Games"))
+               .andExpect(jsonPath("$.balance").value("32"));
+      }
+      ```
+
+   Use this import for the `post()` method:
+   
+   ```java
+   import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+   ``` 
 
 1. Add a new method in the `AccountApiController` that is a `POST` mapping:
 
@@ -134,13 +155,15 @@ In this section, you'll create a *new* Account via an incoming POST request.
 
 ### Try it out
 
+* Run the `AccountRestTest`, which should pass.
+
 * Using **Postman**, use the following JSON
 
     ```json
     {"initialBalance":13,"accountName":"Video Games"}
     ```
 
-* Using **curl**, do the following:
+* Using **curl**, you can copy-and-paste the following terminal commands:
 
     **For Linux/Mac:**
     
