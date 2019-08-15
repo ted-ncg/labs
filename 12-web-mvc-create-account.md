@@ -40,7 +40,7 @@ Create a link to a Create Account Form to create a new account and save it in th
 1. Re-run the `CreateAccountWebIntegrationTest`, it should now **pass**.
    If it doesn't don't move on until it's fixed!
 
-1. Try it from the browser by going to `locahost:8080/create-account` and you should see the form.
+1. Try it from the browser by going to `localhost:8080/create-account` and you should see the form.
 
 ## Process Create Account POST Request
 
@@ -128,4 +128,4 @@ Create a link to a Create Account Form to create a new account and save it in th
 
 1. And it should now **pass**.
 
-1. Try it from the browser by going to `locahost:8080/create-account` and you should see the form.
+1. Try it from the browser by going to `localhost:8080/create-account` and you should see the form.
