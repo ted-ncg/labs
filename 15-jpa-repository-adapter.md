@@ -26,7 +26,7 @@ Create a JPA implementation of the `AccountRepository` that uses Spring Data to 
 1. From the command-line, do a `mvn compile`, like this:
 
    ```
-   mvn compile -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true`
+   mvn compile -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true
    ```
    
    This may take a little while as it has to download the Spring Data dependencies.
