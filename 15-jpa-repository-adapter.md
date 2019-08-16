@@ -21,6 +21,8 @@ Create a JPA implementation of the `AccountRepository` that uses Spring Data to 
             <artifactId>h2</artifactId>
         </dependency>
 
+1. Exit IntelliJ IDEA 
+
 1. From the command-line, do a `mvn compile`, like this:
 
    ```
@@ -28,6 +30,8 @@ Create a JPA implementation of the `AccountRepository` that uses Spring Data to 
    ```
    
    This may take a little while as it has to download the Spring Data dependencies.
+   
+1. Re-open IntelliJ IDEA and open the project and make sure all of the tests compile and pass before moving on.
 
 ## A. Create Entity and JPA Repository Interface
 
@@ -74,7 +78,35 @@ Create a JPA implementation of the `AccountRepository` that uses Spring Data to 
 
 ----
 
-**Try out the application, everything should continue to work as before!**
+## C. Try It Out
+
+Try out the application, everything should continue to work as before!
+
+You can see the database tables by opening up a browser and going to:
+
+```
+localhost:8080/h2-console
+```
+
+You'll see a login window like this:
+
+![](h2console-login.png)
+
+* Click on **Test Connection** and make sure you can connect
+
+* Click on **Connect** 
+
+You'll then see a window like this:
+
+![](h2console-select.png)
+
+To query the database:
+
+1. Click on ACCOUNT_DTO (this will create a `SELECT *` statement) **(1)**
+
+1. Click on the **Run** button **(2)**
+
+1. You'll see the contents of the Accounts in the table **(3)**
 
 ----
 

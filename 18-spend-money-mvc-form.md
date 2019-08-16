@@ -52,7 +52,7 @@
   </html>
   ```
 
-1. Create a `WithdrawForm` *POJO* (Plain Old Java Object) that has two properties, with getters and setters:
+1. Create a `WithdrawForm` DTO that has two properties, with getters and setters:
    * `accountId` (`long`) - ID of the account to withdraw from
    * `amount` (`int`) - how much to spend
 
@@ -62,24 +62,34 @@
      @GetMapping("/withdraw/{id}")
      public String withdrawGet(Model model,
                                @PathVariable("id") long id) {
-       // put the Account into the model
-       // create a new WithdrawForm and set its accountId
+       // TODO: put an Account DTO into the model
+
+       // TODO: create a new WithdrawForm, set its accountId
+       //       and put it into the model
+
        return "withdraw";
      }
    ```
 
-1. Create a `@PostMapping` method for the `/withdraw` path that will take the amount *from* the form and withdraw it from the account using the `AccountService` and use the `redirect` to take the user back to the account view page using `"redirect:/account/{id}"`.
+1. Create a `@PostMapping` method for the `/withdraw` path that will take the amount *from* the form
+   and withdraw it from the account using the `AccountService` and use the `redirect` to take the user
+    back to the account view.
 
    ```java
-     @PostMapping("/withdraw")
-     public String withdrawPost(@ModelAttribute WithdrawForm form) {
-       // get the account ID from the form
-       // execute the withdraw on that account via the service
+     // TODO: add a POST mapping annotation
+     public String withdrawPost(@ModelAttribute("withdrawForm") WithdrawForm form) {
+       // TODO: get the account ID from the form
+
+       // TODO: execute the withdraw on that account via the service
+
        return "redirect:/account/" + form.getAccountId();
      }
    ```
 
-1. You should now be able to go to the home page, select an account, click on the "spend money" link, enter an amount, and see that the balance for that account has been reduced.
+## Try It Out
+
+1. You should now be able to go to the home page, select an account, click on the "spend money" link, 
+   enter an amount, and see that the balance for that account has been reduced.
 
 ----
 

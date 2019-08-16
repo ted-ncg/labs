@@ -32,11 +32,12 @@
 
 **Goal**: Create a new API endpoint for transferring money between accounts.
 
-1. Create a new `RestController` (e.g., `TransferMoneyApiController`) that `AutoWire`s both the `AccountRepository` and your new `TransferService`.
+1. Create a new `RestController` (e.g., `TransferMoneyApiController`) that `AutoWire`s both the `AccountRepository` 
+   and your new `TransferService`.
 
-1. Create a new method that is:
+1. Create a new method that:
  
-    * POST mapped to: `/api/transfers`
+    * Has a POST mapped to: `/api/transfers`
     * Takes a parameter: `TransferRequest`, which is a _JavaBean_ that has these three properties
        * `source`, the ID for the source account
        * `destination`, the ID for the destination account
