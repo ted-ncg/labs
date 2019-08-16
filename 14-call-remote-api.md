@@ -28,7 +28,7 @@ From within IDEA, you'll need to set up the proxy information so you can reach o
 
 ----
 
-## The Lab
+## The Lab: Part I
 
 ### Goal
 
@@ -71,6 +71,8 @@ Convert the account balance from USD ($) to GBP (£) and display it on the accou
 
 ----
 
+## Part II
+
 ### Use the Real Currency Conversion Service
 
 Now you will implement the `CurrencyService` so it will call out to the remote API.
@@ -100,7 +102,7 @@ Now you will implement the `CurrencyService` so it will call out to the remote A
    > ```
    >
    >
-   > And here's the JavaBean that's used above:
+   > And here's the JavaBean (DTO) that's used above:
    > 
    > ```java
    > public class WeatherResponse {
@@ -113,8 +115,8 @@ Now you will implement the `CurrencyService` so it will call out to the remote A
    > ```
 
 
-1. Create a JavaBean `ConvertedCurrency` that represents the returned JSON called `ConvertedCurrency`.
-   The *properties* for your JavaBean must *match* the JSON names, i.e., it will have 2 properties for the currency and the converted result.
+1. Create a JavaBean (DTO) `ConvertedCurrency` that represents the returned JSON called `ConvertedCurrency`.
+   The *properties* for your DTO must *match* the JSON names, i.e., it will have 2 properties for the currency and the converted result.
    
    * The JSON returned from this API looks like this:
    
