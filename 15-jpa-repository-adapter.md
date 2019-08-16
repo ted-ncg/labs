@@ -23,7 +23,9 @@ Create a JPA implementation of the `AccountRepository` that uses Spring Data to 
 
 1. Exit IntelliJ IDEA 
 
-1. From the command-line, do a `mvn compile`, like this:
+1. Open up a command line prompt and change to the directory where your project is located.
+
+1. From the command-line, do a `mvn compile`, like this (copy-n-paste the whole line):
 
    ```
    mvn compile -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true
