@@ -35,18 +35,27 @@ Create a JPA implementation of the `AccountRepository` that uses Spring Data to 
    
 1. Re-open IntelliJ IDEA and open the project and make sure all of the tests compile and pass before moving on.
 
+    * You may need to "refresh" (or re-import) the Maven file:
+      open the Maven window (on the right side) and click on the left-most icon
+      (Reimport All Maven Projects).
+
 ## A. Create Entity and JPA Repository Interface
 
 1. Copy the [AccountDto.java](AccountDto.java) class into your production code directory.
 
-1. Create a new *interface* as follows:
+1. First, you'll create a Spring Data Repository by creating a new *interface* as follows:
 
     ```java
     public interface AccountJpaRepository extends CrudRepository<AccountDto, Long> {
     }
     ```
 
+   This is all that's needed, Spring Data generates the database code for you.
+
 ## B. Implement the Repository Adapter
+
+Now that you have a database implementation (provided by Spring Data), you need to connect the Account Repository
+interface to the Spring Data implementation.
 
 1. Create an *Adapter* class called `AccountJpaRepositoryAdapter` that implements the `AccountRepository` interface
    and has the `@Repository` and `@Primary` annotations:
