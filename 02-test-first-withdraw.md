@@ -14,7 +14,7 @@ Make sure you have the latest version, where we "group coded" the **deposit** fu
 1. Download or `git pull` the latest code from
 
    ```
-   https://bitbucket.org/tedmyoung/fostercity-201908-canteen
+   https://bitbucket.org/tedmyoung/austin-201908-canteen
    ```
 
 1. Make sure all of the tests **pass** before continuing!
