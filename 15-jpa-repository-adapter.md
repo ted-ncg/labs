@@ -86,6 +86,13 @@ interface to the Spring Data implementation.
     ```
 
     Now implement `findAll()` and `save()`, delegating to those methods in the `AccountJpaRepository` instance.
+    
+    >Note: Iterable isn't compatible with List, so you can quickly convert between the two by doing:
+    >
+    >List<Account> target = new ArrayList<>();
+    >iterable.forEach(target::add);
+    >
+    >
 
 ----
 

@@ -157,6 +157,8 @@ public interface AccountRepository {
         }
         ```
 
+<img src="account_repository_update.png" width="515px">
+
 1. Once the above works where the `account` already has an ID, 
    then you can work on an account that does **not** have an ID:
 
@@ -182,6 +184,7 @@ public interface AccountRepository {
       }
       ```
 
+<img src="account_repository_assign_id.png" width="625px">
 
 ----
 
