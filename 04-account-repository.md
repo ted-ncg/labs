@@ -194,11 +194,14 @@ public interface AccountRepository {
 
 ### Negative & Other Tests
 
-* Be sure and think about other *negative* tests that you can add and write them,
-  think about:
+* Be sure and think about other tests, including *negative* tests,
+  that you can add and write them. Think about:
 
-    * Finding an `Account` with an ID that doesn't exist? Must be `null`, do you have a test for that?
-    * Can you find a *new* `Account` that was just saved? You must be able to find it by the ID that was assigned!
+    * Finding an `Account` with an ID that doesn't exist? 
+      It must be `null`, so do you have a test for that?
+      
+    * Can you find a *new* `Account` that was just saved?
+      You must be able to find it by the ID that was assigned!
 
 ----
 
