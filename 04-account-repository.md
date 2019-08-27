@@ -159,7 +159,7 @@ public interface AccountRepository {
 
    This is a Sequence Diagram of what should happen when doing an _update_:
 
-   <img src="account_repository_update.png" width="40%">
+   <img src="account_repository_update.png" width="50%">
 
 1. Once the above works where the `account` already has an ID, 
    then you can work on an account that does **not** have an ID:
@@ -188,7 +188,7 @@ public interface AccountRepository {
 
    This is a sequence diagram of what happens when saving a _new_ `Account`:
 
-   <img src="account_repository_assign_id.png" width="40%">
+   <img src="account_repository_assign_id.png" width="50%">
 
 ----
 
