@@ -52,13 +52,11 @@ public interface AccountRepository {
       public FakeAccountRepository() {}
       
       public FakeAccountRepository(Account... accounts) {
-        // You can iterate through the accounts array like this:
+        // You can iterate through the accounts array
+        // (Account... is varargs) like this:
         for (Account account : accounts) {
           // store each account here so it can be found later
         }
-        // You can also convert it directly to a List:
-        // See: https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#asList-T...-
-        List<Account> accountList = Arrays.asList(accounts);
       }
   
       public Account findOne(Long id) {
