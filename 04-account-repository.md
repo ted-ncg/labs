@@ -206,8 +206,7 @@ public interface AccountRepository {
 <div style="padding-right: 8px;">
   <p style="text-align: left; font-size: 120%; font-weight: 700;">
     <img src="/stop-sign.jpg" style="float: left; vertical-align: middle; width: 80px; padding-right: 10px">
-    Once you've completed the above steps,<br/>
-    check in with the instructor to review your code.
+    **Once you've completed the above steps, check in with the instructor to review your code.**
   </p>
 </div>
 

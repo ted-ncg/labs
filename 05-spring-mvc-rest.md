@@ -9,7 +9,18 @@ using Spring's MVC framework.
 
 ### Reference
 
-**Note:** Keep this reference handy: http://engineering.pivotal.io/post/must-know-spring-boot-annotations-controllers/
+**Useful reference for annotations**: http://engineering.pivotal.io/post/must-know-spring-boot-annotations-controllers/
+
+**Full Spring Docs**: https://docs.spring.io/spring/docs/5.1.8.RELEASE/spring-framework-reference/web.html#mvc-ann-requestmapping
+
+## More Logging
+
+So you can see logging related to mapping your endpoints, add the following two lines to the `application.properties` file:
+
+```
+logging.level.org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping=TRACE
+logging.level.web=DEBUG
+```
 
 ## A. Create Failing Test
 
@@ -27,7 +38,9 @@ public class AccountApiControllerTest {
   @Test
   public void accountInfoReturnsAccountWithSpecifiedId() throws Exception {
     AccountApiController controller = new AccountApiController();
+
     Account account = controller.accountInfo("123");
+
     assertThat(account.getId())
         .isEqualTo(123L);
   }
@@ -61,8 +74,9 @@ public class AccountApiControllerTest {
 1. Set the account's ID to the `accountId` parameter
 
     * **Note:** you will need to convert from the `accountId` as a `String` to a `Long`.
+      You can use `Long.parseLong()` to do this.
 
-1. Add 13 to the account's balance via the `.deposit()` method
+1. Add `13` to the account's balance via the `deposit()` method
 
 1. Return this new `Account` object
 
@@ -77,6 +91,8 @@ Now you'll annotate the method so that it can be used via an HTTP `GET` to the U
 
     >**GET MAPPING EXAMPLE**
     >
+    > *DO NOT COPY-AND-PASTE THIS*
+    >
     >This method would be invoked if a *GET* came in to the path `http://localhost:8080/users/999`
     >
     > ```java
@@ -88,6 +104,8 @@ Now you'll annotate the method so that it can be used via an HTTP `GET` to the U
    `@GetMapping` that you used above.
 
     >**PATH VARIABLE EXAMPLE**
+    >
+    > *DO NOT COPY-AND-PASTE THIS*
     >
     >This extracts the `id` variable from the path and puts it in the `userId` parameter
     >
@@ -151,7 +169,3 @@ public class HelloController {
   }
 }  
 ```
-
-### Spring Docs:
-
-* Extracting path and query info from the URI: http://docs.spring.io/spring/docs/4.3.19.RELEASE/spring-framework-reference/htmlsingle/#mvc-ann-requestmapping-uri-templates
