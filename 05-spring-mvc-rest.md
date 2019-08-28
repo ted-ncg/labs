@@ -118,7 +118,9 @@ Now you'll annotate the method so that it can be used via an HTTP `GET` to the U
 
 1. Run the `CanteenApplication` from within IntelliJ IDEA:
 
-   * Right click on the `CanteenApplication` file and then select "Run..."
+   * Right click on the `CanteenApplication` class and then select "Run...", or you can click on the green arrow:
+   
+      ![](running-canteen-application.png)
  
    * Once you see something like the following, you can go to the next step:
 
