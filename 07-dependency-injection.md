@@ -33,6 +33,8 @@ https://bitbucket.org/tedmyoung/austin-201908-canteen
 1. Open `AccountApiController` and create a constructor that takes a *dependency* on `AccountRepository` as a parameter.
 
    * Make sure to save the incoming reference to a member (instance) variable
+   
+   * Add the `@Autowired` annotation to the constructor (Spring Boot can figure this out, but it's a good idea to be explicit)
 
 1. Replace the test class named `AccountApiControllerTest` with the contents below:
 

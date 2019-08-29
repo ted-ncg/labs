@@ -129,8 +129,9 @@ In this section, you'll create a *new* Account via an incoming POST request.
                           .content("{\"initialBalance\":32,\"accountName\":\"Video Games\"}"))
                .andExpect(status().isOk())
                .andExpect(jsonPath("$.name").value("Video Games"))
-               .andExpect(jsonPath("$.balance").value("32"));
-      }
+               .andExpect(jsonPath("$.balance").value("32"))
+               .andExpect(jsonPath("$.id").value("2"));
+          }
       ```
 
    Use this import for the `post()` method:
