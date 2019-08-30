@@ -28,23 +28,28 @@
 
 ----
 
+> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, do **not** move on until you have checked in with the instructor.
+
+----
+
+
 ## Part 2: REST API for Transferring Money
 
 **Goal**: Create a new API endpoint for transferring money between accounts.
 
-1. Create a new `RestController` (e.g., `TransferMoneyApiController`) that `AutoWire`s both the `AccountRepository` 
-   and your new `TransferService`.
+1. Create a new `RestController` named `TransferMoneyApiController` that autowires both the `AccountRepository` 
+   and the new `TransferService`.
 
 1. Create a new method that:
  
     * Has a POST mapped to: `/api/transfers`
-    * Takes a parameter: `TransferRequest`, which is a _JavaBean_ that has these three properties
+    * Takes a parameter: `TransferRequest`, which is a DTO that has these three properties:
        * `source`, the ID for the source account
        * `destination`, the ID for the destination account
        * `amount`, an `int` for the amount to transfer
-    * Inside the method, use the `TransferService` that you created above (by injecting it into your controller) to transfer the money.
+    * Use the `TransferService`'s `transfer()` that you autowired to transfer the money.
     * Return `200` if everything works, otherwise a `400` if any exceptions (such as `InsufficientBalanceException`) are thrown by the transfer service.
-    
+
 1. Try it out using Postman (to the URL `localhost:8080/api/transfers`) with the following JSON:
 
     ```json
@@ -64,6 +69,10 @@
     ```
     curl -v --noproxy "*" -d "{\"source\": 1, \"destination\": 2, \"amount\": 5}" -H "Content-Type: application/json" "localhost:8080/api/transfers"
     ```
+
+----
+
+> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, do **not** move on until you have checked in with the instructor.
 
 ----
 
@@ -169,7 +178,7 @@
 
    ```java
      @PostMapping("/transfer")
-     public String transfer(@ModelAttribute TransferForm form) {
+     public String transfer(@ModelAttribute("transferForm") TransferForm form) {
        // 1: Get both the sourceAccountId and targetAccountId from the form
        // 2: Using the TransferService, transfer the amount from the form
        //    between the two accounts
@@ -181,12 +190,15 @@
 
 ----
 
-**NOTE:** Don't continue with these bonuses until you've had the instructor look over your code.
+<div style="padding-right: 8px;">
+  <p style="text-align: left; font-size: 110%; font-weight: 700;">
+    <img src="/stop-sign.jpg" style="float: left; vertical-align: middle; width: 80px; padding-right: 10px">Once you've completed the above steps,<br/>
+    check in with the instructor to review your code.
+  </p>
+</div>
 
-----
+----  
 
 ## Bonus #1: Tests
 
 * Write a Spring Boot integration test for the REST API from Part 1.
-
-* 
