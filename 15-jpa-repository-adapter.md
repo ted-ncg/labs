@@ -110,6 +110,8 @@ You'll see a login window like this:
 
 ![](h2console-login.png)
 
+* You might have to **change** the JDBC URL to be: `jdbc:h2:mem:testdb`
+
 * Click on **Test Connection** and make sure you can connect
 
 * Click on **Connect** 
