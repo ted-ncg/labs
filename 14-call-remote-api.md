@@ -36,23 +36,26 @@ Convert the account balance from USD ($) to GBP (£) and display it on the accou
 
 ### Change the View
 
-1. Create a new class: `CurrencyService` that has a method:
+1. Create a new *interface*: `CurrencyService` that has a method:
 
     ```java
-    int convertToGbp(int amount)
+    int convertToGbp(int amount);
     ```
 
-1. Create a _stub_ version of this service that simply returns `123`. We'll write the actual implementation later.
+1. Create a _stub_ implementation of this service in a new class named `StubCurrencyService`.
+   Implement the `convertToGbp` method so that it simply returns the value `123`. 
+   We'll write a real implementation later.
 
-1. Inject (autowire) the CurrencyService into your Web (Account) Controller.
+1. Inject (autowire) this `StubCurrencyService` into your Web (Account) Controller.
 
    > **(??)** What will you need to do to properly autowire the service?
    >
    > **(??)** What annotations are necessary?
 
-1. Update the `AccountResponse` object so it has a property for the GBP balance. (Don't forget the getter and setter.)
+1. Update the `AccountResponse` DTO so it has a property for the GBP balance. (Don't forget the getter and setter.)
 
-1. In the `accountView()` method, after transforming the `Account` to an `AccountReponse`, use the `CurrencyService` to convert the balance and store that into the `AccountResponse` as well.
+1. In the `accountView()` method, after transforming the `Account` to an `AccountReponse`, 
+   use the `CurrencyService` to convert the account's balance to GBP and store that into the `AccountResponse`.
 
 1. Update the Account View HTML page to display both USD and GBP on the page, like this:
      ```
@@ -60,7 +63,7 @@ Convert the account balance from USD ($) to GBP (£) and display it on the accou
      GBP Balance: £123
      ```
 
-> Remember, the converted GBP value is hard-coded, so will always be 123.
+> Remember, the converted GBP value is hard-coded, so should always be 123.
 
 
 **Do not proceed further until you have the account view page displaying both USD and GBP balance**
@@ -73,9 +76,9 @@ Convert the account balance from USD ($) to GBP (£) and display it on the accou
 
 ## Part II
 
-### Use the Real Currency Conversion Service
+### HTTP Currency Conversion Service
 
-Now you will implement the `CurrencyService` so it will call out to the remote API.
+Now you will implement a real `CurrencyService` so it will call out to the remote API over HTTP.
 
 
    > **Example**
@@ -116,7 +119,8 @@ Now you will implement the `CurrencyService` so it will call out to the remote A
 
 
 1. Create a JavaBean (DTO) `ConvertedCurrency` that represents the returned JSON called `ConvertedCurrency`.
-   The *properties* for your DTO must *match* the JSON names, i.e., it will have 2 properties for the currency and the converted result.
+   The *properties* for your DTO must *match* the JSON names, i.e., 
+   it will have 2 properties for the currency and the converted result (use a **double** for this).
    
    * The JSON returned from this API looks like this:
    
@@ -127,7 +131,11 @@ Now you will implement the `CurrencyService` so it will call out to the remote A
      }
      ```
 
-1. Create a URI Template string for the remote API:
+1. Create a **new** class that implements `CurrencyService` called `JittertedCurrencyService`,
+   and annotate it so that Spring can manage it. Also annotate it with `@Primary` so it uses it
+   instead of the *stub* version.
+
+1. In the implementation of `convertToGbp()`, Create a URI Template string for the remote API:
 
    * It will send three *query* parameters:
        * `from` - the source currency, e.g., `USD`
@@ -143,9 +151,11 @@ Now you will implement the `CurrencyService` so it will call out to the remote A
    > Think about what parts of the string need to become template variables.
    > A URI Template Variable looks like `{amount}`.
    
-1. Instantiate a `RestTemplate` class and use the `getForObject()` method to pass in: the URL, the `ConvertedCurrency.class`, and the query parameters.
+1. Instantiate a `RestTemplate` class and use the `getForObject()` method to pass in: 
+   the URL, the DTO `ConvertedCurrency.class`, and the query parameters as a map.
 
-1. The `getForObject()` will return an instance of the `ConvertedCurrency`, so you will take the `converted` property (which is a `double`) and return it as an `int` (you can just cast it or use the `intValue()`).
+1. The `getForObject()` will return an instance of the `ConvertedCurrency`, 
+   so you will take the `converted` property (which is a `double`) and return it as an `int` (you can just cast it or use the `intValue()`).
 
 1. Now try viewing an account and see that the GBP converted value is correct.
 
@@ -157,7 +167,7 @@ Now you will implement the `CurrencyService` so it will call out to the remote A
 
 ## Bonus #1
 
-The server at http://jitterted-currency-conversion.herokuapp.com also supports converting to Japanese Yen.
+The server at `http://jitterted-currency-conversion.herokuapp.com` also supports converting to Japanese Yen.
 
 The `to` currency for the Yen is `JPY` (instead of `GBP`).
 
