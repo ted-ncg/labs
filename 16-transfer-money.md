@@ -44,10 +44,11 @@
  
     * Has a POST mapped to: `/api/transfers`
     * Takes a parameter: `TransferRequest`, which is a DTO that has these three properties:
-       * `source`, the ID for the source account
-       * `destination`, the ID for the destination account
+       * `source`, the ID for the source account (`long`)
+       * `destination`, the ID for the destination account (`long`)
        * `amount`, an `int` for the amount to transfer
-    * Use the `TransferService`'s `transfer()` that you autowired to transfer the money.
+    * Use the repository to retrieve each account
+    * Use the `TransferService`'s `transfer()` that you autowired to transfer the money from the source to the destination
     * Return `200` if everything works, otherwise a `400` if any exceptions (such as `InsufficientBalanceException`) are thrown by the transfer service.
 
 1. Try it out using Postman (to the URL `localhost:8080/api/transfers`) with the following JSON:
