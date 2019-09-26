@@ -1,23 +1,11 @@
 @startuml
-actor client
-activate client
 activate SpringBoot
-boundary ApiController
-activate ApiController
-database Repository as "Account\nRepository"
-activate Repository
+boundary AccountWebController
+activate AccountWebController
+activate AccountJpaRepositoryAdapter
+database CrudRepository
+activate CrudRepository
 
-client -> SpringBoot: POST /api/accounts/\n{"initialBalance": 100,\n "accountName": "Video Games"}
-
-activate Jackson
-SpringBoot -> Jackson: readJson {...}
-create AccountCreateRequest
-Jackson -> AccountCreateRequest: new
-activate AccountCreateRequest
-Jackson -> AccountCreateRequest: setInitialBalance(100)
-Jackson -> AccountCreateRequest: setAccountName("Video Games")
-SpringBoot <- Jackson: AccountCreateRequest
-SpringBoot -> ApiController: createAccount(request)
 ApiController -> Repository: save(account)
 activate Account
 Account --> ApiController: account

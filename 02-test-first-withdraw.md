@@ -14,7 +14,7 @@ Make sure you have the latest version, where we "group coded" the **deposit** fu
 1. Download or `git pull` the latest code from
 
    ```
-   https://bitbucket.org/tedmyoung/austin-201908-canteen
+   https://bitbucket.org/tedmyoung/fostercity-201909-canteen
    ```
 
 1. Make sure all of the tests **pass** before continuing!
@@ -60,7 +60,7 @@ You should write at least 3 tests. Think about:
 
 * Withdrawing a single amount
 * Withdrawing twice
-* Withdrawing more than available balance
+* Withdrawing more than available balance (this is allowed, no Exception needed)
 * Withdrawing zero
 
 ----
