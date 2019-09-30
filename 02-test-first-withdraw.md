@@ -58,10 +58,10 @@ Make sure you have the latest version, where we "group coded" the **deposit** fu
 
 You should write at least 3 tests. Think about:
 
+* Withdrawing zero -- this is OK!
 * Withdrawing a single amount
 * Withdrawing twice
-* Withdrawing more than available balance -- this is allowed, do *not* throw an Exception
-* Withdrawing zero
+* Withdrawing more than available balance -- this is allowed, do *not* throw an Exception, let the balance go *negative*
 
 ----
 
