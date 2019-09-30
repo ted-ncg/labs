@@ -80,7 +80,7 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class DepositTest {
+public class AccountDepositTest {
 
   @Test
   public void newAccountBalanceIsZero() throws Exception {
