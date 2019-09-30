@@ -60,7 +60,7 @@ You should write at least 3 tests. Think about:
 
 * Withdrawing a single amount
 * Withdrawing twice
-* Withdrawing more than available balance (this is allowed, no Exception needed)
+* Withdrawing more than available balance -- this is allowed, do *not* throw an Exception
 * Withdrawing zero
 
 ----
@@ -148,4 +148,4 @@ public class Account {
   }
 }
 ```
-<br/>
+
