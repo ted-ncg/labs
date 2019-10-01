@@ -157,18 +157,22 @@ public interface AccountRepository {
 
    This is a Sequence Diagram of what should happen when doing an _update_:
 
-   <img src="account_repository_update.png" width="50%">
+   <img src="account_repository_update.png" width="60%">
 
 1. Once the above works where the `account` already has an ID, 
    then you can work on an account that does **not** have an ID:
 
-   * Rule: If the account came in with NO `id` (it is `null`), SET it with a UNIQUE one that the repository generates
+   * Rule: If the account came in with NO `id` (**it is `null`**), 
+     SET it with a UNIQUE one that the repository generates
    
      * **Think:** How will you guarantee uniqueness?
       
-   * Return the Account object that must now have its id set (i.e., is NOT null)
+   * Return the `Account` object: it must now have its `id` set (i.e., is NOT null)
+   
+1. Write a test that asserts that a **new** `Account` is assigned an ID by the repository when you call `save()`. 
 
-   * Here's a test to ensure that each newly saved Account is given an ID that's different from other newly saved Accounts.
+1. Once the above test passes, you can use this test to ensure that each newly saved `Account`
+   is given an ID that's *different* from other newly saved `Account` objects.
   
       ```java
       @Test
@@ -186,7 +190,7 @@ public interface AccountRepository {
 
    This is a sequence diagram of what happens when saving a _new_ `Account`:
 
-   <img src="account_repository_assign_id.png" width="50%">
+   <img src="account_repository_assign_id.png" width="60%">
 
 ----
 
@@ -228,9 +232,22 @@ public interface AccountRepository {
     
      > NOTE: Don't modify the account object that's being deleted -- it will continue to have the id that was assigned upon `save`
     
-   * If `null` reference for the `Account` is passed in, throw an `IllegalArgumentException`
+   * If `null` reference for the `Account` is passed in, throw an `IllegalArgumentException`, e.g.:
+   
+     ```java
+     accountRepository.delete(null);
+     ```
+     
+     must throw an exception.
     
-   * If an `Account` with an `id` that's not found is passed in, throw an `IllegalArgumentException` 
+   * If an `Account` with an `id` that's not found is passed in, throw an `IllegalArgumentException`
+   
+     ```java
+     accountRepository.delete(alreadyDeletedAccount);
+     ```
+  
+     In the above code, if `alreadyDeletedAccount` is not in the repository, it should throw an exception.
+     This **includes** if the ID is `null`.
   
 ----
 
