@@ -12,12 +12,12 @@ Add "negative" tests to the Account class testing with exceptions.
 
 ----
 
-**Remember:** Follow the *Red-Green-Commit-Refactor-Commit* cycle
+**Remember:** Follow the TDD cycle
 
 **Example:**
 
 Start with the test: make the test fail, fix the exception being thrown in code, then test should pass.
-Don't forget to run all tests
+Don't forget to run all tests!
 
 ----
 
@@ -25,16 +25,19 @@ Don't forget to run all tests
 
 Write a test and then make it pass for **each** scenario (**REMEMBER**: ping-pong pair!): 
 
-  1. Depositing a negative or zero amount must `throw` the `InvalidAmountException` -- what might you need to refactor to make this change?
+Depositing a negative or zero amount must `throw` the `InvalidAmountException` -- what will you need to change to make this happen?
 
-     **NOTE:** Use AssertJ's exception assertion mechanism, e.g.:
-  
-     ```java
-     assertThatThrownBy(() -> { account.deposit(-1); })
-             .isInstanceOf(InvalidAmountException.class);
-     ```
+> **NOTE:** Use AssertJ's exception assertion mechanism, e.g.:
+>
+> ```java
+> assertThatThrownBy(() -> { account.deposit(-1); })
+>      .isInstanceOf(InvalidAmountException.class);
+> ```
+>
+> Make sure to import the method: `import static org.assertj.core.api.Assertions.assertThatThrownBy;`
 
-     **NOTE:** Create the Exception class by subclassing `RuntimeException`
+
+> **NOTE:** Create the Exception class by subclassing `RuntimeException`
 
 ## Invalid Withdrawal Amount
 
