@@ -139,7 +139,7 @@ public interface AccountRepository {
         ```java
         @Test
         public void saveAccountWithIdHasChangedAttributesWhenFound() throws Exception {
-          AccountRepository accountRepository = new AccountRepository();
+          AccountRepository accountRepository = new FakeAccountRepository();
           Account account = new Account();
           account.deposit(15);
           account.setId(12L);
