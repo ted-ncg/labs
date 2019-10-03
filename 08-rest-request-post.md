@@ -60,8 +60,8 @@ https://bitbucket.org/tedmyoung/fostercity-201909-canteen
 
    * **NOTE:** Instead of adding a setter/getter, add query/command methods:
    
-     * `name()` that returns its name
-     * `changeNameTo(String newName)` that updates the name to the new value
+     * `name()` that returns its name (this is a QUERY method)
+     * `changeNameTo(String newName)` that updates the name to the new value (this is a COMMAND or REQUEST method)
 
 1. Modify the `AccountDataLoader` class so that each account has a name, e.g.:
 

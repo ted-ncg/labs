@@ -16,16 +16,6 @@ You'll then provide a "home" page that displays **all** the accounts in the syst
 
 ----
 
-## A. First, Some Tests
-
-Add this [AccountViewWebIntegrationTest](https://github.com/ted-ncg/labs/blob/master/AccountViewWebIntegrationTest.java) and run it and make sure it passes.
-
-  * If it doesn't, ensure that you're putting an `AccountResponse` object into the model and not an `Account`.
-
-**Don't move on until this test passes**
-
-----
-
 ## B. Handle Not Found
 
 Add error handling when an account isn't found.

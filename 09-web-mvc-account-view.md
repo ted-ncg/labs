@@ -70,6 +70,12 @@ First you'll return a static version of the Account View page to make sure every
 
 ----
 
+Add this [AccountViewWebIntegrationTest](https://github.com/ted-ncg/labs/blob/master/AccountViewWebIntegrationTest.java)
+and run it, it should fail.
+The next steps will do the work to make it pass.
+
+----
+
 ## B. Templatize the Page
 
 Instead of returning a static page, you will use Spring MVC to "fill in" parts of the page
@@ -101,7 +107,10 @@ with information that comes from the account entity.
     // ...
     // add the accountResponse to the Model, e.g.:
     model.addAttribute("account", accountResponse);
-    ```    
+    ```
+
+1. Run the `AccountViewWebIntegrationTest` and it should now pass.
+   If it doesn't, ensure that you're putting an `AccountResponse` object into the model and not an `Account` object.
 
 1. Restart and test out the page and see what you find by going to `localhost:8080/account/1`.
 
