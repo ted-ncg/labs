@@ -4,6 +4,16 @@
 
 ----
 
+### Latest Code
+
+If you want to download the latest code that the instructor did in class, it can be found at:
+
+```
+https://bitbucket.org/tedmyoung/fostercity-201909-canteen
+```
+
+----
+
 ### References
 
 * **Spring Web Controller**: https://docs.spring.io/spring/docs/5.1.8.RELEASE/spring-framework-reference/web.html#mvc-controller
