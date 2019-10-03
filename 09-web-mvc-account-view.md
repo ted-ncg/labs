@@ -70,16 +70,14 @@ First you'll return a static version of the Account View page to make sure every
 
 ----
 
-Add this [AccountViewWebIntegrationTest](https://github.com/ted-ncg/labs/blob/master/AccountViewWebIntegrationTest.java)
-and run it, it should fail.
-The next steps will do the work to make it pass.
-
-----
-
 ## B. Templatize the Page
 
 Instead of returning a static page, you will use Spring MVC to "fill in" parts of the page
 with information that comes from the account entity.
+
+1. Add this test: [AccountViewWebIntegrationTest](https://github.com/ted-ncg/labs/blob/master/AccountViewWebIntegrationTest.java)
+   and run it, it should fail.
+   The next steps will have you do the work to make it pass.
 
 1. "Templatize" the `<h1>Account</h1>` and the `<p>Balance</p>` elements so that it displays
    the information from the account by using the `th:text` attribute.
@@ -88,7 +86,7 @@ with information that comes from the account entity.
     
         `<h1>Account: <span th:text="${account.id}">99</span></h1>`
 
-    * Make sure to do the same for the `Balance` 
+    * Make sure to do the same for the `Balance` property
 
 1. In the `accountView` method, add a new parameter, `Model model`, e.g.:
 
