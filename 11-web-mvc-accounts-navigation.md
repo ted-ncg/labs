@@ -43,7 +43,7 @@ the details of the account.
 
 1. Run the test from above and it should **pass**.
 
-1. Also verify it by going to `http://localhost:8080/`.
+1. Run the `CanteenApplication` and then try it out by going to `http://localhost:8080/`.
 
 ## Linking to Specific Account Pages
 
