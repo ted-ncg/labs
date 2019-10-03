@@ -59,20 +59,20 @@ Use the `th:href` tag to create links to view a specific account page.
    * We'll need to make the "href" dynamic, which Thymeleaf does through its `th:href` tag.
      Documentation for that tag can be found here: http://www.thymeleaf.org/doc/articles/standardurlsyntax.html
 
-1. Add a parameterized link, which will look like our templated path in our `GetMapping`.
-   For example, to produce a link to a product page using its product ID, we would use the `@{}` expression, with an embedded `${}` variable expression like this:
+1. Add a parameterized link, using the Thymeleaf `th:href` syntax (details [here](http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#preprocessing)):
+
+    ```html
+    <a th:href="@{/product/__${product.id}__}">Product</a>`
+    ```
+
+   At runtime, Thymeleaf will replace `__${product.id}__` with the ID of the *product* taken from the model.
+   For example, if `${product.id}` was 2, then the final output from Thymeleaf is:
    
+   ```html
+   <a href="/product/2">Product</a>`
    ```
-   <a th:href="@{/product/{id}(id=${product.id})}">Product</a>
-   ```
    
-   This can look complicated, so let's look at the pieces, the `${product.id}` is the dynamic ID from the product and `(id=${...})` means assign it to `id`.
-   The `/product/{id}` then gets the `{id}` replaced at runtime with the `id` variable.
-   If `${product.id}` was 2, then the final output from Thymeleaf is `/product/2` and the href would look like this:
-   
-      `<a href="/product/2">Product</a>`
-   
-1. Since we want each account name cell to have both the name of the account and a link, 
+1. Since we want each account name table cell to have both the name of the account and a link, 
    we'll need to pull the `th:text` out of the `<td>` tag and into a `<span>`.
 
    The resulting HTML that we want to be generated is:
@@ -82,21 +82,6 @@ Use the `th:href` tag to create links to view a specific account page.
    Use the concepts you've learned to translate the above into Thymeleaf attributes.
    
 1. Verify that clicking on a link from the "all accounts" page takes you to the specific page for that account.
-
-
-----
-
-> <img src="stop-sign.jpg" width="56" /> Once you've completed the above steps, let the instructor know before moving on.
-
-----
-
-## Bonus
-
-1. You can use the "pre-processing" syntax to generate the href, which for this particular use case is easier:
-
-    `th:href="@{/account/__${account.id}__}"`
-    
-   In case you're interested, the documentation for the pre-processing syntax is here: http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#preprocessing
 
 
 ----

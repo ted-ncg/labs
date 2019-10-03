@@ -120,6 +120,8 @@ View a summary of all accounts.
     </html>
     ```
 
+**NOTE**: Do *NOT* delete the `<th>` tags, they are the table header and need to remain.
+
 1. Add Thymeleaf text substitution (`th:each` and `th:text`) to the `<tr>` and `<td>` tags so that it pulls the content from the list of accounts.
    You will need to do something similar to this example, replacing **account** for **product**.
    

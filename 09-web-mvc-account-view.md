@@ -18,6 +18,8 @@ https://bitbucket.org/tedmyoung/fostercity-201909-canteen
 
 * **Spring Web Controller**: https://docs.spring.io/spring/docs/5.1.8.RELEASE/spring-framework-reference/web.html#mvc-controller
 
+* **Controller annotations**: http://engineering.pivotal.io/post/must-know-spring-boot-annotations-controllers/
+
 * **Thymeleaf 3**: https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-and-displaying-variables
 
 * **Test Annotations**: more details about how `@SpringBootTest`, etc. work:
