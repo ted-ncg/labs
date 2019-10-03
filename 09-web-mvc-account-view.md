@@ -17,7 +17,7 @@
  
 ----
 
-## Goal: Create an "account view" page.
+## Goal: Create an "Account View" page.
 
 In this lab you will create a web app that will show account information for a single account.
 
@@ -62,7 +62,7 @@ First you'll return a static version of the Account View page to make sure every
    </html>
    ```
 
-1. Test out the static page above by going to `localhost:8080/account/1` to make sure you see the page.
+1. Test out this page above by going to `localhost:8080/account/1` to make sure you see the page.
 
 ----
 
@@ -123,7 +123,7 @@ with information that comes from the account entity.
 ## C. Replace ID With Name
 
 1. Update the `account-view.html` template and **replace** showing 
-   the account ID with showing the account's **name** (e.g., `account.name`).
+   the account ID with the account's **name** (e.g., `account.name`).
 
 1. Restart and test out the page and see what you find by going to `localhost:8080/account/0` 
    and then `localhost:8080/account/1`.
