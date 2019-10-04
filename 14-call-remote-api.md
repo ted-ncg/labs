@@ -91,7 +91,7 @@ Now you will implement a real `CurrencyService` so it will call out to the remot
    > // instantiate a RestTemplate instance
    > RestTemplate restTemplate = new RestTemplate();
    > // create a Template URL for the API
-   > String weatherUrl = "https://basic-weather.herokuapp.com/api/weather/{zip}";
+   > String weatherUrl = "https://basic-weather.herokuapp.com/api/zip/{zip}";
    >
    > // put the variables in a Map
    > Map<String, String> uriVariables = new HashMap<>();
@@ -105,7 +105,7 @@ Now you will implement a real `CurrencyService` so it will call out to the remot
    > ```
    >
    >
-   > And here's the JavaBean (DTO) that's used above:
+   > And here's the DTO that's used above:
    > 
    > ```java
    > public class WeatherResponse {
