@@ -46,7 +46,7 @@ Convert the account balance from USD ($) to GBP (£) and display it on the accou
    Implement the `convertToGbp` method so that it simply returns the value `123`. 
    We'll write a real implementation later.
 
-1. Inject (autowire) this `StubCurrencyService` into your Web (Account) Controller.
+1. Inject (autowire) the `CurrencyService` into your Web (Account) Controller.
 
    > **(??)** What will you need to do to properly autowire the service?
    >
@@ -54,7 +54,7 @@ Convert the account balance from USD ($) to GBP (£) and display it on the accou
 
 1. Update the `AccountResponse` DTO so it has a property for the GBP balance. (Don't forget the getter and setter.)
 
-1. In the `accountView()` method, after transforming the `Account` to an `AccountReponse`, 
+1. In the `accountView()` method, after transforming the `Account` to an `AccountResponse`, 
    use the `CurrencyService` to convert the account's balance to GBP and store that into the `AccountResponse`.
 
 1. Update the Account View HTML page to display both USD and GBP on the page, like this:
