@@ -62,14 +62,14 @@ Use the `th:href` tag to create links to view a specific account page.
 1. Add a parameterized link, using the Thymeleaf `th:href` syntax (details [here](http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#preprocessing)):
 
     ```html
-    <a th:href="@{/product/__${product.id}__}">Product</a>`
+    <a th:href="@{/product/__${product.id}__}">Product</a>
     ```
 
    At runtime, Thymeleaf will replace `__${product.id}__` with the ID of the *product* taken from the model.
    For example, if `${product.id}` was 2, then the final output from Thymeleaf is:
    
    ```html
-   <a href="/product/2">Product</a>`
+   <a href="/product/2">Product</a>
    ```
    
 1. Since we want each account name table cell to have both the name of the account and a link, 
