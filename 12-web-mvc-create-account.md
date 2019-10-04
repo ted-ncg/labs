@@ -72,12 +72,13 @@ Create a link to a Create Account Form to create a new account and save it in th
 
 1. Run this new test, and it should **fail**. 
 
-1. Add a `createAccount()` method to your web controller class that:
+1. Add a `createAccount()` method to your web controller class that will:
 
     * Has a `@PostMapping` annotation, mapping to `/create-account`
     * Takes a parameter `@ModelAttribute("accountName") String name` that will be the account name.
-    * Creates a new `Account` instance with the incoming `name` and does a `save` to the account repository.
-    * Redirects back to the "all accounts" view
+    * Create a new `Account` instance with the incoming `name` 
+    * Save that account to the account repository.
+    * Redirect back to the "all accounts" view
         * **NOTE:** Instead of return the name of a _view_, you're returning a **URL**, e.g.:
         
           ```java

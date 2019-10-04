@@ -19,9 +19,9 @@ We'd also like to pre-fill the form with a default deposit amount of $100.
 
 ----
 
-## Update Form HTML to JavaBean
+## Update Form HTML to JavaBean (DTO)
 
-1. Create a new `CreateForm` JavaBean class that has properties for `accountName` and `initialDeposit`.
+1. Create a new `CreateForm` DTO class that has properties for `accountName` and `initialDeposit`.
 
     > **Watch out for correct spelling of Properties!**
 
@@ -33,6 +33,12 @@ We'd also like to pre-fill the form with a default deposit amount of $100.
      <p>Initial Deposit: $<input type="text" th:field="*{initialDeposit}"/></p>
      <p><input type="submit" value="Create Account"/> <input type="reset" value="Clear"/></p>
    </form>
+   ```
+
+   Make sure the HTML file has this declaration at the top:
+   
+   ```html
+   <html lang="en" xmlns:th="http://www.thymeleaf.org">
    ```
 
 ## Modify Web Controller GET
