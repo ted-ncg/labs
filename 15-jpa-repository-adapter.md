@@ -8,37 +8,6 @@
 
 Create a JPA implementation of the `AccountRepository` that uses Spring Data to store Accounts in a database.
 
-## Preparation
-
-1. Add the following dependencies to the `pom.xml` file inside the `<dependencies>` section:
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>
-
-1. Exit IntelliJ IDEA 
-
-1. Open up a command line prompt and change to the directory where your project is located.
-
-1. From the command-line, do a `mvn compile`, like this (copy-n-paste the whole line):
-
-   ```
-   mvn compile -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true
-   ```
-   
-   This may take a little while as it has to download the Spring Data dependencies.
-   
-1. Re-open IntelliJ IDEA and open the project and make sure all of the tests compile and pass before moving on.
-
-    * You may need to "refresh" (or re-import) the Maven file:
-      open the Maven window (on the right side) and click on the left-most icon
-      (Reimport All Maven Projects).
-
 ## A. Create Entity and JPA Repository Interface
 
 1. Copy the [AccountDto.java](AccountDto.java) class into your production code directory.
